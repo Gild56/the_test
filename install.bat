@@ -10,7 +10,7 @@ python -m pip install colorama
 
 echo Opening the game...
 
-python main.py
+python3 main.py
 
 echo Installation is finished. Enjoy!
 
