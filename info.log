@@ -1,1 +1,9 @@
 [INFO]  [14:18:12] [..\logic\music_manager.py]      Playing next song - "Elekid - Melting Ice".
+[INFO]  [14:22:28] [..\logic\music_manager.py]      Playing next song - "Aurora Borealis - Beyond The Horizon".
+[INFO]  [14:25:48] [..\main.py]                     Stopping the app...
+[INFO]  [14:25:53] [logs.py]                        The app is starting...
+[INFO]  [14:25:53] [..\logic\music_manager.py]      Randomizing the playlist.
+[INFO]  [14:25:54] [..\logic\points_manager.py]     Data has been imported from the points.json file.
+[INFO]  [14:25:54] [..\logic\music_manager.py]      Playing next song - "Vexaic - Lifted".
+[INFO]  [14:25:54] [..\logic\questions_manager.py]  Randomizing the next question. The arguments are: ['Dans quel club Zin...
+[WARN]  [14:25:54] [question_menu.py]               There are no image for this question. The image wasn't created.
