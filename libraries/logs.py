@@ -48,6 +48,7 @@ class Logs:
             return text[:self.MAX_LINE_LENGTH] + '...'
         return text
 
+
     def debug(self, text="Debug text wasn't added!"):
         frame = inspect.currentframe()
         caller_frame = frame.f_back
