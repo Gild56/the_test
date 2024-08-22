@@ -1,0 +1,88 @@
+[INFO]  [13:44:44] [logs.py]                        The app is starting...
+[ERROR] [13:44:44] [logs.py]                        Traceback (most recent call last):
+  File "c:\Users\Gild56\Documents\vscode_folder\iq_test\main.py", line 8, in <module>
+    from ui.main_menu import MainMenu
+  File "c:\Users\Gild56\Documents\vscode_folder\iq_test\ui\main_menu.py", line 7, in <module>
+    from logic.music_manager import music_manager
+  File "c:\Users\Gild56\Documents\vscode_folder\iq_test\logic\music_manager.py", line 6, in <module>
+    from libraries.logs import log
+  File "c:\Users\Gild56\Documents\vscode_folder\iq_test\libraries\logs.py", line 133, in <module>
+    print(1/0)
+          ~^~
+ZeroDivisionError: division by zero
+
+[INFO]  [12:43:46] [logs.py]                        The app is starting...
+[ERROR] [12:43:46] [logs.py]                        [ERROR] [12:43:46] [main.py     ] in line 8   
+[ERROR] [12:43:46] [main_menu.py] in line 7   
+[ERROR] [12:43:46] [music_manager.py] in line 6   
+[ERROR] [12:43:46] [logs.py     ] in line 149 
+ZeroDivisionError: division by zero
+[INFO]  [12:44:21] [logs.py]                        The app is starting...
+[ERROR] [12:44:21] [logs.py]                         
+[ERROR] [12:44:21] [logs.py]                        [ERROR] [12:44:21] [main.py     ] in line 8   
+[ERROR] [12:44:21] [main_menu.py] in line 7   
+[ERROR] [12:44:21] [music_manager.py] in line 6   
+[ERROR] [12:44:21] [logs.py     ] in line 150 
+ZeroDivisionError: division by zero
+[INFO]  [13:05:21] [logs.py]                        The app is starting...
+[ERROR] [13:05:21] [logs.py]                         
+[ERROR] [13:05:21] [logs.py]                        
+
+[ERROR] [13:05:21] [main.py     ] in line 8   
+[ERROR] [13:05:21] [main_menu.py] in line 7   
+[ERROR] [13:05:21] [music_manager.py] in line 6   
+[ERROR] [13:05:21] [logs.py     ] in line 150 
+ZeroDivisionError: division by zero
+[INFO]  [13:05:42] [logs.py]                        The app is starting...
+[ERROR] [13:05:42] [logs.py]                        
+
+[ERROR] [13:05:42] [main.py     ] in line 8   
+[ERROR] [13:05:42] [main_menu.py] in line 7   
+[ERROR] [13:05:42] [music_manager.py] in line 6   
+[ERROR] [13:05:42] [logs.py     ] in line 149 
+ZeroDivisionError: division by zero
+[INFO]  [13:05:57] [logs.py]                        The app is starting...
+[ERROR] [13:05:57] [logs.py]                        
+[ERROR] [13:05:57] [main.py     ] in line 8   
+[ERROR] [13:05:57] [main_menu.py] in line 7   
+[ERROR] [13:05:57] [music_manager.py] in line 6   
+[ERROR] [13:05:57] [logs.py     ] in line 149 
+ZeroDivisionError: division by zero
+[INFO]  [13:08:44] [logs.py]                        The app is starting...
+
+[ERROR] [13:08:44] [main.py     ] in line 8   
+[ERROR] [13:08:44] [main_menu.py] in line 7   
+[ERROR] [13:08:44] [music_manager.py] in line 6   
+[ERROR] [13:08:44] [logs.py     ] in line 153 
+ZeroDivisionError: division by zero
+[INFO]  [13:08:57] [logs.py]                        The app is starting...
+[ERROR] [13:08:57] [main.py     ] in line 8   
+[ERROR] [13:08:57] [main_menu.py] in line 7   
+[ERROR] [13:08:57] [music_manager.py] in line 6   
+[ERROR] [13:08:57] [logs.py     ] in line 153 
+ZeroDivisionError: division by zero
+[INFO]  [13:39:39] [logs.py]                        The app is starting...
+[ERROR] [13:39:39] [logs.py     ] in line 142 
+ZeroDivisionError: division by zero
+[INFO]  [13:46:28] [logs.py]                        The app is starting...
+[WARN]  [13:46:28] [c:\Users\Gild56\Documents\vscode_folder\iq_test\libraries\logs.py]                        Warning text wasn't added!
+[ERROR] [13:46:28] [logs.py] in line 148
+ZeroDivisionError: division by zero
+[INFO]  [13:46:49] [logs.py]                        The app is starting...
+[WARN]  [13:46:49] [logs.py]                        Warning text wasn't added!
+[ERROR] [13:46:49] [logs.py] in line 148
+ZeroDivisionError: division by zero
+[INFO]  [14:05:23] [logs.py]                        The app is starting...
+[WARN]  [14:05:23] [logs.py]                        Warning text wasn't added!
+[ERROR] [14:05:23] [main.py] in line 8
+[ERROR] [14:05:23] [main_menu.py] in line 7
+[ERROR] [14:05:23] [music_manager.py] in line 6
+[ERROR] [14:05:23] [logs.py] in line 148
+ZeroDivisionError: division by zero
+[INFO]  [14:05:36] [logs.py]                        The app is starting...
+[INFO]  [14:05:37] [..\logic\music_manager.py]      Randomizing the playlist.
+[INFO]  [14:05:39] [..\logic\points_manager.py]     Data has been imported from the points.json file.
+[INFO]  [14:05:39] [..\logic\music_manager.py]      Playing next song - "Dimatis - Moonlit Lover".
+[INFO]  [14:05:39] [..\logic\questions_manager.py]  Randomizing the next question. The arguments are: ["Quel est le nom de...
+[WARN]  [14:05:39] [question_menu.py]               There are no image for this question. The image wasn't created.
+[INFO]  [14:09:09] [..\logic\music_manager.py]      Playing next song - "Osk - Komorebi".
