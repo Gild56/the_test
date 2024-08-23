@@ -10,7 +10,7 @@ from logic.points_manager import points_manager
 from logic.text_manager import txt
 
 from libraries.colors import *
-from libraries.logs import log
+from libraries.logger import log
 
 class MainMenu(Screen):
     def __init__(self, **kwargs):

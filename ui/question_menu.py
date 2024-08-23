@@ -13,7 +13,7 @@ from logic.text_manager import txt
 
 from libraries.resource_path import resource_path
 from libraries.colors import *
-from libraries.logs import log
+from libraries.logger import log
 
 class QuestionMenu(Screen):
     def __init__(self, **kwargs):

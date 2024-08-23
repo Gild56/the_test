@@ -1,0 +1,180 @@
+[INFO]  [10:11:34] [logs.py]                        The app is starting...
+[INFO]  [10:11:34] [..\logic\music_manager.py]      Randomizing the playlist.
+[INFO]  [10:11:36] [..\logic\points_manager.py]     Data has been imported from the points.json file.
+[INFO]  [10:11:36] [..\logic\music_manager.py]      Playing next song - "Dimatis - Moonlit Lover".
+[INFO]  [10:11:36] [..\logic\questions_manager.py]  Randomizing the next question. The arguments are: ['Pour Texas et quel...
+[WARN]  [10:11:36] [question_menu.py]               There are no image for this question. The image wasn't created.
+[INFO]  [10:12:00] [..\logic\questions_manager.py]  Randomizing the next question. The arguments are: ['Dans quel pays par...
+[INFO]  [10:12:01] [..\ui\question_menu.py]         The image was created. The path do the image is 'C:\Users\Gild56\Docum...
+[INFO]  [10:12:01] [..\ui\question_menu.py]         The image was added to the layout. The path do the image is 'C:\Users\...
+[INFO]  [10:12:01] [..\ui\main_menu.py]             Going to the next screen - QuestionMenu.
+[INFO]  [10:12:27] [..\main.py]                     Stopping the app...
+[INFO]  [10:12:27] [..\logic\points_manager.py]     Data has been saved in the points.json file.
+[INFO]  [10:12:27] [..\main.py]                     The app stopped when a question was asked. Points were lost.
+[INFO]  [10:13:14] [logs.py]                        The app is starting...
+[INFO]  [10:13:14] [..\logic\music_manager.py]      Randomizing the playlist.
+[INFO]  [10:13:16] [..\logic\points_manager.py]     Data has been imported from the points.json file.
+[INFO]  [10:13:16] [..\logic\music_manager.py]      Playing next song - "Dimatis - Moonlit Lover".
+[INFO]  [10:13:16] [..\logic\questions_manager.py]  Randomizing the next question. The arguments are: ['Combien de doight ...
+[WARN]  [10:13:16] [question_menu.py]               There are no image for this question. The image wasn't created.
+[INFO]  [10:13:34] [..\logic\questions_manager.py]  Randomizing the next question. The arguments are: ['Sur combien de cas...
+[WARN]  [10:13:34] [question_menu.py]               There are no image for this question. The image wasn't created.
+[WARN]  [10:13:34] [question_menu.py]               There are no image for this question. The image wasn't added to the layout.
+[INFO]  [10:13:34] [..\ui\main_menu.py]             Going to the next screen - QuestionMenu.
+[INFO]  [10:18:56] [logs.py]                        The app is starting...
+[INFO]  [10:18:56] [..\logic\music_manager.py]      Randomizing the playlist.
+[ERROR] [10:18:57] [main.py] in line 8
+[ERROR] [10:18:57] [main_menu.py] in line 8
+[ERROR] [10:18:57] [questions_manager.py] in line 128
+[ERROR] [10:18:57] [questions_manager.py] in line 11
+[ERROR] [10:18:57] [readers.py] in line 1026
+[ERROR] [10:18:57] [readers.py] in line 620
+[ERROR] [10:18:57] [readers.py] in line 1620
+[ERROR] [10:18:57] [readers.py] in line 1880
+[ERROR] [10:18:57] [common.py] in line 873
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Gild56\\Documents\\vscode_folder\\iq_test\\databases\\ukraionien.csv'
+[INFO]  [10:20:17] [logs.py]                        The app is starting...
+[INFO]  [10:20:17] [..\logic\music_manager.py]      Randomizing the playlist.
+[INFO]  [10:20:18] [..\logic\points_manager.py]     Data has been imported from the points.json file.
+[INFO]  [10:20:18] [..\logic\music_manager.py]      Playing next song - "Daminika - Beyond the Stars".
+[INFO]  [10:20:18] [..\logic\questions_manager.py]  Randomizing the next question. The arguments are: ['Як звати вченого К...
+[WARN]  [10:20:18] [question_menu.py]               There are no image for this question. The image wasn't created.
+[INFO]  [10:20:44] [..\logic\questions_manager.py]  Randomizing the next question. The arguments are: ['Яка краïна продала...
+[WARN]  [10:20:44] [question_menu.py]               There are no image for this question. The image wasn't created.
+[WARN]  [10:20:44] [question_menu.py]               There are no image for this question. The image wasn't added to the layout.
+[INFO]  [10:20:44] [..\ui\main_menu.py]             Going to the next screen - QuestionMenu.
+[INFO]  [10:22:32] [..\logic\points_manager.py]     Data has been saved in the points.json file.
+[INFO]  [10:22:32] [..\ui\question_menu.py]         The answer was true.
+[INFO]  [10:22:32] [..\ui\question_menu.py]         Going to the next screen - AnsweredMenu.
+[INFO]  [10:22:40] [..\logic\questions_manager.py]  Randomizing the next question. The arguments are: ['Яка столиця Німечч...
+[WARN]  [10:22:40] [question_menu.py]               There are no image for this question. The image wasn't created.
+[WARN]  [10:22:40] [question_menu.py]               There are no image for this question. The image wasn't added to the layout.
+[INFO]  [10:22:40] [..\ui\answered_menu.py]         Going to the next screen - QuestionMenu.
+[INFO]  [10:22:44] [..\logic\points_manager.py]     Data has been saved in the points.json file.
+[INFO]  [10:22:44] [..\ui\question_menu.py]         The answer was true.
+[INFO]  [10:22:44] [..\ui\question_menu.py]         Going to the next screen - AnsweredMenu.
+[ERROR] [10:22:45] [main.py] in line 48
+[ERROR] [10:22:45] [app.py] in line 956
+[ERROR] [10:22:45] [base.py] in line 574
+[ERROR] [10:22:45] [base.py] in line 339
+[ERROR] [10:22:45] [base.py] in line 383
+[ERROR] [10:22:45] [base.py] in line 334
+[ERROR] [10:22:45] [base.py] in line 263
+[ERROR] [10:22:45] [_event.pyx] in line 731
+[ERROR] [10:22:45] [__init__.py] in line 1709
+[ERROR] [10:22:45] [_event.pyx] in line 731
+[ERROR] [10:22:45] [__init__.py] in line 1726
+[ERROR] [10:22:45] [_event.pyx] in line 731
+[ERROR] [10:22:45] [screenmanager.py] in line 1210
+[ERROR] [10:22:45] [widget.py] in line 589
+[ERROR] [10:22:45] [_event.pyx] in line 731
+[ERROR] [10:22:45] [relativelayout.py] in line 306
+[ERROR] [10:22:45] [widget.py] in line 589
+[ERROR] [10:22:45] [_event.pyx] in line 731
+[ERROR] [10:22:45] [widget.py] in line 589
+[ERROR] [10:22:45] [_event.pyx] in line 731
+[ERROR] [10:22:45] [button.py] in line 151
+[ERROR] [10:22:45] [_event.pyx] in line 727
+[ERROR] [10:22:45] [_event.pyx] in line 1307
+[ERROR] [10:22:45] [_event.pyx] in line 1231
+[ERROR] [10:22:45] [answered_menu.py] in line 105
+[ERROR] [10:22:45] [question_menu.py] in line 193
+[ERROR] [10:22:45] [question_menu.py] in line 112
+[ERROR] [10:22:45] [questions_manager.py] in line 99
+[ERROR] [10:22:45] [indexing.py] in line 1183
+[ERROR] [10:22:45] [frame.py] in line 4212
+IndexError: index 99 is out of bounds for axis 0 with size 99
+[INFO]  [14:36:16] [logs.py]                        The app is starting...
+[INFO]  [14:36:16] [..\logic\music_manager.py]      Randomizing the playlist.
+[INFO]  [14:36:18] [..\logic\points_manager.py]     Data has been imported from the points.json file.
+[INFO]  [14:36:18] [..\logic\music_manager.py]      Playing next song - "Vexaic - Lifted".
+[INFO]  [14:36:18] [..\logic\questions_manager.py]  Randomizing the next question. The arguments are: ['Яка найменша держа...
+[WARN]  [14:36:18] [question_menu.py]               There are no image for this question. The image wasn't created.
+[INFO]  [14:37:32] [..\main.py]                     Stopping the app...
+[INFO]  [14:40:54] [logs.py]                        The app is starting...
+[INFO]  [14:40:54] [..\logic\music_manager.py]      Randomizing the playlist.
+[INFO]  [14:40:55] [..\logic\points_manager.py]     Data has been imported from the points.json file.
+[INFO]  [14:40:55] [..\logic\music_manager.py]      Playing next song - "Rameses B - Believing".
+[INFO]  [14:40:55] [..\logic\questions_manager.py]  Randomizing the next question. The arguments are: ["Що означає слово '...
+[WARN]  [14:40:55] [question_menu.py]               There are no image for this question. The image wasn't created.
+[INFO]  [14:41:13] [..\logic\questions_manager.py]  Randomizing the next question. The arguments are: ['Якого кольору знам...
+[INFO]  [14:41:13] [..\ui\question_menu.py]         The image was created. The path do the image is 'C:\Users\Gild56\Docum...
+[INFO]  [14:41:13] [..\ui\question_menu.py]         The image was added to the layout. The path do the image is 'C:\Users\...
+[INFO]  [14:41:13] [..\ui\main_menu.py]             Going to the next screen - QuestionMenu.
+[INFO]  [14:41:21] [..\logic\points_manager.py]     Data has been saved in the points.json file.
+[INFO]  [14:41:21] [..\ui\question_menu.py]         The answer was false.
+[INFO]  [14:41:21] [..\ui\question_menu.py]         Going to the next screen - AnsweredMenu.
+[INFO]  [14:41:22] [..\ui\answered_menu.py]         Going to the next screen - MainMenu.
+[INFO]  [14:41:45] [..\main.py]                     Stopping the app...
+[INFO]  [14:46:36] [logs.py]                        The app is starting...
+[INFO]  [14:46:36] [music_manager.py]               Randomizing the playlist.
+[INFO]  [14:46:38] [points_manager.py]              Data has been imported from the points.json file.
+[INFO]  [14:46:38] [music_manager.py]               Playing next song - "Rameses B - Believing".
+[INFO]  [14:46:38] [questions_manager.py]           Randomizing the next question. The arguments are: ['Який композитор на...
+[WARN]  [14:46:38] [question_menu.py]               There are no image for this question. The image wasn't created.
+[INFO]  [14:50:39] [main.py]                        Stopping the app...
+[INFO]  [14:50:44] [logs.py]              The app is starting...
+[INFO]  [14:50:44] [music_manager.py]     Randomizing the playlist.
+[INFO]  [14:50:45] [points_manager.py]    Data has been imported from the points.json file.
+[INFO]  [14:50:45] [music_manager.py]     Playing next song - "SkyFlair & Exal - Afterlife".
+[INFO]  [14:50:45] [questions_manager.py] Randomizing the next question. The arguments are: ['Яка краïна продала Луïзіану ...
+[WARN]  [14:50:45] [question_menu.py]     There are no image for this question. The image wasn't created.
+[INFO]  [14:51:16] [main.py]              Stopping the app...
+[INFO]  [14:51:50] [logs.py]                   The app is starting...
+[INFO]  [14:51:50] [music_manager.py]          Randomizing the playlist.
+[INFO]  [14:51:51] [points_manager.py]         Data has been imported from the points.json file.
+[INFO]  [14:51:51] [music_manager.py]          Playing next song - "Dimatis - Moonlit Lover".
+[INFO]  [14:51:51] [questions_manager.py]      Randomizing the next question. The arguments are: ['Скільки важелів на футбольно...
+[WARN]  [14:51:51] [question_menu.py]          There are no image for this question. The image wasn't created.
+[INFO]  [15:00:14] [main.py]                   Stopping the app...
+[INFO]  [15:00:21] [logs.py]                   The app is starting...
+[INFO]  [15:00:21] [music_manager.py]          Randomizing the playlist.
+[INFO]  [15:00:22] [points_manager.py]         Data has been imported from the points.json file.
+[INFO]  [15:00:22] [music_manager.py]          Playing next song - "Dimatis - Moonlit Lover".
+[INFO]  [15:00:22] [questions_manager.py]      Randomizing the next question. The arguments are: ["В якому клубі Зінедін Зідан ...
+[WARN]  [15:00:22] [question_menu.py]          There are no image for this question. The image wasn't created.
+[INFO]  [15:01:19] [main.py]                   Stopping the app...
+[INFO]  [15:01:23] [logs.py]                   The app is starting...
+[INFO]  [15:01:23] [music_manager.py]          Randomizing the playlist.
+[INFO]  [15:01:24] [points_manager.py]         Data has been imported from the points.json file.
+[INFO]  [15:01:24] [music_manager.py]          Playing next song - "Osk - Komorebi".
+[INFO]  [15:01:24] [questions_manager.py]      Randomizing the next question. The arguments are: ['Як звати вченого Коперника?'...
+[WARN]  [15:01:24] [question_menu.py]          There are no image for this question. The image wasn't created.
+[INFO]  [15:04:05] [logs.py]                   The app is starting...
+[INFO]  [15:04:05] [music_manager.py]          Randomizing the playlist.
+[INFO]  [15:04:06] [points_manager.py]         Data has been imported from the points.json file.
+[INFO]  [15:04:06] [music_manager.py]          Playing next song - "SkyFlair & Exal - Afterlife".
+[INFO]  [15:04:06] [questions_manager.py]      Randomizing the next question. The arguments are: ['Яку фігуру намагаються збити...
+[WARN]  [15:04:06] [question_menu.py]          There are no image for this question. The image wasn't created.
+[INFO]  [15:04:29] [main.py]                   Stopping the app...
+[INFO]  [15:07:16] [logger.py]                 The app is starting...
+[INFO]  [15:07:16] [music_manager.py]          Randomizing the playlist.
+[INFO]  [15:07:18] [points_manager.py]         Data has been imported from the points.json file.
+[INFO]  [15:07:18] [music_manager.py]          Playing next song - "Dimatis - Moonlit Lover".
+[INFO]  [15:07:18] [questions_manager.py]      Randomizing the next question. The arguments are: ['Яке місто приймало Олімпійсь...
+[INFO]  [15:07:18] [question_menu.py]          The image was created. The path do the image is 'C:\Users\Gild56\Documents\vscod...
+[INFO]  [15:07:26] [questions_manager.py]      Randomizing the next question. The arguments are: ['Яка планета Сонячноï системи...
+[WARN]  [15:07:26] [question_menu.py]          There are no image for this question. The image wasn't created.
+[WARN]  [15:07:26] [question_menu.py]          There are no image for this question. The image wasn't added to the layout.
+[INFO]  [15:07:26] [main_menu.py]              Going to the next screen - QuestionMenu.
+[INFO]  [15:07:28] [main.py]                   Stopping the app...
+[INFO]  [15:07:28] [points_manager.py]         Data has been saved in the points.json file.
+[INFO]  [15:07:28] [main.py]                   The app stopped when a question was asked. Points were lost.
+[INFO]  [15:11:43] [logger.py]                 The app is starting...
+[INFO]  [15:11:44] [music_manager.py]          Randomizing the playlist.
+[INFO]  [15:11:45] [points_manager.py]         Data has been imported from the points.json file.
+[INFO]  [15:11:45] [text_manager.py]           The system language is Ukrainian_Ukraine.
+[INFO]  [15:11:45] [text_manager.py]           The language was changed into ukrainien.
+[INFO]  [15:11:45] [music_manager.py]          Playing next song - "Elekid - Melting Ice".
+[INFO]  [15:11:45] [text_manager.py]           The language was changed into ukrainien.
+[INFO]  [15:11:45] [questions_manager.py]      Randomizing the next question. The arguments are: ['В якій краïні знаходяться мі...
+[INFO]  [15:11:45] [question_menu.py]          The image was created. The path do the image is 'C:\Users\Gild56\Documents\vscod...
+[INFO]  [15:25:31] [logger.py]                 The app is starting...
+[INFO]  [15:25:31] [music_manager.py]          Randomizing the playlist.
+[INFO]  [15:25:32] [points_manager.py]         Data has been imported from the points.json file.
+[INFO]  [15:25:33] [text_manager.py]           The system language is Ukrainian_Ukraine.
+[INFO]  [15:25:33] [text_manager.py]           The language was changed into ukrainien.
+[INFO]  [15:25:33] [music_manager.py]          Playing next song - "Aurora Borealis - Beyond The Horizon".
+[INFO]  [15:25:33] [questions_manager.py]      Randomizing the next question. The arguments are: ['З 250 моряків, які вирушили ...
+[INFO]  [15:25:33] [question_menu.py]          The image was created. The path do the image is 'C:\Users\Gild56\Documents\vscod...
+[INFO]  [15:34:01] [main.py]                   Stopping the app...

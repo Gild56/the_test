@@ -8,14 +8,13 @@ from libraries.colors import *
 from libraries.resource_path import resource_path
 
 class Logs:
-
     def __init__(self, collecting_errors=True, filename="info.log"):
         self.FILE = resource_path(filename)
         self.info_text = ""
         self.warning_text = ""
         self.error_text = ""
-        self.MAX_SPACES = 30
-        self.MAX_LINE_LENGTH = 70
+        self.MAX_SPACES = 25
+        self.MAX_LINE_LENGTH = 80
         self.info("The app is starting...")
 
         self.project_root = os.path.dirname(os.path.abspath(__file__))
@@ -52,14 +51,15 @@ class Logs:
     def debug(self, text="Debug text wasn't added!"):
         frame = inspect.currentframe()
         caller_frame = frame.f_back
-        filename = self.format_filename(caller_frame.f_code.co_filename)
+        filename = caller_frame.f_code.co_filename
+        short_filename = filename.replace("\\", "/").split("/")[-1]
 
-        spaces_count = self.MAX_SPACES - len(filename)
+        spaces_count = self.MAX_SPACES - len(short_filename)
         spaces = ""
         for i in range(spaces_count):
             spaces = spaces + " "
 
-        self.debug_text = f"[DEBUG] [{self.get_time()}] [{filename}]{spaces} {self.format_line(text)}"
+        self.debug_text = f"[DEBUG] [{self.get_time()}] [{short_filename}]{spaces} {self.format_line(text)}"
 
         print(COL_CYAN + self.debug_text + COL_RESET)
         self.add_log(self.debug_text)
@@ -68,14 +68,15 @@ class Logs:
     def info(self, text="Info text wasn't added!"):
         frame = inspect.currentframe()
         caller_frame = frame.f_back
-        filename = self.format_filename(caller_frame.f_code.co_filename)
+        filename = caller_frame.f_code.co_filename
+        short_filename = filename.replace("\\", "/").split("/")[-1]
 
-        spaces_count = self.MAX_SPACES - len(filename)
+        spaces_count = self.MAX_SPACES - len(short_filename)
         spaces = ""
         for i in range(spaces_count):
             spaces = spaces + " "
 
-        self.info_text = f"[INFO]  [{self.get_time()}] [{filename}]{spaces} {self.format_line(text)}"
+        self.info_text = f"[INFO]  [{self.get_time()}] [{short_filename}]{spaces} {self.format_line(text)}"
 
         print(COL_GREEN + self.info_text + COL_RESET)
         self.add_log(self.info_text)

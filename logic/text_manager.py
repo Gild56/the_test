@@ -1,10 +1,13 @@
 import locale
 
 from logic.questions_manager import questions_manager
-from logic.texts import *
+from languages.en_texts import *
+from languages.fr_texts import *
+from languages.ru_texts import *
+from languages.ua_texts import *
 
 from libraries.resource_path import resource_path
-from libraries.logs import log
+from libraries.logger import log
 
 class TextManager():
 
@@ -32,6 +35,7 @@ class TextManager():
         self.options = ""
 
         self.system_language, _ = locale.getlocale()
+        log.info(f"The system language is {self.system_language}.")
 
         if 'ru' in self.system_language:
             self.change_of_language('russian')
@@ -39,100 +43,84 @@ class TextManager():
         elif 'fr' in self.system_language:
             self.change_of_language('french')
 
-        elif 'uk' in self.system_language or 'ua' in self.system_language or "Uk" in self.system_language:
+        elif 'uk' in self.system_language or \
+            'ua' in self.system_language or \
+            "Uk" in self.system_language:
+
             self.change_of_language('ukrainien')
 
     def set_english(self):
+        log.info("The language was changed into english.")
 
         self.good_answers = GOOD_ANSWERS_ENGLISH
         self.wrong_answers = WRONG_ANSWERS_ENGLISH
         self.keep_it_messages = KEEP_IT_MESSAGES_ENGLISH
 
-        self.dedications = "A game made by\nGild56 // @gild56gmd\nEnjoy!"
-        self.name = "IQ Test"
-        self.points = "points"
-        self.win_streak = "your win streak now"
-        self.best_win_streak = "best win streak"
-        self.clear_stats = "Clear stats"
-        self.play = "Play"
-        self.next = "Continue"
-        self.main_menu = "<-- Main menu"
-        self.correct_answer = "The correct answer was"
-        self.options = "Options"
+        self.dedications = DEDICATIONS_ENGLISH
+        self.name = NAME_ENGLISH
+        self.points = POINTS_ENGLISH
+        self.win_streak = WIN_STREAK_ENGLISH
+        self.best_win_streak = BEST_WIN_STREAK_ENGLISH
+        self.clear_stats = CLEAR_STATS_ENGLISH
+        self.play = PLAY_ENGLISH
+        self.next = NEXT_ENGLISH
+        self.main_menu = MAIN_MENU_ENGLISH
+        self.correct_answer = CORRECT_ANSWER_ENGLISH
+        self.options = OPTIONS_ENGLISH
 
-        self.warning_message = (
-            "WARNING!\nAfter doing this you won't be able to\n"
-            "return to the previous stats."
-        )
+        self.warning_message = WARNING_MESSAGE_ENGLISH
 
     def set_russian(self):
+        log.info("The language was changed into russian.")
 
         self.good_answers = GOOD_ANSWERS_RUSSIAN
         self.wrong_answers = WRONG_ANSWERS_RUSSIAN
         self.keep_it_messages = KEEP_IT_MESSAGES_RUSSIAN
 
-        self.dedications = "Игра от\nGild56 // @gild56gmd\nПриятной игры!"
-        self.name = "IQ Тест"
-        self.points = "очков"
-        self.win_streak = "текущая серия правильных ответов"
-        self.best_win_streak = "лучшая серия правильных ответов"
-        self.clear_stats = "Очистить статистику"
-        self.play = "Играть"
-        self.next = "Дальше"
-        self.main_menu = "<-- Главное меню"
-        self.correct_answer = "Правильный ответ"
-        self.options = "Настройки"
+        self.dedications = DEDICATIONS_RUSSIAN
+        self.name = NAME_RUSSIAN
+        self.points = POINTS_RUSSIAN
+        self.win_streak = WIN_STREAK_RUSSIAN
+        self.best_win_streak = BEST_WIN_STREAK_RUSSIAN
+        self.clear_stats = CLEAR_STATS_RUSSIAN
+        self.play = PLAY_RUSSIAN
+        self.next = NEXT_RUSSIAN
+        self.main_menu = MAIN_MENU_RUSSIAN
+        self.correct_answer = CORRECT_ANSWER_RUSSIAN
+        self.options = OPTIONS_RUSSIAN
 
-        self.warning_message = (
-            "Осторожно!\nПосле этого нельзя\n"
-            "вернуть предыдущие данные."
-        )
+        self.warning_message = WARNING_MESSAGE_RUSSIAN
 
     def set_french(self):
+        log.info("The language was changed into french.")
 
         self.good_answers = GOOD_ANSWERS_FRENCH
         self.wrong_answers = WRONG_ANSWERS_FRENCH
         self.keep_it_messages = KEEP_IT_MESSAGES_FRENCH
 
-        self.dedications = "Jeu de\nGild56 // @gild56gmd\nAmusez-vous bien!"
-        self.name = "Test de QI"
-        self.points = "points"
-        self.win_streak = "ta série actuelle"
-        self.best_win_streak = "meilleure série"
-        self.clear_stats = "Réinitialiser"
-        self.play = "Jouer"
-        self.next = "Continuer"
-        self.main_menu = "<-- Menu principal"
-        self.correct_answer = "La réponse correcte était"
-        self.options = "Paramètres"
+        self.dedications = DEDICATIONS_FRENCH
+        self.name = NAME_FRENCH
+        self.points = POINTS_FRENCH
+        self.win_streak = WIN_STREAK_FRENCH
+        self.best_win_streak = BEST_WIN_STREAK_FRENCH
+        self.clear_stats = CLEAR_STATS_FRENCH
+        self.play = PLAY_FRENCH
+        self.next = NEXT_FRENCH
+        self.main_menu = MAIN_MENU_FRENCH
+        self.correct_answer = CORRECT_ANSWER_FRENCH
+        self.options = OPTIONS_FRENCH
 
-        self.warning_message = (
-            "AVERTISSEMENT!\nAprès cela, tu ne pourras pas\n"
-            "retourner aux statistiques précédentes."
-        )
+        self.warning_message = WARNING_MESSAGE_FRENCH
+
 
     def set_ukrainien(self):
+        log.info("The language was changed into ukrainien.")
 
         self.good_answers = GOOD_ANSWERS_UKRAINIEN
         self.wrong_answers = WRONG_ANSWERS_UKRAINIEN
         self.keep_it_messages = KEEP_IT_MESSAGES_UKRAINIEN
 
-        self.dedications = "Гра вiд\nGild56 // @gild56gmd\nГарноï гри!"
-        self.name = "IQ Тест"
-        self.points = "очок"
-        self.win_streak = "твоя поточна серiя"
-        self.best_win_streak = "твоя найкраща серiя"
-        self.clear_stats = "Очистити статистику"
-        self.play = "Грати"
-        self.next = "Далi"
-        self.main_menu = "<-- Головне меню"
-        self.correct_answer = "Правильна вiдповiдь була"
-        self.options = ""
 
-        self.warning_message = (
-            "ОБЕРЕЖНО!\nПiсля цього неможливо\n"
-            "повернутися до попереднiх даних."
-        )
 
     def change_of_language(self, next_language=None):
 

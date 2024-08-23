@@ -1,7 +1,7 @@
 import json
 
 from libraries.resource_path import resource_path
-from libraries.logs import log
+from libraries.logger import log
 
 class PointsManager:
     def __init__(self):

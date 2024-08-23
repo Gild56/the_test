@@ -3,7 +3,7 @@ import os
 from random import shuffle
 
 from libraries.resource_path import resource_path
-from libraries.logs import log
+from libraries.logger import log
 
 class MusicManager:
     def __init__(self):
