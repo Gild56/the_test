@@ -70,6 +70,7 @@ class TextManager():
 
         self.warning_message = WARNING_MESSAGE_ENGLISH
 
+
     def set_russian(self):
         log.info("The language was changed into russian.")
 
@@ -90,6 +91,7 @@ class TextManager():
         self.options = OPTIONS_RUSSIAN
 
         self.warning_message = WARNING_MESSAGE_RUSSIAN
+
 
     def set_french(self):
         log.info("The language was changed into french.")
@@ -120,6 +122,19 @@ class TextManager():
         self.wrong_answers = WRONG_ANSWERS_UKRAINIEN
         self.keep_it_messages = KEEP_IT_MESSAGES_UKRAINIEN
 
+        self.dedications = DEDICATIONS_UKRAINIEN
+        self.name = NAME_UKRAINIEN
+        self.points = POINTS_UKRAINIEN
+        self.win_streak = WIN_STREAK_UKRAINIEN
+        self.best_win_streak = BEST_WIN_STREAK_UKRAINIEN
+        self.clear_stats = CLEAR_STATS_UKRAINIEN
+        self.play = PLAY_UKRAINIEN
+        self.next = NEXT_UKRAINIEN
+        self.main_menu = MAIN_MENU_UKRAINIEN
+        self.correct_answer = CORRECT_ANSWER_UKRAINIEN
+        self.options = OPTIONS_UKRAINIEN
+
+        self.warning_message = WARNING_MESSAGE_UKRAINIEN
 
 
     def change_of_language(self, next_language=None):

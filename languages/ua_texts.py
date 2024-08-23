@@ -79,7 +79,7 @@ MAIN_MENU_UKRAINIEN = "<-- Головне меню"
 CORRECT_ANSWER_UKRAINIEN = "Правильна вiдповiдь була"
 OPTIONS_UKRAINIEN = "Налаштування"
 
-warning_message = (
+WARNING_MESSAGE_UKRAINIEN = (
     "ОБЕРЕЖНО!\nПiсля цього неможливо\n"
     "повернутися до попереднiх даних."
 )

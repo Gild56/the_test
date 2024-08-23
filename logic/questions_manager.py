@@ -25,7 +25,7 @@ class QuestionsManager:
         self.number_of_possibilities = len(self.df)
 
     def format_text(self, text_input, max_length):
-        text = text_input.replace("ї","ï")
+        text = text_input.replace("ї","ï").replace("і","i")
 
         try:
             words = text.split(' ')
