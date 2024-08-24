@@ -6,3 +6,4 @@ zipper.py
 *.zip
 temp/
 temp_copy/
+*.json
