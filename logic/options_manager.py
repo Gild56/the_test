@@ -9,11 +9,13 @@ class OptionsManager():
         self.music_volume = 0.5
         self.sounds_volume = 0.25
 
+        self._import_data()
+
     def _save(self):
         with open(self.JSON_PATH, 'w') as f:
             json.dump({
-                'music_volume': self.points,
-                'sounds_volume': self.win_streak,
+                'music_volume': self.music_volume,
+                'sounds_volume': self.sounds_volume,
             }, f)
         log.info("Data has been saved in the options.json file.")
 

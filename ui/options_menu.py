@@ -2,7 +2,6 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import Screen
 from kivy.uix.label import Label
 from kivy.uix.button import Button
-from kivy.clock import Clock
 
 from logic.music_manager import music_manager
 from logic.options_manager import options_manager
@@ -64,8 +63,10 @@ class OptionsMenu(Screen):
         self.update_labels()
 
         self.clear_button.bind(on_press=self.clear_stats)
-
         self.return_button.bind(on_press=self.return_in_main_menu)
+
+        self.left_layout.add_widget(self.clear_button)
+        self.left_layout.add_widget(self.return_button)
 
         self.main_layout.add_widget(self.left_layout)
         self.main_layout.add_widget(self.right_layout)
@@ -73,7 +74,8 @@ class OptionsMenu(Screen):
         self.add_widget(self.main_layout)
 
     def update_labels(self):
-        self.clear_button.text=("")
+        self.clear_button.text=(txt.clear_stats)
+        self.clear_button.text=(txt.main_menu)
 
     def return_in_main_menu(self, instance):
         questions_manager.status = True

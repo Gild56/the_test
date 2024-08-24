@@ -1,4 +1,23 @@
-from colorama import Fore
+try:
+    from colorama import Fore
+
+    """Colorama colors:"""
+
+    COL_RED = Fore.RED
+    COL_CYAN = Fore.CYAN
+    COL_BLUE = Fore.BLUE
+    COL_GREEN = Fore.GREEN
+    COL_YELLOW = Fore.YELLOW
+
+    COL_RESET = Fore.RESET
+
+except:
+    COL_RED = ""
+    COL_CYAN = ""
+    COL_BLUE = ""
+    COL_GREEN = ""
+    COL_YELLOW = ""
+    COL_RESET = ""
 
 """RGB 1 colors:"""
 
@@ -26,13 +45,3 @@ CYAN = (0, 1, 1)
 
 WHITE = (1, 1, 1)
 BLACK = (0, 0, 0)
-
-"""Colorama colors:"""
-
-COL_RED = Fore.RED
-COL_CYAN = Fore.CYAN
-COL_BLUE = Fore.BLUE
-COL_GREEN = Fore.GREEN
-COL_YELLOW = Fore.YELLOW
-
-COL_RESET = Fore.RESET

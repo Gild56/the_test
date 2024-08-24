@@ -1,13 +1,14 @@
 import locale
 
 from logic.questions_manager import questions_manager
+
+from libraries.resource_path import resource_path
+from libraries.logger import log
+
 from languages.en_texts import *
 from languages.fr_texts import *
 from languages.ru_texts import *
 from languages.ua_texts import *
-
-from libraries.resource_path import resource_path
-from libraries.logger import log
 
 class TextManager():
 
@@ -36,6 +37,7 @@ class TextManager():
 
         self.system_language, _ = locale.getlocale()
         log.info(f"The system language is {self.system_language}.")
+        self.system_language = self.system_language.lower()
 
         if 'ru' in self.system_language:
             self.change_of_language('russian')
@@ -43,11 +45,14 @@ class TextManager():
         elif 'fr' in self.system_language:
             self.change_of_language('french')
 
-        elif 'uk' in self.system_language or \
-            'ua' in self.system_language or \
-            "Uk" in self.system_language:
+        elif 'ukr' in self.system_language or \
+            'ua' in self.system_language:
 
-            self.change_of_language('ukrainien')
+            log.debug("Ukrinian language is the system one")
+            self.change_of_language('ukrainian')
+
+        else:
+            self.change_of_language('russian')
 
     def set_english(self):
         log.info("The language was changed into english.")
@@ -115,48 +120,54 @@ class TextManager():
         self.warning_message = WARNING_MESSAGE_FRENCH
 
 
-    def set_ukrainien(self):
-        log.info("The language was changed into ukrainien.")
+    def set_ukrainian(self):
+        log.info("The language was changed into ukrainian.")
 
-        self.good_answers = GOOD_ANSWERS_UKRAINIEN
-        self.wrong_answers = WRONG_ANSWERS_UKRAINIEN
-        self.keep_it_messages = KEEP_IT_MESSAGES_UKRAINIEN
+        self.good_answers = GOOD_ANSWERS_UKRAINIAN
+        self.wrong_answers = WRONG_ANSWERS_UKRAINIAN
+        self.keep_it_messages = KEEP_IT_MESSAGES_UKRAINIAN
 
-        self.dedications = DEDICATIONS_UKRAINIEN
-        self.name = NAME_UKRAINIEN
-        self.points = POINTS_UKRAINIEN
-        self.win_streak = WIN_STREAK_UKRAINIEN
-        self.best_win_streak = BEST_WIN_STREAK_UKRAINIEN
-        self.clear_stats = CLEAR_STATS_UKRAINIEN
-        self.play = PLAY_UKRAINIEN
-        self.next = NEXT_UKRAINIEN
-        self.main_menu = MAIN_MENU_UKRAINIEN
-        self.correct_answer = CORRECT_ANSWER_UKRAINIEN
-        self.options = OPTIONS_UKRAINIEN
+        self.dedications = DEDICATIONS_UKRAINIAN
+        self.name = NAME_UKRAINIAN
+        self.points = POINTS_UKRAINIAN
+        self.win_streak = WIN_STREAK_UKRAINIAN
+        self.best_win_streak = BEST_WIN_STREAK_UKRAINIAN
+        self.clear_stats = CLEAR_STATS_UKRAINIAN
+        self.play = PLAY_UKRAINIAN
+        self.next = NEXT_UKRAINIAN
+        self.main_menu = MAIN_MENU_UKRAINIAN
+        self.correct_answer = CORRECT_ANSWER_UKRAINIAN
+        self.options = OPTIONS_UKRAINIAN
 
-        self.warning_message = WARNING_MESSAGE_UKRAINIEN
+        self.warning_message = WARNING_MESSAGE_UKRAINIAN
 
 
     def change_of_language(self, next_language=None):
 
+        off = False
+
         if next_language == 'english':
             self.current_language = next_language
             self.set_english()
-            return
+            off = True
 
         elif next_language == 'russian':
             self.current_language = next_language
             self.set_russian()
-            return
+            off = True
 
         elif next_language == 'french':
             self.current_language = next_language
             self.set_french()
-            return
+            off = True
 
-        elif next_language == 'ukrainien':
+        elif next_language == 'ukrainian':
             self.current_language = next_language
-            self.set_ukrainien()
+            self.set_ukrainian()
+            off = True
+
+        if off:
+            questions_manager.change_the_language(self.current_language)
             return
 
 
@@ -169,8 +180,8 @@ class TextManager():
             self.current_language = 'french'
 
         elif self.current_language == 'french':
-            self.set_ukrainien()
-            self.current_language = 'ukrainien'
+            self.set_ukrainian()
+            self.current_language = 'ukrainian'
 
         else:
             self.set_english()

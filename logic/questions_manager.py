@@ -7,7 +7,7 @@ from libraries.logger import log
 
 class QuestionsManager:
     def __init__(self):
-        self.csv_name = 'databases\\ukrainien.csv'
+        self.csv_name = 'databases\\english.csv'
         self.df = pd.read_csv(resource_path(self.csv_name))
         self.number_of_possibilities = len(self.df)
         self.question = ""

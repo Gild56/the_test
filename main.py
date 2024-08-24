@@ -1,9 +1,10 @@
-from kivy.logger import Logger
+
 from logging import CRITICAL
 
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
 from kivy.core.window import Window
+from kivy.logger import Logger
 
 from ui.main_menu import MainMenu
 from ui.question_menu import QuestionMenu
@@ -24,7 +25,7 @@ Window.clearcolor = DARK_BLUE
 
 music_manager.play_music()
 
-#txt.change_of_language("ukrainien")
+#txt.change_of_language("ukrainian")
 
 class QuizApp(App):
     def build(self):

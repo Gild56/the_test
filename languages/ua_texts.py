@@ -1,4 +1,4 @@
-GOOD_ANSWERS_UKRAINIEN = [
+GOOD_ANSWERS_UKRAINIAN = [
     "Вiрно!",
     "Правильно!",
     "Точно!",
@@ -21,7 +21,7 @@ GOOD_ANSWERS_UKRAINIEN = [
     "Прекрасно!"
 ]
 
-WRONG_ANSWERS_UKRAINIEN = [
+WRONG_ANSWERS_UKRAINIAN = [
     "Помилка!",
     "Невiрно!",
     "Не той варiант!",
@@ -44,7 +44,7 @@ WRONG_ANSWERS_UKRAINIEN = [
     "Не пiдходить!"
 ]
 
-KEEP_IT_MESSAGES_UKRAINIEN = [
+KEEP_IT_MESSAGES_UKRAINIAN = [
     "Продовжуй!",
     "Молодець!",
     "Добре!",
@@ -67,19 +67,19 @@ KEEP_IT_MESSAGES_UKRAINIEN = [
     "Добре!"
 ]
 
-DEDICATIONS_UKRAINIEN = "Гра вiд\nGild56 // @gild56gmd\nГарноï гри!"
-NAME_UKRAINIEN = "IQ Тест"
-POINTS_UKRAINIEN = "очок"
-WIN_STREAK_UKRAINIEN = "твоя поточна серiя"
-BEST_WIN_STREAK_UKRAINIEN = "твоя найкраща серiя"
-CLEAR_STATS_UKRAINIEN = "Очистити статистику"
-PLAY_UKRAINIEN = "Грати"
-NEXT_UKRAINIEN = "Далi"
-MAIN_MENU_UKRAINIEN = "<-- Головне меню"
-CORRECT_ANSWER_UKRAINIEN = "Правильна вiдповiдь була"
-OPTIONS_UKRAINIEN = "Налаштування"
+DEDICATIONS_UKRAINIAN = "Гра вiд\nGild56 // @gild56gmd\nГарноï гри!"
+NAME_UKRAINIAN = "IQ Тест"
+POINTS_UKRAINIAN = "очок"
+WIN_STREAK_UKRAINIAN = "твоя поточна серiя"
+BEST_WIN_STREAK_UKRAINIAN = "твоя найкраща серiя"
+CLEAR_STATS_UKRAINIAN = "Очистити статистику"
+PLAY_UKRAINIAN = "Грати"
+NEXT_UKRAINIAN = "Далi"
+MAIN_MENU_UKRAINIAN = "<-- Головне меню"
+CORRECT_ANSWER_UKRAINIAN = "Правильна вiдповiдь була"
+OPTIONS_UKRAINIAN = "Налаштування"
 
-WARNING_MESSAGE_UKRAINIEN = (
+WARNING_MESSAGE_UKRAINIAN = (
     "ОБЕРЕЖНО!\nПiсля цього неможливо\n"
     "повернутися до попереднiх даних."
 )

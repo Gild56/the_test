@@ -61,7 +61,7 @@ class Logs:
 
         self.debug_text = f"[DEBUG] [{self.get_time()}] [{short_filename}]{spaces} {self.format_line(text)}"
 
-        print(COL_CYAN + self.debug_text + COL_RESET)
+        print(COL_BLUE + self.debug_text + COL_RESET)
         self.add_log(self.debug_text)
 
 
