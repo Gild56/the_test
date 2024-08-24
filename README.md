@@ -18,12 +18,11 @@ If the game crashed or you need to find an exception, the [info.log](info.log) f
 
 To begin your experience in the game, you will need to install Python and some modules, like kivy and pygame.
 
+* Alternatively, you can go on the [official Python site](https://python.org/downloads) and install the last *Python 3* version.
+
 * I recommend to install it with the `install.bat` file if you are on Windows.
 
-* Alternatively, you can go on the [official Python site](https://python.org) and install the last *Python 3* version.
-(There are already a `python.exe` in the directory.)
-
-  Next, open your terminal () and write `pip install pygame`, then `pip install kivy`, and finally `pip install colorama`.
+  Next, open your terminal (Win + R, than write powershell and do enter) and write `pip install pygame`, then `pip install kivy`, and finally `pip install colorama` (colorama is optional, just for debug).
 
   Finally, you can play this game, opening the `main.py` file.
 
