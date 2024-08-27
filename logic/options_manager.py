@@ -5,16 +5,22 @@ from libraries.logger import log
 
 class OptionsManager():
     def __init__(self):
-        self.JSON_PATH = resource_path('json\options.json')
         self.music_volume = 0.5
         self.sounds_volume = 0.25
+
+        if not os.path.exists(resource_path("json/")):
+            os.makedirs(resource_path("json/"))
+            log.info("The json/ folder does not exist. A new json/ folder was created")
+
+        self.JSON_PATH = resource_path('json/options.json')
+
         if not os.path.exists(self.JSON_PATH):
-            log.info("the json/options.json file does not exist. The new one was created.")
             with open(self.JSON_PATH, 'w') as f:
                 json.dump({
                     'music_volume': 0,
                     'sounds_volume': 0,
                 }, f)
+            log.info("the json/options.json file does not exist. The new one was created.")
 
         try:
             self._import_data()

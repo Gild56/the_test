@@ -3,6 +3,7 @@ from kivy.uix.screenmanager import Screen
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.clock import Clock
+from kivy.core.window import Window
 
 from logic.music_manager import music_manager
 from logic.questions_manager import questions_manager
@@ -15,6 +16,8 @@ from libraries.logger import log
 class MainMenu(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+        Window.clearcolor = DARK_BLUE
 
         Clock.schedule_interval(self.update_music, 1)
 
@@ -55,10 +58,10 @@ class MainMenu(Screen):
 
         self.options_button = Button(
             pos_hint={"center_x": 0.5, "center_y": 0.5},
-            size_hint=(0.3, 0.2),
+            size_hint=(0.5, 0.3),
             background_color=BLUE,
             color=WHITE,
-            font_size=32,
+            font_size=64,
             font_name=txt.big_font,
             halign="center"
         )

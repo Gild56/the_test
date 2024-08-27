@@ -18,6 +18,8 @@ class MusicManager:
 
         self.randomize_song()
 
+        self.play_music()
+
     def randomize_song(self):
         if len(self.remaining_songs) == 0:
             self.remaining_songs = self.songs_list

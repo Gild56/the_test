@@ -1,9 +1,7 @@
-
 from logging import CRITICAL
 
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
-from kivy.core.window import Window
 from kivy.logger import Logger
 
 from ui.main_menu import MainMenu
@@ -20,10 +18,6 @@ from logic.questions_manager import questions_manager
 
 Logger.setLevel(CRITICAL)
 
-Window.clearcolor = DARK_BLUE
-
-music_manager.play_music()
-
 class QuizApp(App):
     def build(self):
         sm = ScreenManager()
@@ -36,11 +30,11 @@ class QuizApp(App):
     def on_stop(self):
         log.info("Stopping the app...")
         if questions_manager.status:
-            points_manager.lose()
             log.info(
                 "The app stopped when a question "
                 "was asked. Points were lost."
                 )
+            points_manager.lose()
 
 if __name__ == '__main__':
     QuizApp().run()

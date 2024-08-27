@@ -10,7 +10,6 @@ from libraries.resource_path import resource_path
 class Logs:
     def __init__(self, collecting_errors=True):
         self.LOGS_FILE = resource_path("info.log")
-        self.CRASHLOGS_FILE = resource_path("crash.log")
         self.info_text = ""
         self.warning_text = ""
         self.error_text = ""
@@ -19,6 +18,9 @@ class Logs:
         self.info("The app is starting...")
 
         self.project_root = os.path.dirname(os.path.abspath(__file__))
+
+        if not os.path.exists(resource_path("crashes/")):
+            os.makedirs(resource_path("crashes/"))
 
         if collecting_errors:
             sys.excepthook = self.error_collector
@@ -141,8 +143,11 @@ class Logs:
 
     def crash(self, text):
         print(COL_RED + text + COL_RESET)
-        with open(self.CRASHLOGS_FILE, "a", encoding="utf8") as f:
-            f.write(text + "\n\n")
+
+        self.crashlog_filename = self.get_crashlog_filename()
+
+        with open(self.crashlog_filename, "a", encoding="utf8") as f:
+            f.write(text)
 
 
     def error_collector(self, exc_type, exc_value, exc_traceback):
@@ -179,10 +184,5 @@ class Logs:
         self.error(f'"{exc_type.__name__}": {exc_value}.', critical=True)
 
         self.crash(full_message)
-
-        self.crashlog_filename = self.get_crashlog_filename()
-
-        with open(self.crashlog_filename, "a", encoding="utf8") as f:
-            f.write(full_message)
 
 log = Logs(collecting_errors=True)

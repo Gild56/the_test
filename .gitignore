@@ -7,3 +7,5 @@ zipper.py
 temp/
 temp_copy/
 *.json
+json/
+crashes/

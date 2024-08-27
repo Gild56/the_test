@@ -14,6 +14,10 @@ class PointsManager:
         self.win_streak = 0
         self.best_win_streak = 0
 
+        if not os.path.exists(resource_path("json/")):
+            os.makedirs(resource_path("json/"))
+            log.info("The json/ folder does not exist. A new json/ folder was created")
+
         self.JSON_PATH = resource_path('json/points.json')
 
         if not os.path.exists(self.JSON_PATH):
