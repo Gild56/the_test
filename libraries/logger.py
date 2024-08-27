@@ -186,5 +186,3 @@ class Logs:
             f.write(full_message)
 
 log = Logs(collecting_errors=True)
-
-print(0/0)
