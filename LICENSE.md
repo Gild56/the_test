@@ -1,21 +1,23 @@
-# MIT License
+# LICENCE
 
-Copyright (c) 2024 Gild56
+© Gild56
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This software, known as "IQ Test," is provided under the following terms:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+## Permissions
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+1. You are allowed to use, copy, and distribute this software in any form.
+2. You are allowed to modify, enhance, and create derivative works based on this software.
+
+## Conditions
+
+1. Any use or distribution of the software must retain proper attribution: the original author, Gild56, must be credited in the source code, documentation, or any other relevant locations where the software is presented.
+2. If you modify and distribute the software, you must also clearly state that the original code belongs to Gild56.
+
+## Disclaimer
+
+The software is provided "as is," without any express or implied warranties. The author is not liable for any damages arising from the use of the software.
+
+---
+
+For any questions or suggestions, feel free to reach out to the author.

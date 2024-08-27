@@ -208,4 +208,4 @@ class QuestionMenu(Screen):
         music_manager.transition.play()
 
         log.info(f"The answer was {str(win).lower()}.")
-        log.info("Going to the next screen - AnsweredMenu.")
+        log.info("Going to the next screen -> AnsweredMenu.")

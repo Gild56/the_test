@@ -105,11 +105,11 @@ class AnsweredMenu(Screen):
         self.manager.get_screen('QuestionMenu').update_menu()
         music_manager.transition.play()
         Window.clearcolor = DARK_BLUE
-        log.info("Going to the next screen - QuestionMenu.")
+        log.info("Going to the next screen -> QuestionMenu.")
 
     def exit_to_main_menu(self, instance):
         music_manager.button_clicked.play()
         self.manager.current = "MainMenu"
         self.manager.get_screen('MainMenu').update_labels()
         Window.clearcolor = DARK_BLUE
-        log.info("Going to the next screen - MainMenu.")
+        log.info("Going to the next screen -> MainMenu.")

@@ -82,18 +82,3 @@ WARNING_MESSAGE_ENGLISH = (
     "WARNING!\nAfter doing this you won't be able to\n"
     "return to the previous stats."
 )
-
-
-
-#DEDICATIONS
-#NAME
-#POINTS
-#WIN_STREAK
-#BEST_WIN_STREAK
-#CLEAR_STATS
-#PLAY
-#NEXT
-#MAIN_MENU
-#CORRECT_ANSWER
-#OPTIONS
-#WARNING_MESSAGES

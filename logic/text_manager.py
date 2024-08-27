@@ -47,12 +47,10 @@ class TextManager():
 
         elif 'ukr' in self.system_language or \
             'ua' in self.system_language:
-
-            log.debug("Ukrinian language is the system one")
             self.change_of_language('ukrainian')
 
         else:
-            self.change_of_language('russian')
+            self.change_of_language('english')
 
     def set_english(self):
         log.info("The language was changed into english.")

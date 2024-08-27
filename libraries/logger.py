@@ -8,8 +8,9 @@ from libraries.colors import *
 from libraries.resource_path import resource_path
 
 class Logs:
-    def __init__(self, collecting_errors=True, filename="info.log"):
-        self.FILE = resource_path(filename)
+    def __init__(self, collecting_errors=True):
+        self.LOGS_FILE = resource_path("info.log")
+        self.CRASHLOGS_FILE = resource_path("crash.log")
         self.info_text = ""
         self.warning_text = ""
         self.error_text = ""
@@ -28,8 +29,17 @@ class Logs:
         return time.strftime("%H:%M:%S", current_time)
 
 
+    def get_date(self, style="text"):
+        today = time.localtime()
+        if style == "text":
+            date = time.strftime("%d %B", today).lower()
+        else:
+            date = time.strftime("%Y-%m-%d", today)
+        return date
+
+
     def add_log(self, text):
-        with open(self.FILE, "a", encoding="utf8") as f:
+        with open(self.LOGS_FILE, "a", encoding="utf8") as f:
             f.write(text + "\n")
 
 
@@ -46,6 +56,16 @@ class Logs:
         if len(text) > self.MAX_LINE_LENGTH:
             return text[:self.MAX_LINE_LENGTH] + '...'
         return text
+
+
+    def get_crashlog_filename(self):
+        current_time = time.localtime()
+        current_time = time.strftime("%H-%M-%S", current_time)
+        crashlog_name = f"crashes/crashlog_{self.get_date("numbers")}_{current_time}.log"
+        while True:
+            if not os.path.exists(crashlog_name):
+                return crashlog_name
+            crashlog_name += " (copy)"
 
 
     def debug(self, text="Debug text wasn't added!"):
@@ -99,7 +119,7 @@ class Logs:
         self.add_log(self.warning_text)
 
 
-    def error(self, text="Error text wasn't added!", adding_text=True):
+    def error(self, text="Error text wasn't added!", critical=False):
         frame = inspect.currentframe()
         caller_frame = frame.f_back
         filename = caller_frame.f_code.co_filename
@@ -110,21 +130,28 @@ class Logs:
         for i in range(spaces_count):
             spaces = spaces + " "
 
-        self.error_text = f"[ERROR] [{self.get_time()}] [{short_filename}]{spaces} {text}"
-
-        if adding_text:
-            print(COL_RED + self.error_text + COL_RESET)
-            self.add_log(self.error_text)
+        if critical:
+            self.error_text = f"[ERROR] [{self.get_time()}] [CRITICAL]{spaces} {text}"
         else:
-            print(COL_RED + text + COL_RESET)
-            self.add_log(text)
+            self.error_text = f"[ERROR] [{self.get_time()}] [{short_filename}]{spaces} {text}"
+
+        print(COL_RED + self.error_text + COL_RESET)
+        self.add_log(self.error_text)
+
+
+    def crash(self, text):
+        print(COL_RED + text + COL_RESET)
+        with open(self.CRASHLOGS_FILE, "a", encoding="utf8") as f:
+            f.write(text + "\n\n")
 
 
     def error_collector(self, exc_type, exc_value, exc_traceback):
-
         error_messages = []
         current_time = self.get_time()
 
+        error_messages.append(f"A crash happened the [{self.get_date()}] at [{current_time}].")
+
+        times = 0
         for tb in traceback.extract_tb(exc_traceback):
             filename = os.path.relpath(tb.filename, start=os.getcwd())
             line_number = tb.lineno
@@ -135,13 +162,29 @@ class Logs:
             for i in range(spaces_count):
                 spaces = spaces + " "
 
-            error_message = f"[ERROR] [{current_time}] [{short_filename}] in line {line_number}"
-            error_messages.append(error_message)
+            if times == 0:
+                i = "I"
+            else:
+                i = "i"
 
-        final_message = f"{exc_type.__name__}: {exc_value}"
+            error_message = f"{i}n [{short_filename}] in line {line_number},"
+            error_messages.append(error_message)
+            times += 1
+
+        final_message = f'The error is called "{exc_type.__name__}": {exc_value}.'
         error_messages.append(final_message)
 
         full_message = "\n".join(error_messages)
-        self.error(full_message, False)
+
+        self.error(f'"{exc_type.__name__}": {exc_value}.', critical=True)
+
+        self.crash(full_message)
+
+        self.crashlog_filename = self.get_crashlog_filename()
+
+        with open(self.crashlog_filename, "a", encoding="utf8") as f:
+            f.write(full_message)
 
 log = Logs(collecting_errors=True)
+
+print(0/0)

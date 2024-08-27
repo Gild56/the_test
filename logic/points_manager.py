@@ -1,11 +1,10 @@
-import json
+import os, json
 
 from libraries.resource_path import resource_path
 from libraries.logger import log
 
 class PointsManager:
     def __init__(self):
-        self.JSON_PATH = resource_path('json/save.json')
         self.WINNING_POINTS = 7
         self.MAX_WINNING_WIN_STREAK_POINTS = 5
         self.WINNING_WIN_STREAK_POINTS = 1
@@ -15,7 +14,21 @@ class PointsManager:
         self.win_streak = 0
         self.best_win_streak = 0
 
-        self._import_data()
+        self.JSON_PATH = resource_path('json/points.json')
+
+        if not os.path.exists(self.JSON_PATH):
+            log.info("the json/points.json file does not exist. The new one was created.")
+            with open(self.JSON_PATH, 'w') as f:
+                json.dump({
+                    'points': 0,
+                    'win_streak': 0,
+                    'best_win_streak': 0
+                }, f)
+
+        try:
+            self._import_data()
+        except:
+            log.info("The json/points.json format isn't the required one. The json/options.json file was reset.")
 
     def _save(self):
         with open(self.JSON_PATH, 'w') as f:
@@ -27,6 +40,14 @@ class PointsManager:
         log.info("Data has been saved in the points.json file.")
 
     def _import_data(self):
+        if os.path.getsize(self.JSON_PATH) == 0:
+            with open(self.JSON_PATH, 'w') as f:
+                json.dump({
+                    'points': 0,
+                    'win_streak': 0,
+                    'best_win_streak': 0
+                }, f)
+
         with open(self.JSON_PATH, 'r') as f:
             data = json.load(f)
             self.points = data.get('points', 0)
@@ -36,6 +57,7 @@ class PointsManager:
 
     def clear(self):
         self.points, self.win_streak, self.best_win_streak = 0, 0, 0
+        log.info("The stats were succesfully cleared.")
         self._save()
 
     def win(self):

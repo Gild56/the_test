@@ -17,15 +17,12 @@ from libraries.logger import log
 from logic.music_manager import music_manager
 from logic.points_manager import points_manager
 from logic.questions_manager import questions_manager
-from logic.text_manager import txt
 
 Logger.setLevel(CRITICAL)
 
 Window.clearcolor = DARK_BLUE
 
 music_manager.play_music()
-
-#txt.change_of_language("ukrainian")
 
 class QuizApp(App):
     def build(self):

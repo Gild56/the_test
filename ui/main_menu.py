@@ -107,9 +107,10 @@ class MainMenu(Screen):
         self.manager.current = "QuestionMenu"
         self.manager.get_screen('QuestionMenu').update_menu()
         music_manager.transition.play()
-        log.info("Going to the next screen - QuestionMenu.")
+        log.info("Going to the next screen -> QuestionMenu.")
 
     def open_options(self, instance):
         self.manager.current = "OptionsMenu"
         music_manager.transition.play()
-        log.info("Going to the next screen - OptionsMenu.")
+        music_manager.button_clicked.play()
+        log.info("Going to the next screen -> OptionsMenu.")
