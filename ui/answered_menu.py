@@ -46,7 +46,7 @@ class AnsweredMenu(Screen):
         self.exit_button = Button(
             text=txt.main_menu,
             pos_hint={"center_x": 0.5, "center_y": 0.4},
-            size_hint=(0.3, 0.15),
+            size_hint=(0.5, 0.2),
             background_color=BLUE,
             color=WHITE,
             font_size=32,
@@ -57,7 +57,7 @@ class AnsweredMenu(Screen):
         self.next_screen_button = Button(
             text=txt.next,
             pos_hint={"center_x": 0.5, "center_y": 0.5},
-            size_hint=(0.4, 0.15),
+            size_hint=(0.5, 0.2),
             background_color=BLUE,
             color=WHITE,
             font_size=64,
@@ -75,7 +75,10 @@ class AnsweredMenu(Screen):
 
         self.add_widget(self.main_layout)
 
+
     def update_labels(self, is_correct):
+        self.exit_button.text = txt.main_menu
+        self.next_screen_button.text = txt.next
         if is_correct:
             self.top_text.text = choice(txt.good_answers)
             self.bottom_text.text = choice(txt.keep_it_messages)
@@ -99,6 +102,7 @@ class AnsweredMenu(Screen):
                 f"{txt.best_win_streak}: {points_manager.best_win_streak}"
             )
 
+
     def next_screen(self, instance):
         music_manager.button_clicked.play()
         self.manager.current = "QuestionMenu"
@@ -106,6 +110,7 @@ class AnsweredMenu(Screen):
         music_manager.transition.play()
         Window.clearcolor = DARK_BLUE
         log.info("Going to the next screen -> QuestionMenu.")
+
 
     def exit_to_main_menu(self, instance):
         music_manager.button_clicked.play()

@@ -1,8 +1,6 @@
-import sys
-import os
-import time
-import traceback
-import inspect
+import sys, os, time, traceback, inspect, logging
+from kivy.logger import Logger
+Logger.setLevel(logging.CRITICAL)
 
 from libraries.colors import *
 from libraries.resource_path import resource_path

@@ -78,6 +78,7 @@ NEXT_ENGLISH = "Continue"
 MAIN_MENU_ENGLISH = "<-- Main menu"
 CORRECT_ANSWER_ENGLISH = "The correct answer was"
 OPTIONS_ENGLISH = "Options"
+CHANGE_LANGUAGE_ENGLISH = "Next language"
 WARNING_MESSAGE_ENGLISH = (
     "WARNING!\nAfter doing this you won't be able to\n"
     "return to the previous stats."

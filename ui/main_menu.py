@@ -23,8 +23,8 @@ class MainMenu(Screen):
 
         self.main_layout = BoxLayout(
             orientation="vertical",
-            spacing=8,
-            padding=20
+            spacing=32,
+            padding=32
         )
 
         self.top_layout = BoxLayout(
@@ -57,18 +57,18 @@ class MainMenu(Screen):
         )
 
         self.options_button = Button(
-            pos_hint={"center_x": 0.5, "center_y": 0.5},
-            size_hint=(0.5, 0.3),
+            pos_hint={"center_x": 0.5, "center_y": 0.7},
+            size_hint=(0.7, 0.5),
             background_color=BLUE,
             color=WHITE,
-            font_size=64,
+            font_size=50,
             font_name=txt.big_font,
             halign="center"
         )
 
         self.play_button = Button(
             pos_hint={"center_x": 0.5, "center_y": 0.2},
-            size_hint=(0.5, 0.3),
+            size_hint=(0.7, 0.5),
             background_color=BLUE,
             color=WHITE,
             font_size=64,

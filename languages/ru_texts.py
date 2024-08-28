@@ -75,6 +75,7 @@ NEXT_RUSSIAN = "Дальше"
 MAIN_MENU_RUSSIAN = "<-- Главное меню"
 CORRECT_ANSWER_RUSSIAN = "Правильный ответ"
 OPTIONS_RUSSIAN = "Настройки"
+CHANGE_LANGUAGE_RUSSIAN = "Следующий язык"
 WARNING_MESSAGE_RUSSIAN = (
     "Осторожно!\nПосле этого нельзя\n"
     "вернуть предыдущие данные."

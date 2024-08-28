@@ -78,6 +78,7 @@ NEXT_FRENCH = "Continuer"
 MAIN_MENU_FRENCH = "<-- Menu principal"
 CORRECT_ANSWER_FRENCH = "La réponse correcte était"
 OPTIONS_FRENCH = "Paramètres"
+CHANGE_LANGUAGE_FRENCH = "Language suivant"
 WARNING_MESSAGE_FRENCH = (
     "AVERTISSEMENT!\nAprès cela, tu ne pourras pas\n"
     "retourner aux statistiques précédentes."

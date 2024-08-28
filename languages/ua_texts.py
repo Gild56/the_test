@@ -78,7 +78,7 @@ NEXT_UKRAINIAN = "Далi"
 MAIN_MENU_UKRAINIAN = "<-- Головне меню"
 CORRECT_ANSWER_UKRAINIAN = "Правильна вiдповiдь була"
 OPTIONS_UKRAINIAN = "Налаштування"
-
+CHANGE_LANGUAGE_UKRAINIAN = "Наступна мова"
 WARNING_MESSAGE_UKRAINIAN = (
     "ОБЕРЕЖНО!\nПiсля цього неможливо\n"
     "повернутися до попереднiх даних."

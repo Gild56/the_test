@@ -1,8 +1,5 @@
-from logging import CRITICAL
-
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
-from kivy.logger import Logger
 
 from ui.main_menu import MainMenu
 from ui.question_menu import QuestionMenu
@@ -12,11 +9,8 @@ from ui.options_menu import OptionsMenu
 from libraries.colors import *
 from libraries.logger import log
 
-from logic.music_manager import music_manager
 from logic.points_manager import points_manager
 from logic.questions_manager import questions_manager
-
-Logger.setLevel(CRITICAL)
 
 class QuizApp(App):
     def build(self):

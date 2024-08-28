@@ -17,32 +17,32 @@ class OptionsMenu(Screen):
         super().__init__(**kwargs)
 
         self.main_layout = BoxLayout(
-            spacing=8,
-            padding=20
+            spacing=32,
+            padding=32
         )
 
         self.left_layout = BoxLayout(
             orientation="vertical",
-            spacing=8,
-            padding=8
+            spacing=32,
+            padding=32
         )
 
         self.right_layout = BoxLayout(
             orientation="vertical",
-            spacing=8,
-            padding=8
+            spacing=32,
+            padding=32
         )
 
-        self.name_label = Label(
-            text=txt.name,
-            size_hint=(1, 0.3),
-            font_size=60,
-            font_name=txt.big_font,
-            pos_hint={"center_x": 0.5, "center_y": 0.8}
+        self.next_language_button = Button(
+            pos_hint={"center_x": 0.5, "center_y": 0.2},
+            size_hint=(1, 0.1),
+            background_color=BLUE,
+            color=WHITE,
+            font_size=32,
+            font_name=txt.small_font
         )
 
         self.clear_button = Button(
-            text="clear",
             pos_hint={"center_x": 0.5, "center_y": 0.5},
             size_hint=(1, 0.1),
             background_color=BLUE,
@@ -53,7 +53,6 @@ class OptionsMenu(Screen):
         )
 
         self.return_button = Button(
-            text="return",
             pos_hint={"center_x": 0.5, "center_y": 0.2},
             size_hint=(1, 0.1),
             background_color=BLUE,
@@ -65,8 +64,10 @@ class OptionsMenu(Screen):
         self.update_labels()
 
         self.clear_button.bind(on_press=self.clear_stats)
+        self.next_language_button.bind(on_press=self.next_language)
         self.return_button.bind(on_press=self.return_in_main_menu)
 
+        self.left_layout.add_widget(self.next_language_button)
         self.left_layout.add_widget(self.clear_button)
         self.left_layout.add_widget(self.return_button)
 
@@ -75,20 +76,31 @@ class OptionsMenu(Screen):
 
         self.add_widget(self.main_layout)
 
+
     def update_labels(self):
+        self.next_language_button.text=(txt.change_language)
         self.clear_button.text=(txt.clear_stats)
         self.return_button.text=(txt.main_menu)
 
+
+    def next_language(self, instance):
+        txt.next_language()
+        self.update_labels()
+        music_manager.button_clicked.play()
+
+
     def return_in_main_menu(self, instance):
         questions_manager.status = True
-        music_manager.button_clicked.play()
-        self.manager.current = "MainMenu"
-        self.manager.get_screen('MainMenu').update_labels()
-        music_manager.transition.play()
-        log.info("Going to the next screen -> MainMenu.")
         options_manager._save()
 
-    def clear_stats(self, istance):
+        music_manager.button_clicked.play()
+        music_manager.transition.play()
+
+        self.manager.current = "MainMenu"
+        self.manager.get_screen('MainMenu').update_labels()
+        log.info("Going to the next screen -> MainMenu.")
+
+
+    def clear_stats(self, instance):
         music_manager.button_clicked.play()
         points_manager.clear()
-        self.update_labels()

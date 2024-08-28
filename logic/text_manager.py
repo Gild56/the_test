@@ -70,7 +70,7 @@ class TextManager():
         self.main_menu = MAIN_MENU_ENGLISH
         self.correct_answer = CORRECT_ANSWER_ENGLISH
         self.options = OPTIONS_ENGLISH
-
+        self.change_language = CHANGE_LANGUAGE_ENGLISH
         self.warning_message = WARNING_MESSAGE_ENGLISH
 
 
@@ -92,7 +92,7 @@ class TextManager():
         self.main_menu = MAIN_MENU_RUSSIAN
         self.correct_answer = CORRECT_ANSWER_RUSSIAN
         self.options = OPTIONS_RUSSIAN
-
+        self.change_language = CHANGE_LANGUAGE_RUSSIAN
         self.warning_message = WARNING_MESSAGE_RUSSIAN
 
 
@@ -114,7 +114,7 @@ class TextManager():
         self.main_menu = MAIN_MENU_FRENCH
         self.correct_answer = CORRECT_ANSWER_FRENCH
         self.options = OPTIONS_FRENCH
-
+        self.change_language = CHANGE_LANGUAGE_FRENCH
         self.warning_message = WARNING_MESSAGE_FRENCH
 
 
@@ -136,39 +136,31 @@ class TextManager():
         self.main_menu = MAIN_MENU_UKRAINIAN
         self.correct_answer = CORRECT_ANSWER_UKRAINIAN
         self.options = OPTIONS_UKRAINIAN
-
+        self.change_language = CHANGE_LANGUAGE_UKRAINIAN
         self.warning_message = WARNING_MESSAGE_UKRAINIAN
 
 
     def change_of_language(self, next_language=None):
-
-        off = False
-
         if next_language == 'english':
             self.current_language = next_language
             self.set_english()
-            off = True
 
         elif next_language == 'russian':
             self.current_language = next_language
             self.set_russian()
-            off = True
 
         elif next_language == 'french':
             self.current_language = next_language
             self.set_french()
-            off = True
 
         elif next_language == 'ukrainian':
             self.current_language = next_language
             self.set_ukrainian()
-            off = True
 
-        if off:
-            questions_manager.change_the_language(self.current_language)
-            return
+        questions_manager.change_the_language(self.current_language)
 
 
+    def next_language(self):
         if self.current_language == 'english':
             self.set_russian()
             self.current_language = 'russian'
