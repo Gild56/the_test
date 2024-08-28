@@ -99,6 +99,7 @@ class MainMenu(Screen):
         f" {txt.win_streak}: {points_manager.win_streak}\n"
         f" {txt.best_win_streak}: {points_manager.best_win_streak}"
         )
+
         self.play_button.text = txt.play
         self.options_button.text = txt.options
         self.name_label.text = txt.name

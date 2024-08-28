@@ -25,7 +25,11 @@ class QuestionsManager:
         self.number_of_possibilities = len(self.df)
 
     def format_text(self, text_input, max_length):
-        text = text_input.replace("ї","ï").replace("і","i")
+        text = text_input
+
+        text = text.replace("ї","ï").replace("і","i")
+        text = text.replace("Ї","Ï").replace("І","I")
+        text = text.replace("Є","Е").replace("є","е") #todo check the pusab font
 
         try:
             words = text.split(' ')
@@ -48,7 +52,8 @@ class QuestionsManager:
             else:
                 the_space_count = 0
 
-            line_length = current_length + len(word) + the_space_count
+            line_length = current_length + \
+                len(word) + the_space_count
 
             if line_length > max_length:
                 wrapped_lines.append(' '.join(current_line))
@@ -100,9 +105,13 @@ class QuestionsManager:
             self.number_of_the_question, 0
             ]
 
-        self.question = self.format_text(self.question, 50)
-        self.true_answer = self.format_text(self.true_answer, 20)
-        self.wrong_answer1 = self.format_text(self.wrong_answer1, 20)
+        self.question = \
+            self.format_text(self.question, 50)
+
+        self.true_answer = \
+            self.format_text(self.true_answer, 20)
+        self.wrong_answer1 = \
+            self.format_text(self.wrong_answer1, 20)
         self.wrong_answer2 = self.format_text(self.wrong_answer2, 20)
         self.wrong_answer3 = self.format_text(self.wrong_answer3, 20)
 

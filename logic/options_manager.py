@@ -10,7 +10,10 @@ class OptionsManager():
 
         if not os.path.exists(resource_path("json/")):
             os.makedirs(resource_path("json/"))
-            log.info("The json/ folder does not exist. A new json/ folder was created")
+            log.info(
+                "The json/ folder does not exist. "
+                "A new json/ folder was created"
+            )
 
         self.JSON_PATH = resource_path('json/options.json')
 
@@ -20,12 +23,18 @@ class OptionsManager():
                     'music_volume': 0,
                     'sounds_volume': 0,
                 }, f)
-            log.info("the json/options.json file does not exist. The new one was created.")
+            log.info(
+                "the json/options.json file does not exist. "
+                "The new one was created."
+            )
 
         try:
             self._import_data()
         except:
-            log.info("The json/options.json format isn't the required one. The json/options.json file was reset.")
+            log.info(
+                "The json/options.json format isn't the required "
+                "one. The json/options.json file was reset."
+            )
 
     def _save(self):
         with open(self.JSON_PATH, 'w') as f:
@@ -40,6 +49,8 @@ class OptionsManager():
             data = json.load(f)
             self.music_volume = data.get('music_volume', 0)
             self.sounds_volume = data.get('sounds_volume', 0)
-        log.info("Data has been imported from the options.json file.")
+        log.info(
+            "Data has been imported from the options.json file."
+        )
 
 options_manager = OptionsManager()

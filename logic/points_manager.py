@@ -16,12 +16,18 @@ class PointsManager:
 
         if not os.path.exists(resource_path("json/")):
             os.makedirs(resource_path("json/"))
-            log.info("The json/ folder does not exist. A new json/ folder was created")
+            log.info(
+                "The json/ folder does not exist. "
+                "A new json/ folder was created"
+            )
 
         self.JSON_PATH = resource_path('json/points.json')
 
         if not os.path.exists(self.JSON_PATH):
-            log.info("the json/points.json file does not exist. The new one was created.")
+            log.info(
+                "the json/points.json file does not exist. "
+                "The new one was created."
+            )
             with open(self.JSON_PATH, 'w') as f:
                 json.dump({
                     'points': 0,
@@ -32,7 +38,10 @@ class PointsManager:
         try:
             self._import_data()
         except:
-            log.info("The json/points.json format isn't the required one. The json/options.json file was reset.")
+            log.info(
+                "The json/points.json format isn't the required "
+                "one. The json/options.json file was reset."
+            )
 
     def _save(self):
         with open(self.JSON_PATH, 'w') as f:
@@ -67,10 +76,18 @@ class PointsManager:
     def win(self):
         self.points += self.WINNING_POINTS
 
-        if self.win_streak < self.MAX_WINNING_WIN_STREAK_POINTS:
-            self.points += self.win_streak * self.WINNING_WIN_STREAK_POINTS
+        if self.win_streak < \
+            self.MAX_WINNING_WIN_STREAK_POINTS:
+
+            self.points += (
+                self.win_streak * \
+                    self.WINNING_WIN_STREAK_POINTS
+                )
         else:
-            self.points += self.WINNING_WIN_STREAK_POINTS * self.MAX_WINNING_WIN_STREAK_POINTS
+            self.points += (
+                self.WINNING_WIN_STREAK_POINTS * \
+                    self.MAX_WINNING_WIN_STREAK_POINTS
+            )
 
         self.win_streak += 1
 

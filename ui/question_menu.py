@@ -55,14 +55,13 @@ class QuestionMenu(Screen):
             size_hint_y=None
         )
 
-        button_height = 3
         self.true_button = Button(
             background_color=BLUE,
             color=WHITE,
             font_size=32,
             font_name=txt.small_font,
-            size_hint=(1, None),
-            size_hint_y=button_height,
+            size_hint=(1, 3),
+            halign="center"
         )
 
         self.wrongbutton1 = Button(
@@ -70,8 +69,8 @@ class QuestionMenu(Screen):
             color=WHITE,
             font_size=32,
             font_name=txt.small_font,
-            size_hint=(1, None),
-            size_hint_y=button_height,
+            size_hint=(1, 3),
+            halign="center"
         )
 
         self.wrongbutton2 = Button(
@@ -79,8 +78,8 @@ class QuestionMenu(Screen):
             color=WHITE,
             font_size=32,
             font_name=txt.small_font,
-            size_hint=(1, None),
-            size_hint_y=button_height,
+            size_hint=(1, 3),
+            halign="center"
         )
 
         self.wrongbutton3 = Button(
@@ -88,8 +87,8 @@ class QuestionMenu(Screen):
             color=WHITE,
             font_size=32,
             font_name=txt.small_font,
-            size_hint=(1, None),
-            size_hint_y=button_height,
+            size_hint=(1, 3),
+            halign="center"
         )
 
         self.main_layout.add_widget(self.question_text)

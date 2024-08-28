@@ -93,14 +93,17 @@ class AnsweredMenu(Screen):
             self.top_text.text = choice(txt.wrong_answers)
             self.bottom_text.text = (
                 f'{txt.correct_answer}: '
-                f'"{self.manager.get_screen('QuestionMenu').true_answer}".'
+                f'"{
+                    self.manager.get_screen('QuestionMenu').true_answer
+                }".'
             )
 
-            self.stats_label.text=(
-                f"{txt.points}: {points_manager.points}\n "
-                f"{txt.win_streak}: {points_manager.win_streak}\n "
-                f"{txt.best_win_streak}: {points_manager.best_win_streak}"
-            )
+        self.stats_label.text=(
+            f"{txt.points}: {points_manager.points}\n "
+            f"{txt.win_streak}: {points_manager.win_streak}\n "
+            f"{txt.best_win_streak}: "
+            f"{points_manager.best_win_streak}"
+        )
 
 
     def next_screen(self, instance):

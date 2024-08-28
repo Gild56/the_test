@@ -12,10 +12,13 @@ class Logs:
         self.warning_text = ""
         self.error_text = ""
         self.MAX_SPACES = 25
+        self.MAX_SPACES2 = 5
         self.MAX_LINE_LENGTH = 80
         self.info("The app is starting...")
 
-        self.project_root = os.path.dirname(os.path.abspath(__file__))
+        self.project_root = os.path.dirname(
+            os.path.abspath(__file__)
+        )
 
         if not os.path.exists(resource_path("crashes/")):
             os.makedirs(resource_path("crashes/"))
@@ -35,6 +38,7 @@ class Logs:
             date = time.strftime("%d %B", today).lower()
         else:
             date = time.strftime("%Y-%m-%d", today)
+
         return date
 
 
@@ -44,7 +48,10 @@ class Logs:
 
 
     def format_filename(self, filename):
-        rel_path = os.path.relpath(filename, os.path.abspath(os.path.dirname(__file__)))
+        rel_path = os.path.relpath(
+            filename, os.path.abspath(os.path.dirname(__file__))
+        )
+
         return rel_path
 
 
@@ -61,7 +68,10 @@ class Logs:
     def get_crashlog_filename(self):
         current_time = time.localtime()
         current_time = time.strftime("%H-%M-%S", current_time)
-        crashlog_name = f"crashes/crashlog_{self.get_date("numbers")}_{current_time}.log"
+        crashlog_name = (
+            f"crashes/crashlog_{self.get_date("numbers")}"
+            f"_{current_time}.log"
+        )
         while True:
             if not os.path.exists(crashlog_name):
                 return crashlog_name
@@ -79,7 +89,10 @@ class Logs:
         for i in range(spaces_count):
             spaces = spaces + " "
 
-        self.debug_text = f"[DEBUG] [{self.get_time()}] [{short_filename}]{spaces} {self.format_line(text)}"
+        self.debug_text = (
+            f"[DEBUG] [{self.get_time()}] "
+            f"[{short_filename}]{spaces} {self.format_line(text)}"
+        )
 
         print(COL_BLUE + self.debug_text + COL_RESET)
         self.add_log(self.debug_text)
@@ -96,7 +109,10 @@ class Logs:
         for i in range(spaces_count):
             spaces = spaces + " "
 
-        self.info_text = f"[INFO]  [{self.get_time()}] [{short_filename}]{spaces} {self.format_line(text)}"
+        self.info_text = (
+            f"[INFO]  [{self.get_time()}] "
+            f"[{short_filename}]{spaces} {self.format_line(text)}"
+        )
 
         print(COL_GREEN + self.info_text + COL_RESET)
         self.add_log(self.info_text)
@@ -113,7 +129,10 @@ class Logs:
         for i in range(spaces_count):
             spaces = spaces + " "
 
-        self.warning_text = f"[WARN]  [{self.get_time()}] [{short_filename}]{spaces} {text}"
+        self.warning_text = (
+            f"[WARN]  [{self.get_time()}] "
+            f"[{short_filename}]{spaces} {text}"
+        )
 
         print(COL_YELLOW + self.warning_text + COL_RESET)
         self.add_log(self.warning_text)
@@ -131,16 +150,22 @@ class Logs:
             spaces = spaces + " "
 
         if critical:
-            self.error_text = f"[ERROR] [{self.get_time()}] [CRITICAL]{spaces} {text}"
+            self.error_text = (
+                f"[ERROR] [{self.get_time()}] "
+                f"[CRITICAL]{spaces} {text}"
+            )
         else:
-            self.error_text = f"[ERROR] [{self.get_time()}] [{short_filename}]{spaces} {text}"
+            self.error_text = (
+                f"[ERROR] [{self.get_time()}] "
+                f"[{short_filename}]{spaces} {text}"
+            )
 
         print(COL_RED + self.error_text + COL_RESET)
         self.add_log(self.error_text)
 
 
     def crash(self, text):
-        print(COL_RED + text + COL_RESET)
+        print("\n" + COL_RED + text + COL_RESET)
 
         self.crashlog_filename = self.get_crashlog_filename()
 
@@ -152,34 +177,78 @@ class Logs:
         error_messages = []
         current_time = self.get_time()
 
-        error_messages.append(f"A crash happened the [{self.get_date()}] at [{current_time}].")
+        error_messages.append(
+            f"A crash happened on [{self.get_date()}] "
+            f"at [{current_time}]."
+        )
 
-        times = 0
-        for tb in traceback.extract_tb(exc_traceback):
-            filename = os.path.relpath(tb.filename, start=os.getcwd())
+        crash_message_lines = \
+            len(traceback.extract_tb(exc_traceback))
+
+        for times, tb in enumerate(
+            traceback.extract_tb(exc_traceback)
+        ):
+            filename = os.path.relpath(
+                tb.filename, start=os.getcwd()
+            )
+
+            short_filename = filename.replace(
+                "\\", "/"
+                ).split("/")[-1]
+
             line_number = tb.lineno
-            short_filename = filename.replace("\\", "/").split("/")[-1]
 
-            spaces_count = self.MAX_SPACES - len(filename)
-            spaces = ""
-            for i in range(spaces_count):
-                spaces = spaces + " "
+            with open(tb.filename, 'r') as f:
+                lines = f.readlines()
+                the_line = lines[line_number - 1].strip()
+
+            spaces_count = (
+                self.MAX_SPACES - len(short_filename)
+            )
+
+            spaces = ' ' * spaces_count
+
+            line_number = str(line_number)
+
+            if len(line_number) < 5:
+                spaces_count = (
+                    self.MAX_SPACES2 - len(line_number)
+                )
+            else:
+                spaces_count = 4
+
+            spaces2 = ' ' * spaces_count
 
             if times == 0:
                 i = "I"
             else:
                 i = "i"
 
-            error_message = f"{i}n [{short_filename}] in line {line_number},"
-            error_messages.append(error_message)
-            times += 1
+            if times == crash_message_lines - 1:
+                punctuation = "."
+            else:
+                punctuation = ","
 
-        final_message = f'The error is called "{exc_type.__name__}": {exc_value}.'
+            error_message = (
+                f"{i}n [{short_filename}]{spaces} in line "
+                f"{line_number}:{spaces2} "
+                f"[ {the_line} ]{punctuation}"
+            )
+            error_messages.append(error_message)
+
+        final_message = (
+            'The error is called '
+            f'"{exc_type.__name__}": {exc_value}.'
+        )
         error_messages.append(final_message)
 
         full_message = "\n".join(error_messages)
 
-        self.error(f'"{exc_type.__name__}": {exc_value}.', critical=True)
+        self.error(
+            f'"{exc_type.__name__}": '
+            f'"{exc_value}.',
+            critical=True
+        )
 
         self.crash(full_message)
 

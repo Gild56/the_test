@@ -5,20 +5,38 @@ from random import shuffle
 from libraries.resource_path import resource_path
 from libraries.logger import log
 
+from logic.options_manager import options_manager
+
 class MusicManager:
     def __init__(self):
         pygame.mixer.init()
-        self.songs_list = os.listdir(resource_path("music"))
         self.remaining_songs = []
         self.current_song = None
-        self.transition = pygame.mixer.Sound(resource_path("sounds/transition.mp3"))
-        self.transition.set_volume(0.25)
-        self.button_clicked = pygame.mixer.Sound(resource_path("sounds/8bit-click.wav"))
-        self.button_clicked.set_volume(0.25)
+
+        self.songs_list = os.listdir(
+            resource_path("music")
+        )
+
+        self.transition = pygame.mixer.Sound(
+            resource_path("sounds/transition.mp3")
+        )
+
+        self.button_clicked = pygame.mixer.Sound(
+            resource_path("sounds/8bit-click.wav")
+        )
 
         self.randomize_song()
 
         self.play_music()
+
+    def set_sfx_volume(self):
+        self.transition.set_volume(
+            options_manager.sounds_volume
+        )
+
+        self.button_clicked.set_volume(
+            options_manager.sounds_volume
+        )
 
     def randomize_song(self):
         if len(self.remaining_songs) == 0:
@@ -31,11 +49,15 @@ class MusicManager:
 
     def play_music(self):
         self.randomize_song()
-        song_path = resource_path(f"music/{self.current_song}.mp3")
+        song_path = resource_path(
+            f"music/{self.current_song}.mp3"
+        )
         pygame.mixer.music.load(song_path)
         pygame.mixer.music.set_volume(0.5)
         pygame.mixer.music.play()
-        log.info(f'Playing next song - "{self.current_song}".')
+        log.info(
+            f'Playing next song - "{self.current_song}".'
+        )
 
     def check_music(self):
         if not pygame.mixer.music.get_busy():

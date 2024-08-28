@@ -1,4 +1,6 @@
 try:
+    # To install colorama isn't
+    # needed if you aren't a developper.
     from colorama import Fore
 
     """Colorama colors:"""
