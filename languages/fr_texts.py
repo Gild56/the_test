@@ -83,3 +83,4 @@ WARNING_MESSAGE_FRENCH = (
     "AVERTISSEMENT!\nAprès cela, tu ne pourras pas\n"
     "retourner aux statistiques précédentes."
 )
+RESET_SETTINGS_FRENCH = "Retour aux\nparamétres de base"

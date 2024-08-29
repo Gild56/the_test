@@ -33,13 +33,14 @@ class OptionsMenu(Screen):
             padding=32
         )
 
-        self.next_language_button = Button(
+        self.reset_settings_button = Button(
             pos_hint={"center_x": 0.5, "center_y": 0.2},
             size_hint=(1, 0.1),
             background_color=BLUE,
             color=WHITE,
             font_size=32,
-            font_name=txt.small_font
+            font_name=txt.small_font,
+            halign="center"
         )
 
         self.clear_button = Button(
@@ -48,8 +49,7 @@ class OptionsMenu(Screen):
             background_color=BLUE,
             color=WHITE,
             font_size=32,
-            font_name=txt.small_font,
-            halign="center"
+            font_name=txt.small_font
         )
 
         self.return_button = Button(
@@ -64,10 +64,10 @@ class OptionsMenu(Screen):
         self.update_labels()
 
         self.clear_button.bind(on_press=self.clear_stats)
-        self.next_language_button.bind(on_press=self.next_language)
+        self.reset_settings_button.bind(on_press=self.reset_settings)
         self.return_button.bind(on_press=self.return_in_main_menu)
 
-        self.left_layout.add_widget(self.next_language_button)
+        self.left_layout.add_widget(self.reset_settings_button)
         self.left_layout.add_widget(self.clear_button)
         self.left_layout.add_widget(self.return_button)
 
@@ -78,13 +78,14 @@ class OptionsMenu(Screen):
 
 
     def update_labels(self):
-        self.next_language_button.text=(txt.change_language)
+        self.reset_settings_button.text=(txt.reset_settings)
         self.clear_button.text=(txt.clear_stats)
         self.return_button.text=(txt.main_menu)
 
 
-    def next_language(self, instance):
-        txt.next_language()
+    def reset_settings(self, instance):
+        options_manager.clear()
+        txt.set_system_language()
         self.update_labels()
         music_manager.button_clicked.play()
 

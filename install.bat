@@ -8,7 +8,7 @@ python -m pip install -r requirements.txt
 
 echo Opening the game...
 
-python3 main.py
+python main.py
 
 echo Installation is finished. Enjoy!
 

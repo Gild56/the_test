@@ -5,8 +5,6 @@ from random import shuffle
 from libraries.resource_path import resource_path
 from libraries.logger import log
 
-from logic.options_manager import options_manager
-
 class MusicManager:
     def __init__(self):
         pygame.mixer.init()
@@ -29,15 +27,6 @@ class MusicManager:
 
         self.play_music()
 
-    def set_sfx_volume(self):
-        self.transition.set_volume(
-            options_manager.sounds_volume
-        )
-
-        self.button_clicked.set_volume(
-            options_manager.sounds_volume
-        )
-
     def randomize_song(self):
         if len(self.remaining_songs) == 0:
             self.remaining_songs = self.songs_list
@@ -53,7 +42,6 @@ class MusicManager:
             f"music/{self.current_song}.mp3"
         )
         pygame.mixer.music.load(song_path)
-        pygame.mixer.music.set_volume(0.5)
         pygame.mixer.music.play()
         log.info(
             f'Playing next song - "{self.current_song}".'

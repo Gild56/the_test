@@ -14,7 +14,9 @@ class TextManager():
 
     def __init__(self):
 
-        self.current_language = 'english'
+        self.ALL_LANGUAGES = ['english','french','russian','ukrainien']
+
+        self.current_language = None
 
         self.big_font = resource_path("fonts/big_font.ttf")
         self.small_font = resource_path("fonts/small_font.ttf")
@@ -35,6 +37,7 @@ class TextManager():
         self.correct_answer = ""
         self.options = ""
 
+    def set_system_language(self):
         self.system_language, _ = locale.getlocale()
         log.info(f"The system language is {self.system_language}.")
         self.system_language = self.system_language.lower()
@@ -72,6 +75,7 @@ class TextManager():
         self.options = OPTIONS_ENGLISH
         self.change_language = CHANGE_LANGUAGE_ENGLISH
         self.warning_message = WARNING_MESSAGE_ENGLISH
+        self.reset_settings = RESET_SETTINGS_ENGLISH
 
 
     def set_russian(self):
@@ -94,6 +98,7 @@ class TextManager():
         self.options = OPTIONS_RUSSIAN
         self.change_language = CHANGE_LANGUAGE_RUSSIAN
         self.warning_message = WARNING_MESSAGE_RUSSIAN
+        self.reset_settings = RESET_SETTINGS_RUSSIAN
 
 
     def set_french(self):
@@ -116,6 +121,7 @@ class TextManager():
         self.options = OPTIONS_FRENCH
         self.change_language = CHANGE_LANGUAGE_FRENCH
         self.warning_message = WARNING_MESSAGE_FRENCH
+        self.reset_settings = RESET_SETTINGS_FRENCH
 
 
     def set_ukrainian(self):
@@ -138,6 +144,7 @@ class TextManager():
         self.options = OPTIONS_UKRAINIAN
         self.change_language = CHANGE_LANGUAGE_UKRAINIAN
         self.warning_message = WARNING_MESSAGE_UKRAINIAN
+        self.reset_settings = RESET_SETTINGS_UKRAINIAN
 
 
     def change_of_language(self, next_language=None):

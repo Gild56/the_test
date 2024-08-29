@@ -5,9 +5,12 @@ from kivy.uix.button import Button
 from kivy.clock import Clock
 from kivy.core.window import Window
 
+import pygame
+
 from logic.music_manager import music_manager
 from logic.questions_manager import questions_manager
 from logic.points_manager import points_manager
+from logic.options_manager import options_manager
 from logic.text_manager import txt
 
 from libraries.colors import *
@@ -35,7 +38,7 @@ class MainMenu(Screen):
         self.dedications_label = Label(
             text=txt.dedications,
             size_hint=(0.3, 0.3),
-            font_size=16,
+            font_size=25,
             font_name=txt.small_font,
             pos_hint={"center_x": 0.5, "center_y": 0.8}
         )
@@ -43,14 +46,14 @@ class MainMenu(Screen):
         self.name_label = Label(
             text=txt.name,
             size_hint=(1, 0.3),
-            font_size=60,
+            font_size=80,
             font_name=txt.big_font,
             pos_hint={"center_x": 0.5, "center_y": 0.8}
         )
 
         self.stats_label = Label(
             size_hint=(0.3, 0.3),
-            font_size=16,
+            font_size=25,
             font_name=txt.small_font,
             pos_hint={"center_x": 0.5, "center_y": 0.8},
             halign="right"
@@ -92,6 +95,18 @@ class MainMenu(Screen):
 
     def update_music(self, dt):
         music_manager.check_music()
+
+        music_manager.transition.set_volume(
+            options_manager.sounds_volume
+        )
+
+        music_manager.button_clicked.set_volume(
+            options_manager.sounds_volume
+        )
+
+        pygame.mixer.music.set_volume(
+            options_manager.music_volume
+        )
 
     def update_labels(self):
         self.stats_label.text = (

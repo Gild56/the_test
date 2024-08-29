@@ -83,3 +83,4 @@ WARNING_MESSAGE_ENGLISH = (
     "WARNING!\nAfter doing this you won't be able to\n"
     "return to the previous stats."
 )
+RESET_SETTINGS_ENGLISH = "Reset settings"
