@@ -67,7 +67,7 @@ KEEP_IT_MESSAGES_FRENCH = [
     "Bon travail!"
 ]
 
-DEDICATIONS_FRENCH = "Jeu de\nGild56 // @gild56gmd\nAmusez-vous bien!"
+DEDICATIONS_FRENCH = "Jeu de Gild56\nAmusez-vous bien!"
 NAME_FRENCH = "Test de QI"
 POINTS_FRENCH = "points"
 WIN_STREAK_FRENCH = "ta série actuelle"

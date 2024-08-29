@@ -4,9 +4,7 @@ echo Hello! Welcome to the installation of the IQ Test Game. Make sure that you 
 
 echo Installing libraries...
 
-python -m pip install pygame
-python -m pip install kivy
-python -m pip install colorama
+python -m pip install -r requirements.txt
 
 echo Opening the game...
 

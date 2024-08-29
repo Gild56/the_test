@@ -67,7 +67,7 @@ KEEP_IT_MESSAGES_ENGLISH = [
     "Good going!"
 ]
 
-DEDICATIONS_ENGLISH = "A game made by\nGild56 // @gild56gmd\nEnjoy!"
+DEDICATIONS_ENGLISH = "A game made by Gild56\nEnjoy!"
 NAME_ENGLISH = "IQ Test"
 POINTS_ENGLISH = "points"
 WIN_STREAK_ENGLISH = "your win streak now"

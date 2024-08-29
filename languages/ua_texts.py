@@ -67,7 +67,7 @@ KEEP_IT_MESSAGES_UKRAINIAN = [
     "Добре!"
 ]
 
-DEDICATIONS_UKRAINIAN = "Гра вiд\nGild56 // @gild56gmd\nГарноï гри!"
+DEDICATIONS_UKRAINIAN = "Гра вiд Gild56\nГарноï гри!"
 NAME_UKRAINIAN = "IQ Тест"
 POINTS_UKRAINIAN = "очок"
 WIN_STREAK_UKRAINIAN = "твоя поточна серiя"

@@ -78,7 +78,7 @@ class QuestionsManager:
     def randomize_question(self):
 
         self.number_of_the_question = randint(
-            0, self.number_of_possibilities - 1
+            0, 1#, self.number_of_possibilities - 1
             )
 
         self.question = self.df.iloc[

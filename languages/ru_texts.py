@@ -64,7 +64,7 @@ KEEP_IT_MESSAGES_RUSSIAN = [
     "Отлично!"
 ]
 
-DEDICATIONS_RUSSIAN = "Игра от\nGild56 // @gild56gmd\nПриятной игры!"
+DEDICATIONS_RUSSIAN = "Игра от Gild56\nПриятной игры!"
 NAME_RUSSIAN = "IQ Тест"
 POINTS_RUSSIAN = "очков"
 WIN_STREAK_RUSSIAN = "текущая серия правильных ответов"
