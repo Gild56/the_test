@@ -32,6 +32,7 @@ class OptionsManager():
         try:
             self._import_data()
         except:
+            self.clear()
             log.info(
                 "The json/options.json format isn't the required "
                 "one. The json/options.json file was reset."
@@ -52,30 +53,21 @@ class OptionsManager():
 
         with open(self.JSON_PATH, 'r') as f:
             data = json.load(f)
-            self.music_volume = data.get('music_volume', 0)
-            self.sounds_volume = data.get('sounds_volume', 0)
-            self.current_language = data.get('language', 0)
+            self.music_volume = data.get('music_volume', 0.5)
+            self.sounds_volume = data.get('sounds_volume', 0.25)
+            self.current_language = data.get('language', None)
 
         if not self.current_language in txt.ALL_LANGUAGES:
             txt.set_system_language()
         else:
             txt.current_language = self.current_language
-
-        music_manager.transition.set_volume(
-            self.sounds_volume
-        )
-
-        music_manager.button_clicked.set_volume(
-            self.sounds_volume
-        )
-
-        pygame.mixer.music.set_volume(
-            self.music_volume
-        )
+            txt.set_language()
 
         log.info(
             "Data has been imported from the options.json file."
         )
+
+        self._save()
 
     def clear(self):
         with open(self.JSON_PATH, 'w') as f:
