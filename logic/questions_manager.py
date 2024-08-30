@@ -1,4 +1,4 @@
-from random import randint
+from random import randint, shuffle
 import pandas as pd
 import numpy as np
 
@@ -7,9 +7,10 @@ from libraries.logger import log
 
 class QuestionsManager:
     def __init__(self):
-        self.csv_name = 'databases\\english.csv'
+        self.csv_name = 'databases/english.csv'
         self.df = pd.read_csv(resource_path(self.csv_name))
         self.number_of_possibilities = len(self.df)
+        self.randomizing_status = "normal"
         self.question = ""
         self.true_answer = ""
         self.wrong_answers = []
@@ -18,6 +19,18 @@ class QuestionsManager:
         self.df_images = pd.read_csv(
             resource_path("databases/images.csv")
         )
+
+        self.question_numbers = []
+
+        for i in range(self.number_of_possibilities):
+            self.question_numbers.append(i)
+
+        self.question_numbers_randomized = \
+            self.question_numbers.copy()
+
+        shuffle(self.question_numbers_randomized)
+
+        self.question_numbers = [-1] + self.question_numbers
 
     def change_the_language(self, new_language):
         self.csv_name = f'databases/{new_language}.csv'
@@ -29,7 +42,8 @@ class QuestionsManager:
 
         text = text.replace("ї","ï").replace("і","i")
         text = text.replace("Ї","Ï").replace("І","I")
-        text = text.replace("Є","Е").replace("є","е") #todo check the pusab font
+        text = text.replace("Є","Е").replace("є","е")
+        #todo check the pusab font
 
         try:
             words = text.split(' ')
@@ -77,9 +91,32 @@ class QuestionsManager:
 
     def randomize_question(self):
 
-        self.number_of_the_question = randint(
-            0, 1#, self.number_of_possibilities - 1
-            )
+        if self.randomizing_status == "normal":
+            log.debug(self.question_numbers_randomized)
+            if len(self.question_numbers_randomized) == 0:
+                for i in range(self.number_of_possibilities):
+                    self.question_numbers_randomized.append(i)
+
+                shuffle(self.question_numbers_randomized)
+
+            self.number_of_the_question = \
+                self.question_numbers_randomized[0]
+
+            self.question_numbers_randomized.pop(0)
+
+        elif self.randomizing_status == "alternative":
+            self.number_of_the_question = randint(
+                0, self.number_of_possibilities - 1
+                )
+
+        elif self.randomizing_status == "in_range":
+            if len(self.question_numbers) == 0:
+                for i in range(self.number_of_possibilities):
+                    self.question_numbers.append(i)
+
+            self.number_of_the_question = self.question_numbers[0]
+
+            self.question_numbers.pop(0)
 
         self.question = self.df.iloc[
             self.number_of_the_question, 0
@@ -110,10 +147,17 @@ class QuestionsManager:
 
         self.true_answer = \
             self.format_text(self.true_answer, 20)
+
         self.wrong_answer1 = \
             self.format_text(self.wrong_answer1, 20)
-        self.wrong_answer2 = self.format_text(self.wrong_answer2, 20)
-        self.wrong_answer3 = self.format_text(self.wrong_answer3, 20)
+
+        self.wrong_answer2 = self.format_text(
+            self.wrong_answer2, 20
+        )
+
+        self.wrong_answer3 = self.format_text(
+            self.wrong_answer3, 20
+        )
 
         if isinstance(self.image,
             (float, np.float64)) and np.isnan(self.image):

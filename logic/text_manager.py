@@ -14,7 +14,9 @@ class TextManager():
 
     def __init__(self):
 
-        self.ALL_LANGUAGES = ['english','french','russian','ukrainian']
+        self.ALL_LANGUAGES = [
+            'english','french','russian','ukrainian'
+        ]
 
         self.current_language = None
 
@@ -22,23 +24,6 @@ class TextManager():
         self.small_font = resource_path("fonts/small_font.ttf")
 
         self.labels = None
-
-        self.good_answers = []
-        self.wrong_answers = []
-        self.keep_it_messages = []
-        self.dedications = ""
-        self.name = ""
-        self.points = ""
-        self.win_streak = ""
-        self.best_win_streak = ""
-        self.clear_stats = ""
-        self.play = ""
-        self.next = ""
-        self.main_menu = ""
-        self.correct_answer = ""
-        self.options = ""
-        self.warning_message = ""
-        self.reset_settings = ""
 
     def set_system_language(self):
         self.system_language, _ = locale.getlocale()
@@ -68,22 +53,30 @@ class TextManager():
         if next_language == 'english':
             self.current_language = next_language
             self.labels = languages.en_texts.labels
-            log.info("The language was changed into english.")
+            log.info(
+                "The language was changed into english."
+            )
 
         elif next_language == 'russian':
             self.current_language = next_language
             self.labels = languages.ru_texts.labels
-            log.info("The language was changed into russian.")
+            log.info(
+                "The language was changed into russian."
+            )
 
         elif next_language == 'french':
             self.current_language = next_language
             self.labels = languages.fr_texts.labels
-            log.info("The language was changed into french.")
+            log.info(
+                "The language was changed into french."
+            )
 
         elif next_language == 'ukrainian':
             self.current_language = next_language
             self.labels = languages.ua_texts.labels
-            log.info("The language was changed into ukrainian.")
+            log.info(
+                "The language was changed into ukrainian."
+            )
 
         (
             self.good_answers,
@@ -104,6 +97,8 @@ class TextManager():
             self.reset_settings
         ) = self.labels
 
-        questions_manager.change_the_language(self.current_language)
+        questions_manager.change_the_language(
+            self.current_language
+        )
 
 txt = TextManager()

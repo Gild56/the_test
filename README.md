@@ -92,61 +92,6 @@ Notice that you should choose fonts with **Cyrillic letters** (the basic ones ar
 
 **To apply your changes, you need to restart the game!**
 
-## Credits
-
-Thanks to :
-
-### **Fonts:**
-
-* **Flat-It** for the *Pusab font*.
-* **HopKa** for the *Cyrillic Pusab version*.
-* **Dalton Maag Inc.** for the *Aller font*.
-
-### **Libraries:**
-
-* **** for the *Pygame* library.
-* **The Kivy Team** for the *Kivy* library.
-* **** for the *Colorama* library.
-
-### **Music:**
-
-* **Aurora Borealis** for his song *"Beyond the Horizon"*.
-* **Daminika** for their song *"Beyond the Stars"*.
-* **Dimatis** for their song *"Moonlit Lover"*.
-* **Direct & Finding Hope** for their song *"Falling Into Place"*.
-* **Elekid** for their song *"Melting Ice"*.
-* **Osk** for their song *"Komorebi"*.
-* **Rameses B** for their song *"Believing"*.
-* **SkyFlair & Exal** for their song *"Afterlife"*.
-* **Vexatic** for his song *"Lifted"*.
-
-### **Images:**
-
-* **iStock & Bihagolan** for their image of *Isaac Newton*.
-* **Frédérique Catinaud-Brusset Naturopathe & F. Brusset** for their image of the *Calcium*.
-* **Unes de l'Equipe** for their image of *René Lacoste*.
-* **Interhome** for their image of the *Basque country*.
-* **Daily Geek Show, Photo Junction & Shutterstock** for their image of the *Bermuda Triangle*.
-* **Le GDE & Mary Evans PL** for their image of the *Magellan's boats*.
-* **Cocorico Web** for their image of *colors*.
-* **L'Humanité & Nicolas Guillermin** for their image of *Cape Horn*.
-* **Guides Ulysse & Chidanand M.** for their image of *Mumbai*.
-* **Hôtel Edmont Rostand & Hôtel Marseille** their image of the *Marseille's port*.
-* **Premiere & DR** for their image of *Hulk*.
-* **Les Echos & Getty Images** for their image of *Halloween*.
-* **Voyages et Vagabondages & Lucie A** for their image of *London's Olympics Games opening ceremony*.
-* **Fandom, AlleDazzi1 & Disney** for their image of *Hercules*.
-* **Papilles et Pullipes** for their image of *popcorn*.
-* **La Voix du Nord & Stephne Mortagne** for their image of **.
-
-*If I didn't write an author's name, it's because I didn't find it! There are too many images without credits on internet.
-
-### **Questions:**
-
-* Huge thanks to **Trivial Pursuit** to give me *ideas for questions*!
-
-### **Thanks to everyone who is reading this and playing my game!**
-
 ## Contact me
 
 To cantact me, write me on [Gmail](mailto:gild56gmd@gmail.com), [Telegram](https://t.me/gild56) or [Discord](https://discord.com/users/gild56).

@@ -1,11 +1,11 @@
 import sys, os, time, traceback, inspect, logging
 from kivy.logger import Logger
-Logger.setLevel(logging.CRITICAL)
 
 from libraries.colors import *
 from libraries.resource_path import resource_path
 
 class Logs:
+
     def __init__(self, collecting_errors=True):
         self.LOGS_FILE = resource_path("info.log")
         self.info_text = ""
@@ -25,6 +25,7 @@ class Logs:
 
         if collecting_errors:
             sys.excepthook = self.error_collector
+            Logger.setLevel(logging.CRITICAL)
 
 
     def get_time(self):
@@ -37,7 +38,7 @@ class Logs:
         if style == "text":
             date = time.strftime("%d %B", today).lower()
         else:
-            date = time.strftime("%Y-%m-%d", today)
+            date = time.strftime("%d-%m-%Y", today)
 
         return date
 
@@ -61,7 +62,7 @@ class Logs:
 
     def format_line(self, text):
         if len(text) > self.MAX_LINE_LENGTH:
-            return text[:self.MAX_LINE_LENGTH] + '...'
+            return str(text[:self.MAX_LINE_LENGTH]) + '...'
         return text
 
 
