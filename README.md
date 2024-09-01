@@ -10,25 +10,27 @@ The other languages:
 
 * [Français](markdown/LISMOI.md)
 
+Go check the [credits](markdown/credits.md) of the project.
+
 The [changelog](markdown/changelog.md) to see all the updates and changes of the project.
 
-If the game crashed or you need to find an exception, the [info.log](info.log) file is for you!
+If you need to find an error, when you added some new features in the code, the [info.log](info.log) file is for you!
+
+If the game crashed, go check the last crashlog in [the crashlogs folder](crashes/).
 
 ## First steps
 
-To begin your experience in the game, you will need to install Python and some modules, like kivy and pygame.
+### On Windows 10 / 11
 
-* Alternatively, you can go on the [official Python site](https://python.org/downloads) and install the last *Python 3* version.
+To begin your experience in the game, you will need to install Python from [the official Python site](https://python.org/downloads) and install the last *Python 3* version.
 
-* I recommend to install it with the `install.bat` file if you are on Windows.
-
-  Next, open your terminal (Win + R, than write powershell and do enter) and write `pip install pygame`, then `pip install kivy`, and finally `pip install colorama` (colorama is optional, just for debug).
-
-  Finally, you can play this game, opening the `main.py` file.
+Then, start the `install.bat` file.
 
 ## Personalization
 
 You can also personalize this game - add some fonts, images, quiz, music, etc..
+
+**For the moment, you can personnalise the game only on Windows 10 / 11!**
 
 ### Custom songs
 
@@ -50,31 +52,45 @@ You can put anything, but remember, that if you don't set the questions correctl
 
 To set your questions correctly you must write:
 
-"Your question (it can be a bit long and you don't need to include `\n` line breaks)","The true answer","The wrong answer №1","The wrong answer №2","The wrong answer №3","The path to your image in `iq_test/images` (Optional)"
+"Your question (it can be a bit long and you don't need to include `\n` line breaks)","The true answer","The wrong answer №1","The wrong answer №2","The wrong answer №3"
 
-#### **Examples with image:**
-
-```python
-"Sur 250 marins partis 1519 avec Magellan, combien rentrent à Séville, 3 ans plus tard?","18","115","249","60","magellan.jpg"
-
-"Quel scientifique est associé à l'image d'une pomme qui lui tombe sur la tête?","Newton","Archimède","Thalès","Pythagore","newton.jpg"
-```
-
-#### **Or without image:**
+#### **Examples:**
 
 ```python
-"Combien contient de calcium en moyenne un corps d'un homme adulte au total?","1 kg","3 kg","5 kg","10 kg"
+# Like that:
 
-"Dans quel pays parle-t-on le basque, le catalan, le galicien ou le valencien?","Espagne","Pays-Bas","Allemagne","Norvège"
+"What animal is the symbol of the former tennis champion René Lacoste?","The crocodile","The panda","The jaguar","The puma"
+
+# Or that:
+
+"Out of 250 sailors who left in 1519 with Magellan, how many returned to Seville 3 years later?","18","115","249","60"
 ```
 
-The first example will show the question, the 4 answers and an illustration, because i added the optional path to the image *`magellan.jpg`* or `newton.jpg`
+### Add an image to your question
 
-If an image is not included, as in the second example, it will not be visible.
+To add a image, you must indicate it in the `databases/images.csv`
 
-You can use the `.jpeg`, `.jpg`, `.webp`, `.png`.
+The line, where you put the name of your image must be the exact line of the question in your database file.
 
-**If the line isn"t set correctly, it may crash the game or don"t work correctly!**
+If you want to add an image only to *certains* questions, leave the others *vides*.
+
+#### **Examples:**
+
+```python
+# Like that:
+
+""
+"magellan.jpg"
+"calcium.jpeg"
+""
+"marseille.jpg"
+```
+
+You can use the `.jpeg`, `.jpg`, `.png` formats.
+
+**It'll set the images for all the languages!**
+
+**If the line isn't set correctly, it may crash the game or don"t work correctly!**
 
 **To apply your changes, you need to restart the game!**
 
@@ -86,7 +102,7 @@ There are two fonts in the vanilla game:
 
 1. The big one (called Pusab) is in the fonts folder and called **`big_font.ttf`**.
 
-2. The smaller one (called Aller) is also in the fonts folder and called **`small_font.ttf`**.
+2. The smaller one (called Aller) is also in the fonts folder and called *`small_font.ttf`*.
 
 Notice that you should choose fonts with **Cyrillic letters** (the basic ones are *Cyrillic extensions* of Aller and Pusab).
 

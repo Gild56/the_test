@@ -5,17 +5,20 @@ import numpy as np
 from libraries.resource_path import resource_path
 from libraries.logger import log
 
+from logic.text_manager import txt
+from logic.options_manager import options_manager
+
 class QuestionsManager:
     def __init__(self):
         self.csv_name = 'databases/english.csv'
         self.df = pd.read_csv(resource_path(self.csv_name))
         self.number_of_possibilities = len(self.df)
-        self.randomizing_status = "normal"
         self.question = ""
         self.true_answer = ""
         self.wrong_answers = []
         self.image = ""
         self.status = False
+        self.current_language = "english"
         self.df_images = pd.read_csv(
             resource_path("databases/images.csv")
         )
@@ -32,8 +35,8 @@ class QuestionsManager:
 
         self.question_numbers = [-1] + self.question_numbers
 
-    def change_the_language(self, new_language):
-        self.csv_name = f'databases/{new_language}.csv'
+    def change_the_language(self):
+        self.csv_name = f'databases/{self.current_language}.csv'
         self.df = pd.read_csv(resource_path(self.csv_name))
         self.number_of_possibilities = len(self.df)
 
@@ -43,7 +46,7 @@ class QuestionsManager:
         text = text.replace("ї","ï").replace("і","i")
         text = text.replace("Ї","Ï").replace("І","I")
         text = text.replace("Є","Е").replace("є","е")
-        #todo check the pusab font
+        # Because fonts don't support ukrainian
 
         try:
             words = text.split(' ')
@@ -91,8 +94,11 @@ class QuestionsManager:
 
     def randomize_question(self):
 
-        if self.randomizing_status == "normal":
-            log.debug(self.question_numbers_randomized)
+        if txt.current_language != self.current_language:
+            self.current_language = txt.current_language
+            self.change_the_language()
+
+        if options_manager.randomizing_style == "normal":
             if len(self.question_numbers_randomized) == 0:
                 for i in range(self.number_of_possibilities):
                     self.question_numbers_randomized.append(i)
@@ -104,12 +110,12 @@ class QuestionsManager:
 
             self.question_numbers_randomized.pop(0)
 
-        elif self.randomizing_status == "alternative":
+        elif options_manager.randomizing_style == "alternative":
             self.number_of_the_question = randint(
                 0, self.number_of_possibilities - 1
                 )
 
-        elif self.randomizing_status == "in_range":
+        elif options_manager.randomizing_style == "in_range":
             if len(self.question_numbers) == 0:
                 for i in range(self.number_of_possibilities):
                     self.question_numbers.append(i)
@@ -117,6 +123,12 @@ class QuestionsManager:
             self.number_of_the_question = self.question_numbers[0]
 
             self.question_numbers.pop(0)
+
+        self.number_of_the_question -= 1
+        #! Don't touch this part
+        # When we have 100 questions,
+        # the 100th index is "out of range"...
+        # And I cant fix it.
 
         self.question = self.df.iloc[
             self.number_of_the_question, 0
@@ -143,7 +155,7 @@ class QuestionsManager:
             ]
 
         self.question = \
-            self.format_text(self.question, 50)
+            self.format_text(self.question, 35)
 
         self.true_answer = \
             self.format_text(self.true_answer, 20)

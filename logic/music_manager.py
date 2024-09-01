@@ -29,7 +29,7 @@ class MusicManager:
 
     def randomize_song(self):
         if len(self.remaining_songs) == 0:
-            self.remaining_songs = self.songs_list
+            self.remaining_songs = self.songs_list.copy()
             shuffle(self.remaining_songs)
             log.info("Randomizing the playlist.")
 

@@ -37,7 +37,7 @@ class AnsweredMenu(Screen):
 
         self.stats_label = Label(
             size_hint=(0.3, 0.3),
-            font_size=32,
+            font_size=25,
             font_name=txt.small_font,
             pos_hint={"center_x": 0.5, "center_y": 0.8},
             halign="center"

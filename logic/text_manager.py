@@ -1,7 +1,5 @@
 import locale
 
-from logic.questions_manager import questions_manager
-
 from libraries.resource_path import resource_path
 from libraries.logger import log
 
@@ -96,9 +94,5 @@ class TextManager():
             self.warning_message,
             self.reset_settings
         ) = self.labels
-
-        questions_manager.change_the_language(
-            self.current_language
-        )
 
 txt = TextManager()
