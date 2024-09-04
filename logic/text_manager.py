@@ -23,6 +23,11 @@ class TextManager():
 
         self.labels = None
 
+        self.english = "English"
+        self.french = "Français"
+        self.russian = "Русский"
+        self.ukrainian = "Украïнська"
+
     def set_system_language(self):
         self.system_language, _ = locale.getlocale()
         log.info(f"The system language is {self.system_language}.")
@@ -92,7 +97,21 @@ class TextManager():
             self.correct_answer,
             self.options,
             self.warning_message,
-            self.reset_settings
+            self.reset_settings,
+            self.rainbow_buttons,
+            self.drawing_images,
+            self.next_song,
+            self.languages,
+            self.blue,
+            self.orange,
+            self.violet,
+            self.pink,
+            self.yellow,
+            self.cyan,
+            self.grey,
+            self.black,
+            self.color_theme
+
         ) = self.labels
 
 txt = TextManager()

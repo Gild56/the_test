@@ -3,7 +3,6 @@ from kivy.uix.screenmanager import Screen
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.clock import Clock
-from kivy.core.window import Window
 
 import pygame
 
@@ -19,8 +18,6 @@ from libraries.logger import log
 class MainMenu(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-
-        Window.clearcolor = DARK_BLUE
 
         Clock.schedule_interval(self.update_music, 1)
 
@@ -62,7 +59,6 @@ class MainMenu(Screen):
         self.options_button = Button(
             pos_hint={"center_x": 0.5, "center_y": 0.7},
             size_hint=(0.7, 0.5),
-            background_color=BLUE,
             color=WHITE,
             font_size=50,
             font_name=txt.big_font,
@@ -72,7 +68,6 @@ class MainMenu(Screen):
         self.play_button = Button(
             pos_hint={"center_x": 0.5, "center_y": 0.2},
             size_hint=(0.7, 0.5),
-            background_color=BLUE,
             color=WHITE,
             font_size=64,
             font_name=txt.big_font
@@ -104,6 +99,15 @@ class MainMenu(Screen):
             options_manager.sounds_volume
         )
 
+
+        music_manager.win.set_volume(
+            options_manager.sounds_volume
+        )
+
+        music_manager.lose.set_volume(
+            options_manager.sounds_volume
+        )
+
         pygame.mixer.music.set_volume(
             options_manager.music_volume
         )
@@ -119,6 +123,9 @@ class MainMenu(Screen):
         self.options_button.text = txt.options
         self.name_label.text = txt.name
         self.dedications_label.text = txt.dedications
+
+        self.play_button.background_color = options_manager.main_color
+        self.options_button.background_color = options_manager.main_color
 
     def start_game(self, instance):
         questions_manager.status = True

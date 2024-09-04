@@ -1,42 +1,42 @@
-# IQ Test app
+# IQ Test App
 
-Hello! It's a **cross-platform** *(iOS, Android & Windows)* project. You can **complete tests**, **collect points**, **listen to** your **favorite music** and so many *more*!
+Hello! It's a **cross-platform** *(iOS, Android & Windows)* project. You can **complete tests**, **collect points**, **listen to**, **presonalize all for your taste**, listen your **favorite music** and much *more*!
 
-The other languages:
+Other languages:
 
-* [Русский](markdown/ПРОЧИТАЙМЕНЯ.md)
+* [Русский](markdown/README-RU.md)
 
-* [Українська](markdown/ПРОЧТИМЕНЕ.md)
+* [Українська](markdown/README-UA.md)
 
-* [Français](markdown/LISMOI.md)
+* [Français](markdown/README-FR.md)
 
 Go check the [credits](markdown/credits.md) of the project.
 
-The [changelog](markdown/changelog.md) to see all the updates and changes of the project.
+Check the [changelog](markdown/changelog.md) to see all the updates and changes of the project.
 
-If you need to find an error, when you added some new features in the code, the [info.log](info.log) file is for you!
+If you need to find errors when you add new features to the code, the [info.log](info.log) file is here to help!
 
-If the game crashed, go check the last crashlog in [the crashlogs folder](crashes/).
+If the game crashes, go check the last crash log in [the crashlogs folder](crashes/).
 
 ## First steps
 
 ### On Windows 10 / 11
 
-To begin your experience in the game, you will need to install Python from [the official Python site](https://python.org/downloads) and install the last *Python 3* version.
+To start your experience with the game, you will need to install Python from [the official Python site](https://python.org/downloads) and install the latest version of *Python 3*.
 
 Then, start the `install.bat` file.
 
 ## Personalization
 
-You can also personalize this game - add some fonts, images, quiz, music, etc..
+You can also personalize this game - add some fonts, images, quizzes, music, etc.
 
-**For the moment, you can personnalise the game only on Windows 10 / 11!**
+**Currently, you can personalize the game only on Windows 10 / 11!**
 
 ### Custom songs
 
-There are awesome songs available in the game.
+There are great songs available in the game.
 
-But, you can also add your own songs in the game.
+But, you can also add your own songs to the game.
 
 To do this, you just need to put your songs in the `iq_test/music` folder.
 
@@ -46,9 +46,9 @@ To do this, you just need to put your songs in the `iq_test/music` folder.
 
 If you want to customize the quiz, you can!
 
-You just need to go in the `iq_test/databases` and choose the language, that you want to change.
+You just need to go in the `iq_test/databases` and choose the language you want to change.
 
-You can put anything, but remember, that if you don't set the questions correctly, it may not work!
+You can put anything, but remember that if you don't set the questions correctly, it may not work!
 
 To set your questions correctly you must write:
 
@@ -68,11 +68,11 @@ To set your questions correctly you must write:
 
 ### Add an image to your question
 
-To add a image, you must indicate it in the `databases/images.csv`
+To add an image, you must indicate it in the `iq_test/databases/images.csv`
 
-The line, where you put the name of your image must be the exact line of the question in your database file.
+The line where you put the name of your image must match the exact line of the question in your database file.
 
-If you want to add an image only to *certains* questions, leave the others *vides*.
+If you want to add an image to only certain questions, leave the corresponding lines empty.
 
 #### **Examples:**
 
@@ -84,13 +84,15 @@ If you want to add an image only to *certains* questions, leave the others *vide
 "calcium.jpeg"
 ""
 "marseille.jpg"
+
+# Et ainsi de suite...
 ```
 
 You can use the `.jpeg`, `.jpg`, `.png` formats.
 
-**It'll set the images for all the languages!**
+**This will apply the images to all languages!**
 
-**If the line isn't set correctly, it may crash the game or don"t work correctly!**
+**If the line isn't set correctly, it may crash the game or not work correctly!**
 
 **To apply your changes, you need to restart the game!**
 
@@ -100,14 +102,17 @@ It is also possible to add some custom fonts.
 
 There are two fonts in the vanilla game:
 
-1. The big one (called Pusab) is in the fonts folder and called **`big_font.ttf`**.
+1. The big one (called Pusab) is in the `iq_test/fonts` folder and called **`big_font.ttf`**.
 
-2. The smaller one (called Aller) is also in the fonts folder and called *`small_font.ttf`*.
+2. The smaller one (called Aller) is in the same folder and called *`small_font.ttf`*.
 
-Notice that you should choose fonts with **Cyrillic letters** (the basic ones are *Cyrillic extensions* of Aller and Pusab).
+Note that you should choose fonts that support **Cyrillic letters** (as the default ones are *Cyrillic versions* of Aller and Pusab), except if you will not need it.
 
 **To apply your changes, you need to restart the game!**
 
 ## Contact me
 
-To cantact me, write me on [Gmail](mailto:gild56gmd@gmail.com), [Telegram](https://t.me/gild56) or [Discord](https://discord.com/users/gild56).
+To contact me:
+* [my Telegram](https://t.me/gild56) (Checked often)
+* [my Discord](https://discord.com/users/gild56) (Checked rarely)
+* [my Gmail](mailto:gild56gmd@gmail.com) (Never checked xD)

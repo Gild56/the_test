@@ -23,6 +23,14 @@ class MusicManager:
             resource_path("sounds/8bit-click.wav")
         )
 
+        self.win = pygame.mixer.Sound(
+            resource_path("sounds/win.mp3")
+        )
+
+        self.lose = pygame.mixer.Sound(
+            resource_path("sounds/win.mp3")
+        )
+
         self.randomize_song()
 
         self.play_music()

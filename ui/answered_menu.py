@@ -8,6 +8,7 @@ from random import choice
 
 from logic.music_manager import music_manager
 from logic.points_manager import points_manager
+from logic.options_manager import options_manager
 from logic.text_manager import txt
 
 from libraries.colors import *
@@ -47,7 +48,7 @@ class AnsweredMenu(Screen):
             text=txt.main_menu,
             pos_hint={"center_x": 0.5, "center_y": 0.4},
             size_hint=(0.5, 0.2),
-            background_color=BLUE,
+            background_color=options_manager.main_color,
             color=WHITE,
             font_size=32,
             font_name=txt.small_font,
@@ -58,7 +59,7 @@ class AnsweredMenu(Screen):
             text=txt.next,
             pos_hint={"center_x": 0.5, "center_y": 0.5},
             size_hint=(0.5, 0.2),
-            background_color=BLUE,
+            background_color=options_manager.main_color,
             color=WHITE,
             font_size=64,
             font_name=txt.big_font
@@ -114,7 +115,7 @@ class AnsweredMenu(Screen):
         self.manager.get_screen('QuestionMenu').update_menu()
         log.info("Going to the next screen -> QuestionMenu.")
 
-        Window.clearcolor = DARK_BLUE
+        Window.clearcolor = options_manager.bg_color
 
 
     def exit_to_main_menu(self, instance):
@@ -125,4 +126,4 @@ class AnsweredMenu(Screen):
         self.manager.get_screen('MainMenu').update_labels()
         log.info("Going to the next screen -> MainMenu.")
 
-        Window.clearcolor = DARK_BLUE
+        Window.clearcolor = options_manager.bg_color

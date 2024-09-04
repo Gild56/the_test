@@ -83,5 +83,18 @@ labels = (
         "WARNING!\nAfter doing this you won't be able to\n"
         "return to the previous stats."
     ),
-    "Reset settings"
+    "Reset settings",
+    "Rainbow answer buttons",
+    "Render images with questions",
+    "Next song",
+    "Languages:",
+    "Blue",
+    "Orange",
+    "Violet",
+    "Pink",
+    "Yellow",
+    "Cyan",
+    "Grey",
+    "Black",
+    "Color themes:"
 )

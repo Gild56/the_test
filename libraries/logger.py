@@ -25,7 +25,7 @@ class Logs:
 
         if collecting_errors:
             sys.excepthook = self.error_collector
-            Logger.setLevel(logging.CRITICAL)
+            Logger.setLevel(logging.ERROR)
 
 
     def get_time(self):
@@ -253,4 +253,4 @@ class Logs:
 
         self.crash(full_message)
 
-log = Logs(collecting_errors=True)
+log = Logs(collecting_errors=False)

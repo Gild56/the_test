@@ -80,8 +80,21 @@ labels = (
     "La réponse correcte était",
     "Paramètres",
     (
-        "AVERTISSEMENT!\nAprès cela, tu ne pourras pas\n"
+        "ATTENTION!\nAprès cela, tu ne pourras pas\n"
         "retourner aux statistiques précédentes."
     ),
     "Retour aux\nparamétres de base",
+    "Les bouttons-réponse colorés",
+    "Montrer les images",
+    "Chanson suivante",
+    "Les langues:",
+    "Bleu",
+    "Orange",
+    "Violet",
+    "Rose",
+    "Jaune",
+    "Cyan",
+    "Gris",
+    "Noir",
+    "Les thèmes colorés:"
 )

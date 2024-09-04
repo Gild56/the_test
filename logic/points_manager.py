@@ -43,7 +43,7 @@ class PointsManager:
                 "one. The json/options.json file was reset."
             )
 
-    def _save(self):
+    def save(self):
         with open(self.JSON_PATH, 'w') as f:
             json.dump({
                 'points': self.points,
@@ -71,7 +71,7 @@ class PointsManager:
     def clear(self):
         self.points, self.win_streak, self.best_win_streak = 0, 0, 0
         log.info("The stats were succesfully cleared.")
-        self._save()
+        self.save()
 
     def win(self):
         self.points += self.WINNING_POINTS
@@ -94,7 +94,7 @@ class PointsManager:
         if self.win_streak > self.best_win_streak:
             self.best_win_streak = self.win_streak
 
-        self._save()
+        self.save()
 
     def lose(self):
         self.win_streak = 0
@@ -103,6 +103,6 @@ class PointsManager:
         if self.points < 0:
             self.points = 0
 
-        self._save()
+        self.save()
 
 points_manager = PointsManager()
