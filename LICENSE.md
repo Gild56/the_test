@@ -2,7 +2,7 @@
 
 © Gild56
 
-This software, known as "IQ Test," is provided under the following terms:
+This software, known as "The Test," is provided under the following terms:
 
 ## Permissions
 

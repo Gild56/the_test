@@ -1,6 +1,6 @@
 @echo off
 
-echo Hello! Welcome to the installation of the IQ Test Game. Make sure that you are connected to the internet and you installed Python 3 from the official site.
+echo Hello! Welcome to the installation of the The Test Game. Make sure that you are connected to the internet and you installed Python 3 from the official site.
 
 echo Installing libraries...
 
@@ -11,8 +11,8 @@ echo Creating a shortcut.
 
 set "target=%~dp0main.py"
 set "icon=%~dp0logo.ico"
-set "desktop=%UserProfile%\Desktop\IQ Test.lnk"
-set "fallback=%~dp0IQ Test.lnk"
+set "desktop=%UserProfile%\Desktop\The Test.lnk"
+set "fallback=%~dp0The Test.lnk"
 :: I need to create a shortcut NEAR the working directory, NOT in. (ERROR n1)
 
 :: This part isn't the final version, but it's here because the next version has an error with "else", and idk why... (ERROR n2)

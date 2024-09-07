@@ -156,7 +156,9 @@ class QuestionMenu(Screen):
         if options_manager.drawing_images:
             if self.image:
                 if self.previous_image:
-                    self.image_layout.remove_widget(self.previous_image)
+                    self.image_layout.remove_widget(
+                        self.previous_image
+                    )
                 self.image_layout.add_widget(self.image)
                 self.previous_image = self.image
                 log.info(
@@ -165,7 +167,9 @@ class QuestionMenu(Screen):
                     )
             else:
                 if self.previous_image:
-                    self.image_layout.remove_widget(self.previous_image)
+                    self.image_layout.remove_widget(
+                        self.previous_image
+                    )
                     self.previous_image = None
                 log.warning(
                     "There are no image for this question. "
@@ -222,10 +226,17 @@ class QuestionMenu(Screen):
                 self.true_button.background_color = LIGHT_CYAN
 
         if not options_manager.rainbow_buttons:
-            self.true_button.background_color = options_manager.main_color
-            self.wrong_button1.background_color = options_manager.main_color
-            self.wrong_button2.background_color = options_manager.main_color
-            self.wrong_button3.background_color = options_manager.main_color
+            self.true_button.background_color = \
+                options_manager.main_color
+
+            self.wrong_button1.background_color = \
+                options_manager.main_color
+
+            self.wrong_button2.background_color = \
+                options_manager.main_color
+
+            self.wrong_button3.background_color = \
+                options_manager.main_color
 
 
     def update_menu(self):

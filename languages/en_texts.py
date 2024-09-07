@@ -69,7 +69,7 @@ labels = (
     ],
 
     "A game made by Gild56\nEnjoy!",
-    "IQ Test",
+    "The Test",
     "points",
     "your win streak now",
     "best win streak",

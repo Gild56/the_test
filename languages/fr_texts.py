@@ -69,7 +69,7 @@ labels = (
     ],
 
     "Jeu de Gild56\nAmusez-vous bien!",
-    "Test de QI",
+    "The Test",
     "points",
     "ta série actuelle",
     "meilleure série",

@@ -94,11 +94,9 @@ class AnsweredMenu(Screen):
             self.exit_button.background_color = RED
             self.next_screen_button.background_color = RED
             self.top_text.text = choice(txt.wrong_answers)
+            t = self.manager.get_screen('QuestionMenu').true_answer
             self.bottom_text.text = (
-                f'{txt.correct_answer}: '
-                f'"{
-                    self.manager.get_screen('QuestionMenu').true_answer
-                }".'
+                f'{txt.correct_answer}: "{t}".'
             )
 
         self.stats_label.text=(

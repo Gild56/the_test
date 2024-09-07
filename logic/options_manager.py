@@ -72,7 +72,9 @@ class OptionsManager():
             self.current_language = data.get('language', None)
             self.menus_color = data.get('menus_color', "blue")
             self.drawing_images = data.get('drawing_images', True)
-            self.randomizing_style = data.get('randomizing_style', "normal")
+            self.randomizing_style = data.get(
+                'randomizing_style', "normal"
+            )
             self.rainbow_buttons = data.get('rainbow_buttons', False)
 
         int(self.music_volume)

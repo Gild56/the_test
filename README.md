@@ -1,4 +1,4 @@
-# IQ Test App
+# The Test App
 
 Hello! It's a **cross-platform** *(iOS, Android & Windows)* project. You can **complete tests**, **collect points**, **listen to**, **presonalize all for your taste**, listen your **favorite music** and much *more*!
 
@@ -38,7 +38,7 @@ There are great songs available in the game.
 
 But, you can also add your own songs to the game.
 
-To do this, you just need to put your songs in the `iq_test/music` folder.
+To do this, you just need to put your songs in the `the_test/music` folder.
 
 **To apply your changes, you need to restart the game!**
 
@@ -46,7 +46,7 @@ To do this, you just need to put your songs in the `iq_test/music` folder.
 
 If you want to customize the quiz, you can!
 
-You just need to go in the `iq_test/databases` and choose the language you want to change.
+You just need to go in the `the_test/databases` and choose the language you want to change.
 
 You can put anything, but remember that if you don't set the questions correctly, it may not work!
 
@@ -68,7 +68,7 @@ To set your questions correctly you must write:
 
 ### Add an image to your question
 
-To add an image, you must indicate it in the `iq_test/databases/images.csv`
+To add an image, you must indicate it in the `the_test/databases/images.csv`
 
 The line where you put the name of your image must match the exact line of the question in your database file.
 
@@ -102,7 +102,7 @@ It is also possible to add some custom fonts.
 
 There are two fonts in the vanilla game:
 
-1. The big one (called Pusab) is in the `iq_test/fonts` folder and called **`big_font.ttf`**.
+1. The big one (called Pusab) is in the `the_test/fonts` folder and called **`big_font.ttf`**.
 
 2. The smaller one (called Aller) is in the same folder and called *`small_font.ttf`*.
 

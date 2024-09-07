@@ -356,11 +356,19 @@ class OptionsMenu(Screen):
         self.color_themes_layout4.add_widget(self.black_checkbox)
         self.color_themes_layout4.add_widget(self.black_label)
 
-        self.drawing_images_layout.add_widget(self.drawing_images_checkbox)
-        self.drawing_images_layout.add_widget(self.drawing_images_label)
+        self.drawing_images_layout.add_widget(
+            self.drawing_images_checkbox
+        )
+        self.drawing_images_layout.add_widget(
+            self.drawing_images_label
+        )
 
-        self.rainbow_buttons_layout.add_widget(self.rainbow_buttons_checkbox)
-        self.rainbow_buttons_layout.add_widget(self.rainbow_buttons_label)
+        self.rainbow_buttons_layout.add_widget(
+            self.rainbow_buttons_checkbox
+        )
+        self.rainbow_buttons_layout.add_widget(
+            self.rainbow_buttons_label
+        )
 
         self.right_layout.add_widget(self.drawing_images_layout)
         self.right_layout.add_widget(self.rainbow_buttons_layout)
@@ -396,8 +404,10 @@ class OptionsMenu(Screen):
     def update_labels(self, dt=None, instance=None):
 
         #! Костыли :(
-        self.rainbow_buttons_label.text = txt.rainbow_buttons + "          "
-        self.drawing_images_label.text = txt.drawing_images +   "          "
+        self.rainbow_buttons_label.text = \
+            txt.rainbow_buttons + "          "
+        self.drawing_images_label.text = \
+            txt.drawing_images +   "          "
 
         #! Don't change this part
         #  Kivy library don't accept to center
@@ -430,10 +440,14 @@ class OptionsMenu(Screen):
         self.grey_label.text = txt.grey
         self.black_label.text = txt.black
 
-        self.reset_settings_button.background_color = options_manager.main_color
-        self.clear_button.background_color = options_manager.main_color
-        self.next_song_button.background_color = options_manager.main_color
-        self.return_button.background_color = options_manager.main_color
+        self.reset_settings_button.background_color = \
+            options_manager.main_color
+        self.clear_button.background_color = \
+            options_manager.main_color
+        self.next_song_button.background_color = \
+            options_manager.main_color
+        self.return_button.background_color = \
+            options_manager.main_color
 
     def update_menu(self, instance=None, df=None):
 
@@ -473,12 +487,16 @@ class OptionsMenu(Screen):
         else:
             self.ukrainian_checkbox.active = True
 
-        self.music_slider.value = options_manager.music_volume * 100
-        self.sounds_slider.value = options_manager.sounds_volume * 100
+        self.music_slider.value = \
+            options_manager.music_volume * 100
+        self.sounds_slider.value = \
+            options_manager.sounds_volume * 100
 
     def update_music(self, dt):
-        options_manager.music_volume = round(self.music_slider.value / 100, 2)
-        options_manager.sounds_volume = round(self.sounds_slider.value / 100, 2)
+        options_manager.music_volume = \
+            round(self.music_slider.value / 100, 2)
+        options_manager.sounds_volume = \
+            round(self.sounds_slider.value / 100, 2)
 
 
     def reset_settings(self, instance):

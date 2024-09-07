@@ -30,7 +30,7 @@ Il y a d'excellentes chansons disponibles dans le jeu.
 
 Mais, vous pouvez également ajouter vos propres chansons au jeu.
 
-Pour ce faire, il vous suffit de mettre vos chansons dans le dossier `iq_test/music`.
+Pour ce faire, il vous suffit de mettre vos chansons dans le dossier `the_test/music`.
 
 **Pour appliquer vos changements, vous devez redémarrer le jeu !**
 
@@ -38,7 +38,7 @@ Pour ce faire, il vous suffit de mettre vos chansons dans le dossier `iq_test/mu
 
 Si vous souhaitez personnaliser le quiz, c'est possible !
 
-Il vous suffit d'aller dans `iq_test/databases` et de choisir la langue que vous souhaitez modifier.
+Il vous suffit d'aller dans `the_test/databases` et de choisir la langue que vous souhaitez modifier.
 
 Vous pouvez mettre ce que vous voulez, mais souvenez-vous que si vous ne configurez pas correctement les questions, cela peut ne pas fonctionner !
 
@@ -60,7 +60,7 @@ Pour configurer correctement vos questions, vous devez écrire :
 
 ### Ajouter une image à votre question
 
-Pour ajouter une image, vous devez l'indiquer dans le fichier `iq_test/databases/images.csv`.
+Pour ajouter une image, vous devez l'indiquer dans le fichier `the_test/databases/images.csv`.
 
 La ligne où vous mettez le nom de votre image doit correspondre exactement à la ligne de la question dans votre fichier de base de données.
 
@@ -94,7 +94,7 @@ Il est également possible d'ajouter des polices personnalisées.
 
 Il y a deux polices dans le jeu par défaut :
 
-1. La grande (appelée Pusab) est dans le dossier `iq_test/fonts` et s'appelle **`big_font.ttf`**.
+1. La grande (appelée Pusab) est dans le dossier `the_test/fonts` et s'appelle **`big_font.ttf`**.
 
 2. La plus petite (appelée Aller) est dans le même dossier et s'appelle *`small_font.ttf`*.
 

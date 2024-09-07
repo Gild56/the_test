@@ -124,8 +124,11 @@ class MainMenu(Screen):
         self.name_label.text = txt.name
         self.dedications_label.text = txt.dedications
 
-        self.play_button.background_color = options_manager.main_color
-        self.options_button.background_color = options_manager.main_color
+        self.play_button.background_color = \
+            options_manager.main_color
+
+        self.options_button.background_color = \
+            options_manager.main_color
 
     def start_game(self, instance):
         questions_manager.status = True
