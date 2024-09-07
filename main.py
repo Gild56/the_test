@@ -11,6 +11,7 @@ from libraries.logger import log
 
 from logic.points_manager import points_manager
 from logic.questions_manager import questions_manager
+from logic.options_manager import options_manager
 
 class QuizApp(App):
     def build(self):
@@ -23,6 +24,7 @@ class QuizApp(App):
 
     def on_stop(self):
         log.info("Stopping the app...")
+        options_manager.save()
         if questions_manager.status:
             log.info(
                 "The app stopped when a question "

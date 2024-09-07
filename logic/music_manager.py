@@ -8,6 +8,7 @@ from libraries.logger import log
 class MusicManager:
     def __init__(self):
         pygame.mixer.init()
+        pygame.mixer.music.set_volume(0)
         self.remaining_songs = []
         self.current_song = None
 

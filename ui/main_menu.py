@@ -43,7 +43,7 @@ class MainMenu(Screen):
         self.name_label = Label(
             text=txt.name,
             size_hint=(1, 0.3),
-            font_size=80,
+            font_size=70,
             font_name=txt.big_font,
             pos_hint={"center_x": 0.5, "center_y": 0.8}
         )
@@ -140,3 +140,5 @@ class MainMenu(Screen):
         music_manager.transition.play()
         music_manager.button_clicked.play()
         log.info("Going to the next screen -> OptionsMenu.")
+        self.manager.get_screen('OptionsMenu').update_labels()
+        self.manager.get_screen('OptionsMenu').update_menu()

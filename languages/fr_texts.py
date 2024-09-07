@@ -73,16 +73,14 @@ labels = (
     "points",
     "ta série actuelle",
     "meilleure série",
-    "Réinitialiser",
+    "Réinitialiser les points",
     "Jouer",
     "Continuer",
     "<-- Menu principal",
     "La réponse correcte était",
     "Paramètres",
-    (
-        "ATTENTION!\nAprès cela, tu ne pourras pas\n"
-        "retourner aux statistiques précédentes."
-    ),
+    "Après cela, vous ne pourraiz pas\n"
+    "retourner aux statistiques précédentes.",
     "Retour aux\nparamétres de base",
     "Les bouttons-réponse colorés",
     "Montrer les images",
@@ -96,5 +94,8 @@ labels = (
     "Cyan",
     "Gris",
     "Noir",
-    "Les thèmes colorés:"
+    "Les thèmes colorés:",
+    "Volume de la musique:",
+    "volume des sons:",
+    "ATTENTION!"
 )

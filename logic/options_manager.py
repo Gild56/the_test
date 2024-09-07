@@ -97,6 +97,8 @@ class OptionsManager():
         if self.randomizing_style not in self.RANDOMIZING_STYLES:
             self.randomizing_style = "normal"
 
+        self.color_change()
+
         if self.drawing_images not in [True, False]:
             self.drawing_images = True
 
@@ -109,13 +111,21 @@ class OptionsManager():
             txt.current_language = self.current_language
             txt.set_language()
 
+        log.info(
+            "Data has been imported from the options.json file."
+        )
+
+        self.save()
+
+    def color_change(self):
+
         if self.menus_color == "blue":
             self.main_color = LIGHT_BLUE
             self.bg_color = DARK_BLUE
 
         elif self.menus_color == "orange":
             self.main_color = LIGHT_ORANGE
-            self.bg_color = ORANGE
+            self.bg_color = DARK_ORANGE
 
         elif self.menus_color == "violet":
             self.main_color = LIGHT_VIOLET
@@ -135,19 +145,13 @@ class OptionsManager():
 
         elif self.menus_color == "grey":
             self.main_color = LIGHT_GREY
-            self.bg_color = GREY
+            self.bg_color = DARK_GREY
 
         elif self.menus_color == "black":
             self.main_color = DARK_GREY
             self.bg_color = BLACK
 
         Window.clearcolor = self.bg_color
-
-        log.info(
-            "Data has been imported from the options.json file."
-        )
-
-        self.save()
 
     def clear(self):
         txt.set_system_language()

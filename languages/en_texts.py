@@ -79,13 +79,11 @@ labels = (
     "<-- Main menu",
     "The correct answer was",
     "Options",
-    (
-        "WARNING!\nAfter doing this you won't be able to\n"
-        "return to the previous stats."
-    ),
+    "After doing this you won't\n"
+    "be able to return to the previous stats.",
     "Reset settings",
     "Rainbow answer buttons",
-    "Render images with questions",
+    "Render images",
     "Next song",
     "Languages:",
     "Blue",
@@ -96,5 +94,8 @@ labels = (
     "Cyan",
     "Grey",
     "Black",
-    "Color themes:"
+    "Color themes:",
+    "Music volume:",
+    "Sounds volume:",
+    "WARNING!"
 )

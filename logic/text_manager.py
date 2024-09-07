@@ -110,7 +110,10 @@ class TextManager():
             self.cyan,
             self.grey,
             self.black,
-            self.color_theme
+            self.color_theme,
+            self.music,
+            self.sounds,
+            self.warning
 
         ) = self.labels
 

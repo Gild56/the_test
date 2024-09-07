@@ -139,6 +139,9 @@ class QuestionMenu(Screen):
                     f"The path do the image is '{self.image_path}'."
                 )
 
+        else:
+            self.image = None
+
     def update_question(self):
         self.question_text.text = self.question
         self.true_button.text = self.true_answer
@@ -150,22 +153,23 @@ class QuestionMenu(Screen):
         self.top_answers_layout.clear_widgets()
         self.bottom_answers_layout.clear_widgets()
 
-        if self.image:
-            if self.previous_image:
-                self.image_layout.remove_widget(self.previous_image)
-            self.image_layout.add_widget(self.image)
-            self.previous_image = self.image
-            log.info(
-                "The image was added to the layout. "
-                f"The path do the image is '{self.image_path}'."
-                )
-        else:
-            if self.previous_image:
-                self.image_layout.remove_widget(self.previous_image)
-                self.previous_image = None
-            log.warning(
-                "There are no image for this question. "
-                "The image wasn't added to the layout."
+        if options_manager.drawing_images:
+            if self.image:
+                if self.previous_image:
+                    self.image_layout.remove_widget(self.previous_image)
+                self.image_layout.add_widget(self.image)
+                self.previous_image = self.image
+                log.info(
+                    "The image was added to the layout. "
+                    f"The path do the image is '{self.image_path}'."
+                    )
+            else:
+                if self.previous_image:
+                    self.image_layout.remove_widget(self.previous_image)
+                    self.previous_image = None
+                log.warning(
+                    "There are no image for this question. "
+                    "The image wasn't added to the layout."
                 )
 
         r = randint(1, 4)
