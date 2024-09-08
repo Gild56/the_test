@@ -71,7 +71,7 @@ labels = (
     "Jeu de Gild56\nAmusez-vous bien!",
     "The Test",
     "points",
-    "ta série actuelle",
+    "série actuelle",
     "meilleure série",
     "Réinitialiser les points",
     "Jouer",

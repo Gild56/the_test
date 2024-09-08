@@ -71,7 +71,7 @@ labels = (
     "A game made by Gild56\nEnjoy!",
     "The Test",
     "points",
-    "your win streak now",
+    "win streak now",
     "best win streak",
     "Clear stats",
     "Play",

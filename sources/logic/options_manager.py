@@ -2,12 +2,12 @@ import os, json
 
 from kivy.core.window import Window
 
-from libraries.resource_path import resource_path
-from libraries.logger import log
+from sources.libraries.resource_path import resource_path
+from sources.libraries.logger import log
+from sources.libraries.colors import *
 
-from logic.text_manager import txt
+from sources.logic.text_manager import txt
 
-from libraries.colors import *
 
 class OptionsManager():
     def __init__(self):
@@ -31,19 +31,19 @@ class OptionsManager():
             "grey", "black"
         ]
 
-        self.JSON_PATH = resource_path('json/options.json')
+        self.JSON_PATH = resource_path('sources/json/options.json')
 
-        if not os.path.exists(resource_path("json/")):
-            os.makedirs(resource_path("json/"))
+        if not os.path.exists(resource_path("sources/json/")):
+            os.makedirs(resource_path("sources/json/"))
             log.info(
-                "The json/ folder does not exist. "
-                "A new json/ folder was created"
+                "The sources/json/ folder does not exist. "
+                "A new sources/json/ folder was created"
             )
 
         if not os.path.exists(self.JSON_PATH):
             self.clear()
             log.info(
-                "the json/options.json file does not exist. "
+                "the sources/json/options.json file does not exist. "
                 "The new one was created."
             )
         self._import_data()

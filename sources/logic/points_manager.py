@@ -1,7 +1,7 @@
 import os, json
 
-from libraries.resource_path import resource_path
-from libraries.logger import log
+from sources.libraries.resource_path import resource_path
+from sources.libraries.logger import log
 
 class PointsManager:
     def __init__(self):
@@ -14,18 +14,18 @@ class PointsManager:
         self.win_streak = 0
         self.best_win_streak = 0
 
-        if not os.path.exists(resource_path("json/")):
-            os.makedirs(resource_path("json/"))
+        if not os.path.exists(resource_path("sources/json/")):
+            os.makedirs(resource_path("sources/json/"))
             log.info(
-                "The json/ folder does not exist. "
-                "A new json/ folder was created"
+                "The sources/json/ folder does not exist. "
+                "A new sources/json/ folder was created"
             )
 
-        self.JSON_PATH = resource_path('json/points.json')
+        self.JSON_PATH = resource_path('sources/json/points.json')
 
         if not os.path.exists(self.JSON_PATH):
             log.info(
-                "the json/points.json file does not exist. "
+                "the sources/json/points.json file does not exist. "
                 "The new one was created."
             )
             with open(self.JSON_PATH, 'w') as f:
@@ -39,8 +39,8 @@ class PointsManager:
             self._import_data()
         except:
             log.info(
-                "The json/points.json format isn't the required "
-                "one. The json/options.json file was reset."
+                "The sources/json/points.json format isn't the required "
+                "one. The sources/json/options.json file was reset."
             )
 
     def save(self):

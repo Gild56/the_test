@@ -6,14 +6,14 @@ from kivy.uix.button import Button
 from kivy.uix.checkbox import CheckBox
 from kivy.clock import Clock
 
-from logic.music_manager import music_manager
-from logic.options_manager import options_manager
-from logic.points_manager import points_manager
-from logic.questions_manager import questions_manager
-from logic.text_manager import txt
+from sources.logic.music_manager import music_manager
+from sources.logic.options_manager import options_manager
+from sources.logic.points_manager import points_manager
+from sources.logic.questions_manager import questions_manager
+from sources.logic.text_manager import txt
 
-from libraries.colors import *
-from libraries.logger import log
+from sources.libraries.colors import *
+from sources.libraries.logger import log
 
 class OptionsMenu(Screen):
     def __init__(self, **kwargs):

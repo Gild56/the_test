@@ -2,11 +2,11 @@ from random import randint, shuffle
 import pandas as pd
 import numpy as np
 
-from libraries.resource_path import resource_path
-from libraries.logger import log
+from sources.libraries.resource_path import resource_path
+from sources.libraries.logger import log
 
-from logic.text_manager import txt
-from logic.options_manager import options_manager
+from sources.logic.text_manager import txt
+from sources.logic.options_manager import options_manager
 
 class QuestionsManager:
     def __init__(self):

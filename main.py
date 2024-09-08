@@ -1,17 +1,17 @@
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
 
-from ui.main_menu import MainMenu
-from ui.question_menu import QuestionMenu
-from ui.answered_menu import AnsweredMenu
-from ui.options_menu import OptionsMenu
+from sources.ui.main_menu import MainMenu
+from sources.ui.question_menu import QuestionMenu
+from sources.ui.answered_menu import AnsweredMenu
+from sources.ui.options_menu import OptionsMenu
 
-from libraries.colors import *
-from libraries.logger import log
+from sources.libraries.colors import *
+from sources.libraries.logger import log
 
-from logic.points_manager import points_manager
-from logic.questions_manager import questions_manager
-from logic.options_manager import options_manager
+from sources.logic.points_manager import points_manager
+from sources.logic.questions_manager import questions_manager
+from sources.logic.options_manager import options_manager
 
 class QuizApp(App):
     def build(self):

@@ -9,7 +9,7 @@ temp_copy/
 *.json
 json/
 crashes/
-make_ico.py
 logo.png
 logo.jpg
 to_jpg.py
+to_ico.py

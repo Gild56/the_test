@@ -1,12 +1,12 @@
 import locale
 
-from libraries.resource_path import resource_path
-from libraries.logger import log
+from sources.libraries.resource_path import resource_path
+from sources.libraries.logger import log
 
-import languages.en_texts
-import languages.fr_texts
-import languages.ru_texts
-import languages.ua_texts
+import sources.languages.en_texts
+import sources.languages.fr_texts
+import sources.languages.ru_texts
+import sources.languages.ua_texts
 
 class TextManager():
 
@@ -55,28 +55,28 @@ class TextManager():
 
         if next_language == 'english':
             self.current_language = next_language
-            self.labels = languages.en_texts.labels
+            self.labels = sources.languages.en_texts.labels
             log.info(
                 "The language was changed into english."
             )
 
         elif next_language == 'russian':
             self.current_language = next_language
-            self.labels = languages.ru_texts.labels
+            self.labels = sources.languages.ru_texts.labels
             log.info(
                 "The language was changed into russian."
             )
 
         elif next_language == 'french':
             self.current_language = next_language
-            self.labels = languages.fr_texts.labels
+            self.labels = sources.languages.fr_texts.labels
             log.info(
                 "The language was changed into french."
             )
 
         elif next_language == 'ukrainian':
             self.current_language = next_language
-            self.labels = languages.ua_texts.labels
+            self.labels = sources.languages.ua_texts.labels
             log.info(
                 "The language was changed into ukrainian."
             )

@@ -1,8 +1,10 @@
 import os
 from random import shuffle
+
 from kivy.core.audio import SoundLoader
-from libraries.resource_path import resource_path
-from libraries.logger import log
+
+from sources.libraries.resource_path import resource_path
+from sources.libraries.logger import log
 
 class MusicManager:
     def __init__(self):

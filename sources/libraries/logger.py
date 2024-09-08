@@ -1,8 +1,8 @@
 import sys, os, time, traceback, inspect, logging
 from kivy.logger import Logger
 
-from libraries.colors import *
-from libraries.resource_path import resource_path
+from sources.libraries.colors import *
+from sources.libraries.resource_path import resource_path
 
 class Logs:
 
