@@ -85,7 +85,7 @@ If you want to add an image to only certain questions, leave the corresponding l
 ""
 "marseille.jpg"
 
-# Et ainsi de suite...
+# And so on...
 ```
 
 You can use the `.jpeg`, `.jpg`, `.png` formats.

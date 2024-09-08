@@ -1,55 +1,40 @@
 @echo off
 
-echo Hello! Welcome to the installation of the The Test Game. Make sure that you are connected to the internet and you installed Python 3 from the official site.
+echo Hello! Welcome to the installation of The Test Game.
+echo
+echo Make sure that you are connected to the internet and have installed Python 3 from the official site.
 
 echo Installing libraries...
 
 python -m pip install -r requirements.txt
 
 echo
-echo Creating a shortcut.
+echo Creating a shortcut...
 
 set "target=%~dp0main.py"
 set "icon=%~dp0logo.ico"
 set "desktop=%UserProfile%\Desktop\The Test.lnk"
-set "fallback=%~dp0The Test.lnk"
-:: I need to create a shortcut NEAR the working directory, NOT in. (ERROR n1)
+set "fallback=%~dp0..\The Test.lnk"  :: Creates a shortcut one directory above the working directory
 
-:: This part isn't the final version, but it's here because the next version has an error with "else", and idk why... (ERROR n2)
-
-:: So, I'll delete this one :
-
+:: Check if the shortcut on the desktop exists
 if not exist "%desktop%" (
-    powershell -Command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%desktop%'); $s.TargetPath = '%target%'; $s.IconLocation = '%icon%'; $s.Save()" 2>nul
-    echo A shortcut was created at the desktop.
+    powershell -Command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%desktop%'); $s.TargetPath = '%target%'; $s.IconLocation = '%icon%'; $s.Save()"
+    if errorlevel 1 (
+        echo Failed to create shortcut on the desktop. Trying to create it near the directory.
+    ) else (
+        echo A shortcut was created on the desktop.
+    )
 )
 
+:: If the desktop shortcut wasn't created, create it near the working directory (one directory above)
 if not exist "%desktop%" (
-    echo To create a shortcut on the desktop isn't possible. Trying it near the directory.
     powershell -Command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%fallback%'); $s.TargetPath = '%target%'; $s.IconLocation = '%icon%'; $s.Save()"
-    echo A shortcut was created near the working directory.
+    if errorlevel 1 (
+        echo Failed to create the shortcut near the directory.
+    ) else (
+        echo A shortcut was created near the working directory.
+    )
 )
-
-:: When I debug this one:
-
-::if not exist "%desktop%" (
-::    powershell -Command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%desktop%'); $s.TargetPath = '%target%'; $s.IconLocation = '%icon%'; $s.Save()" 2>nul
-::    echo A shortcut was created at the desktop.
-::)
-::else (
-::    echo A shortcut on the desktop already exists.
-::)
-::
-::if not exist "%desktop%" and (
-::    echo To create a shortcut on the desktop isn't possible. Trying it near the directory.
-::    if not exist "%fallback%" (
-::        powershell -Command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%fallback%'); $s.TargetPath = '%target%'; $s.IconLocation = '%icon%'; $s.Save()"
-::        echo A shortcut was created near the working directory.
-::    )
-::    else (
-::        echo A shortcut near the directory already exists.
-::    )
-::)
 
 echo Opening the game...
 

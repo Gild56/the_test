@@ -1,6 +1,6 @@
 # Application de Test de QI
 
-Bonjour ! C'est un projet **cross-platforme** *(pour iOS, Android et Windows)*. Vous pourez **compléter des tests**, **collecter des points**, **écouter** votre **musique préférée**, **persaonnaliser tout à votre goût** et bien *plus* encore !
+Bonjour ! C'est un projet **multiplateforme** *(pour iOS, Android et Windows)*. Vous pourez **compléter des tests**, **collecter des points**, **écouter** votre **musique préférée**, **persaonnaliser tout à votre goût** et bien *plus* encore !
 
 Allez voir les [crédits](markdown/credits.md) du projet.
 

@@ -91,26 +91,13 @@ class MainMenu(Screen):
     def update_music(self, dt):
         music_manager.check_music()
 
-        music_manager.transition.set_volume(
-            options_manager.sounds_volume
-        )
+        music_manager.transition.volume = options_manager.sounds_volume
+        music_manager.button_clicked.volume = options_manager.sounds_volume
+        music_manager.win.volume = options_manager.sounds_volume
+        music_manager.lose.volume = options_manager.sounds_volume
 
-        music_manager.button_clicked.set_volume(
-            options_manager.sounds_volume
-        )
-
-
-        music_manager.win.set_volume(
-            options_manager.sounds_volume
-        )
-
-        music_manager.lose.set_volume(
-            options_manager.sounds_volume
-        )
-
-        pygame.mixer.music.set_volume(
-            options_manager.music_volume
-        )
+        if music_manager.current_music:
+            music_manager.current_music.volume = options_manager.music_volume
 
     def update_labels(self):
         self.stats_label.text = (

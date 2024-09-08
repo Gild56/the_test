@@ -10,9 +10,15 @@
 
 ## **Libraries:**
 
-* **** for the *Pygame* library.
 * **The Kivy Team** for the *Kivy* library.
-* **** for the *Colorama* library.
+* **Jonathan Hartley** for the *Colorama* library.
+
+## **Sounds:**
+
+* **Somebody** for the *transition sound*.
+* **Somebody** for the *button clicking sound*.
+* **Somebody** for the *win sound*.
+* **Somebody** for the *lose sound*.
 
 ## **Music:**
 
@@ -44,11 +50,11 @@
 * **Fandom, AlleDazzi1 & Disney** for their image of *Hercules*.
 * **Papilles et Pullipes** for their image of *popcorn*.
 * **La Voix du Nord & Stephne Mortagne** for their image of *Smurfs*.
-* **** for their image of *Christopher Columbus*.
-* **** for their image of *ancient Olympic games*.
-* **** for their image of *Tom and Jerry*.
-* **** for their image of *Cars logo*.
-* **** for their image of **.   small country?
+* **Wikipedia & Sebastiano del Piombo** for their image of *Christopher Columbus*.
+* **The Metropolitean Museum of Art & Alexis Belis** for their image of *ancient Olympic games*.
+* **Pinterest & Warner Bros** for their image of *Tom and Jerry*.
+* **Disney & Pixar** for their image of *Cars logo*.
+* **Craiyon.com** for their image of *a desert island*.
 * **** for their image of *Greenland*.
 * **** for their image of *Las Vegas*.
 * **** for their image of *the Great Wall of China*.
@@ -84,7 +90,7 @@
 * **** for their image of *Lilo*.
 * **** for their image of *a swimming competition*.
 * **** for their image of *a piano*.
-* **** for their image of *petrole*.
+* **** for their image of *oil*.
 * **** for their image of *the Monopoly's logo*.
 * **** for their image of **.   poland ww2 image?
 * **** for their image of **.   mario cart sound dinamic?
@@ -93,7 +99,7 @@
 * **** for their image of *Istanbul*.
 * **** for their image of *Cannes' festival*.
 * **** for their image of *Mercury planet*.
-* **** for their image of **.   pacific ocean?
+* **** for their image of *a big boat*.
 * **** for their image of *Budapest*.
 * **** for their image of *New York*.
 * **** for their image of *Seoul*.
@@ -117,7 +123,7 @@
 * **** for their image of *the Pacific ocean*.
 * **** for their image of *Rio de Janeiro*.
 * **** for their image of *a Swan Lake balet*.
-* **** for their image of *Marrakech*.
+* **** for their image of *Marrakesh*.
 * **** for their image of *Tokyo*.
 * **** for their image of *the Sahara*.
 * **** for their image of *Mendeleev's table*.
@@ -127,7 +133,7 @@
 * **** for their image of *Eiffel Tower*.
 * **** for their image of *Hydrogen molecule*.
 * **** for their image of *Saturn*.
-* **** for their image of **.   an island?
+* **** for their image of *a polinesian island*.
 
 *If I didn't write an author's name, it's because I didn't find it! There are too many images without credits on internet.
 
