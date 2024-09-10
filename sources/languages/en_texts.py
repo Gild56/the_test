@@ -80,7 +80,7 @@ labels = (
     "The correct answer was",
     "Options",
     "After doing this you won't\n"
-    "be able to return to the previous stats.",
+    "be able to return to the previous data.",
     "Reset settings",
     "Rainbow answer buttons",
     "Render images",
@@ -96,6 +96,12 @@ labels = (
     "Black",
     "Color themes:",
     "Music volume:",
-    "Sounds volume:",
-    "WARNING!"
+    "resources/sounds volume:",
+    "WARNING!",
+    "Yes",
+    "No",
+    "Randomizing styles",
+    "Normal",
+    "Alternaative",
+    "In order"
 )

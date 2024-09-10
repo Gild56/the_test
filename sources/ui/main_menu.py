@@ -17,7 +17,7 @@ class MainMenu(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        Clock.schedule_interval(self.update_music, 1)
+        Clock.schedule_interval(self.update_music, 0)
 
         self.main_layout = BoxLayout(
             orientation="vertical",
@@ -26,8 +26,8 @@ class MainMenu(Screen):
         )
 
         self.top_layout = BoxLayout(
-            spacing=8,
-            padding=8
+            spacing=0,
+            padding=0
         )
 
         self.dedications_label = Label(

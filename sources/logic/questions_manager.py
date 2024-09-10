@@ -1,16 +1,16 @@
 from random import randint, shuffle
 import pandas as pd
 import numpy as np
+import os
 
 from sources.libraries.resource_path import resource_path
 from sources.libraries.logger import log
 
 from sources.logic.text_manager import txt
 from sources.logic.options_manager import options_manager
-
 class QuestionsManager:
     def __init__(self):
-        self.csv_name = 'databases/english.csv'
+        self.csv_name = 'resources/databases/english.csv'
         self.df = pd.read_csv(resource_path(self.csv_name))
         self.number_of_possibilities = len(self.df)
         self.question = ""
@@ -20,7 +20,7 @@ class QuestionsManager:
         self.status = False
         self.current_language = "english"
         self.df_images = pd.read_csv(
-            resource_path("databases/images.csv")
+            resource_path("resources/databases/images.csv")
         )
 
         self.question_numbers = []
@@ -35,17 +35,25 @@ class QuestionsManager:
 
         self.question_numbers = [-1] + self.question_numbers
 
+    def replace_ukrainian(self, text_input):
+        text = text_input
+        text = text.replace("ї","ï").replace("і","i")
+        text = text.replace("Ї","Ï").replace("І","I")
+        text = text.replace("Є","Е").replace("є","е")
+        text = text.replace("Ґ","г").replace("ґ","г")
+        return text
+
     def change_the_language(self):
-        self.csv_name = f'databases/{self.current_language}.csv'
-        self.df = pd.read_csv(resource_path(self.csv_name))
+        self.csv_name = resource_path(
+            f'resources/databases/{self.current_language}.csv'
+        )
+        self.df = pd.read_csv(self.csv_name)
         self.number_of_possibilities = len(self.df)
 
     def format_text(self, text_input, max_length):
         text = text_input
 
-        text = text.replace("ї","ï").replace("і","i")
-        text = text.replace("Ї","Ï").replace("І","I")
-        text = text.replace("Є","Е").replace("є","е")
+        text = self.replace_ukrainian(text)
         # Because fonts don't support ukrainian
 
         try:
@@ -115,7 +123,7 @@ class QuestionsManager:
                 0, self.number_of_possibilities - 1
                 )
 
-        elif options_manager.randomizing_style == "in_range":
+        elif options_manager.randomizing_style == "in_order":
             if len(self.question_numbers) == 0:
                 for i in range(self.number_of_possibilities):
                     self.question_numbers.append(i)
@@ -151,8 +159,18 @@ class QuestionsManager:
             ]
 
         self.image = self.df_images.iloc[
-            self.number_of_the_question, 0
+                self.number_of_the_question, 0
             ]
+
+        self.image = resource_path(f'resources/images/{self.image}')
+
+        if not os.path.exists(self.image):
+            log.error(
+                f"The image path '{self.image}' does not exist!"
+            )
+
+            self.image = ""
+
 
         self.question = \
             self.format_text(self.question, 35)
@@ -170,12 +188,6 @@ class QuestionsManager:
         self.wrong_answer3 = self.format_text(
             self.wrong_answer3, 20
         )
-
-        if isinstance(self.image,
-            (float, np.float64)) and np.isnan(self.image):
-            self.image = ""
-        else:
-            self.image = resource_path(f'images/{self.image}')
 
         log.info(
             "Randomizing the next question. The arguments are: "

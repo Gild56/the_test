@@ -13,20 +13,20 @@ class MusicManager:
         self.current_music = None
 
         self.songs_list = os.listdir(
-            resource_path("music")
+            resource_path("resources/music")
         )
 
         self.transition = SoundLoader.load(
-            resource_path("sounds/transition.mp3")
+            resource_path("resources/sounds/transition.mp3")
         )
         self.button_clicked = SoundLoader.load(
-            resource_path("sounds/8bit-click.wav")
+            resource_path("resources/sounds/8bit-click.wav")
         )
         self.win = SoundLoader.load(
-            resource_path("sounds/win.mp3")
+            resource_path("resources/sounds/win.mp3")
         )
         self.lose = SoundLoader.load(
-            resource_path("sounds/lose.mp3")
+            resource_path("resources/sounds/lose.wav")
         )
 
         self.randomize_song()
@@ -46,7 +46,7 @@ class MusicManager:
             self.current_music.stop()
 
         self.randomize_song()
-        song_path = resource_path(f"music/{self.current_song}.mp3")
+        song_path = resource_path(f"resources/music/{self.current_song}.mp3")
         self.current_music = SoundLoader.load(song_path)
 
         if self.current_music:

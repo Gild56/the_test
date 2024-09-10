@@ -1,3 +1,5 @@
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.popup import Popup
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import Screen
 from kivy.uix.label import Label
@@ -44,7 +46,7 @@ class OptionsMenu(Screen):
             font_size = 32,
             font_name=txt.small_font,
             halign = "center",
-            on_press = self.reset_settings
+            on_press = self.show_popup
         )
 
         self.clear_button = Button(
@@ -52,7 +54,7 @@ class OptionsMenu(Screen):
             color = WHITE,
             font_size = 32,
             font_name = txt.small_font,
-            on_press = self.clear_stats
+            on_press = self.show_popup
         )
 
         self.next_song_button = Button(
@@ -301,6 +303,56 @@ class OptionsMenu(Screen):
 
 
 
+        # Questions randomizing styles
+
+
+        self.randomizing_styles_label = Label(
+            font_size = 32,
+            font_name = txt.big_font
+        )
+
+
+
+        self.randomizing_styles_layout1 = BoxLayout(
+            spacing = 16,
+            padding = 16
+        )
+
+        self.normal_checkbox = CheckBox(
+            group = "randomizing_styles"
+        )
+
+        self.normal_label = Label(
+            font_size = 25,
+            font_name = txt.small_font
+        )
+
+        self.alternative_checkbox = CheckBox(
+            group = "randomizing_styles"
+        )
+
+        self.alternative_label = Label(
+            font_size = 25,
+            font_name = txt.small_font
+        )
+
+
+        self.randomizing_styles_layout2 = BoxLayout(
+            spacing = 16,
+            padding = 16
+        )
+
+        self.in_order_checkbox = CheckBox(
+            group = "randomizing_styles"
+        )
+
+        self.in_order_label = Label(
+            font_size = 25,
+            font_name = txt.small_font
+        )
+
+
+
         self.drawing_images_checkbox.bind(
             active=self.drawing_images_function
         )
@@ -308,6 +360,10 @@ class OptionsMenu(Screen):
         self.rainbow_buttons_checkbox.bind(
             active=self.rainbow_buttons_function
         )
+
+        self.normal_checkbox.bind(active=self.normal_function)
+        self.alternative_checkbox.bind(active=self.alternative_function)
+        self.in_order_checkbox.bind(active=self.in_order_function)
 
         self.english_checkbox.bind(active=self.english_function)
         self.french_checkbox.bind(active=self.french_function)
@@ -324,7 +380,28 @@ class OptionsMenu(Screen):
         self.black_checkbox.bind(active=self.black_function)
 
 
+
         # Adding widgets to layouts
+
+        self.randomizing_styles_layout1.add_widget(
+            self.normal_checkbox
+        )
+        self.randomizing_styles_layout1.add_widget(
+            self.normal_label
+        )
+        self.randomizing_styles_layout1.add_widget(
+            self.alternative_checkbox
+        )
+        self.randomizing_styles_layout1.add_widget(
+            self.alternative_label
+        )
+
+        self.randomizing_styles_layout2.add_widget(
+            self.in_order_checkbox
+        )
+        self.randomizing_styles_layout2.add_widget(
+            self.in_order_label
+        )
 
         self.languages_layout1.add_widget(self.english_checkbox)
         self.languages_layout1.add_widget(self.english_label)
@@ -386,6 +463,9 @@ class OptionsMenu(Screen):
         self.right_layout.add_widget(self.color_themes_layout2)
         self.right_layout.add_widget(self.color_themes_layout3)
         self.right_layout.add_widget(self.color_themes_layout4)
+        self.right_layout.add_widget(self.randomizing_styles_label)
+        self.right_layout.add_widget(self.randomizing_styles_layout1)
+        self.right_layout.add_widget(self.randomizing_styles_layout2)
 
         self.left_layout.add_widget(self.reset_settings_button)
         self.left_layout.add_widget(self.clear_button)
@@ -424,6 +504,11 @@ class OptionsMenu(Screen):
         self.sounds_label.text = txt.sounds
 
         self.languages_label.text = txt.languages
+
+        self.normal_label.text = txt.normal
+        self.alternative_label.text = txt.alternative
+        self.in_order_label.text = txt.in_order
+        self.randomizing_styles_label.text = txt.randomizing_styles
 
         self.english_label.text = txt.english
         self.french_label.text = txt.french
@@ -521,7 +606,7 @@ class OptionsMenu(Screen):
         log.info("Going to the next screen -> MainMenu.")
 
 
-    def clear_stats(self, instance):
+    def clear_stats(self, instance=None):
         music_manager.button_clicked.play()
         points_manager.clear()
 
@@ -617,8 +702,97 @@ class OptionsMenu(Screen):
         music_manager.button_clicked.play()
 
     def black_function(self, checkbox, value):
+        if checkbox.value == False:
+            checkbox.value = True
+
         options_manager.menus_color = "black"
         options_manager.color_change()
         options_manager.save()
         self.update_labels()
         music_manager.button_clicked.play()
+
+    def normal_function(self, checkbox, value):
+        options_manager.randomizing_style = "normal"
+        options_manager.save()
+        music_manager.button_clicked.play()
+
+    def alternative_function(self, checkbox, value):
+        options_manager.randomizing_style = "alternative"
+        options_manager.save()
+        music_manager.button_clicked.play()
+
+    def in_order_function(self, checkbox, value):
+        options_manager.randomizing_style = "normal"
+        options_manager.save()
+        music_manager.button_clicked.play()
+
+    def show_popup(self, instance):
+
+        if instance.text == txt.clear_stats:
+            self.current_text = txt.clear_stats
+        else:
+            self.current_text = txt.reset_settings
+
+        layout = BoxLayout(
+            orientation='vertical',
+            padding=10
+        )
+
+        title_label = Label(
+            text=txt.warning,
+            font_size='24sp',
+            font_name=txt.small_font
+        )
+
+        explanation_label = Label(
+            text=txt.warning_message,
+            font_size='14sp',
+            halign="center"
+        )
+
+        button_layout = GridLayout(
+            cols=2,
+            spacing=10
+        )
+
+        yes_button = Button(
+            text=txt.yes,
+            font_name=txt.small_font,
+            background_color = RED
+        )
+
+        no_button = Button(
+            text=txt.no,
+            font_name=txt.small_font,
+            background_color = RED
+        )
+
+        yes_button.bind(on_press=self.yes_action)
+        no_button.bind(on_press=self.close_popup)
+
+        button_layout.add_widget(yes_button)
+        button_layout.add_widget(no_button)
+
+        layout.add_widget(title_label)
+        layout.add_widget(explanation_label)
+        layout.add_widget(button_layout)
+
+        self.popup = Popup(
+            title = self.current_text.replace("\n", " "),
+            content = layout,
+            size_hint = (0.6, 0.4),
+            background_color = RED
+        )
+
+        self.popup.open()
+
+    def yes_action(self, instance):
+        if self.current_text == txt.clear_stats:
+            self.clear_stats()
+        else:
+            self.reset_settings()
+
+        self.popup.dismiss()
+
+    def close_popup(self, instance):
+        self.popup.dismiss()

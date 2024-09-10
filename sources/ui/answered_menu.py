@@ -81,7 +81,7 @@ class AnsweredMenu(Screen):
         self.exit_button.text = txt.main_menu
         self.next_screen_button.text = txt.next
         if is_correct:
-            self.bottom_text.font_size = 32
+            self.bottom_text.font_size = 64
             self.top_text.text = choice(txt.good_answers)
             self.bottom_text.text = choice(txt.keep_it_messages)
             Window.clearcolor = DARK_GREEN
@@ -89,7 +89,7 @@ class AnsweredMenu(Screen):
             self.next_screen_button.background_color = GREEN
 
         else:
-            self.bottom_text.font_size = 20
+            self.bottom_text.font_size = 32
             Window.clearcolor = DARK_RED
             self.exit_button.background_color = RED
             self.next_screen_button.background_color = RED

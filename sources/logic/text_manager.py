@@ -18,8 +18,8 @@ class TextManager():
 
         self.current_language = None
 
-        self.big_font = resource_path("fonts/big_font.ttf")
-        self.small_font = resource_path("fonts/small_font.ttf")
+        self.big_font = resource_path("resources/fonts/big_font.ttf")
+        self.small_font = resource_path("resources/fonts/small_font.ttf")
 
         self.labels = None
 
@@ -113,7 +113,13 @@ class TextManager():
             self.color_theme,
             self.music,
             self.sounds,
-            self.warning
+            self.warning,
+            self.yes,
+            self.no,
+            self.randomizing_styles,
+            self.normal,
+            self.alternative,
+            self.in_order
 
         ) = self.labels
 

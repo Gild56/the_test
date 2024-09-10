@@ -2,7 +2,7 @@
 
 © Gild56
 
-This software, known as "The Test," is provided under the following terms:
+This software, known as "The Test", is provided under the following terms:
 
 ## Permissions
 
@@ -16,7 +16,7 @@ This software, known as "The Test," is provided under the following terms:
 
 ## Disclaimer
 
-The software is provided "as is," without any express or implied warranties. The author is not liable for any damages arising from the use of the software.
+The software is provided "as is", without any express or implied warranties. The author is not liable for any damages arising from the use of the software.
 
 ---
 

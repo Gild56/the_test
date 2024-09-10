@@ -21,7 +21,7 @@ class OptionsManager():
         self.bg_color = DARK_BLUE
 
         self.RANDOMIZING_STYLES = [
-            "normal", "alternative", "in_range"
+            "normal", "alternative", "in_order"
         ]
 
         self.COLORS = [
@@ -146,7 +146,7 @@ class OptionsManager():
             self.bg_color = CYAN
 
         elif self.menus_color == "grey":
-            self.main_color = LIGHT_GREY
+            self.main_color = GREY
             self.bg_color = DARK_GREY
 
         elif self.menus_color == "black":

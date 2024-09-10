@@ -80,7 +80,7 @@ labels = (
     "La réponse correcte était",
     "Paramètres",
     "Après cela, vous ne pourraiz pas\n"
-    "retourner aux statistiques précédentes.",
+    "retourner aux donnés précédentes.",
     "Retour aux\nparamétres de base",
     "Les bouttons-réponse colorés",
     "Montrer les images",
@@ -97,5 +97,11 @@ labels = (
     "Les thèmes colorés:",
     "Volume de la musique:",
     "volume des sons:",
-    "ATTENTION!"
+    "ATTENTION!",
+    "Oui",
+    "Non",
+    "Les styles de mélange",
+    "Normal",
+    "Alternatif",
+    "Dans l'ordre"
 )
