@@ -348,7 +348,8 @@ class OptionsMenu(Screen):
 
         self.in_order_label = Label(
             font_size = 25,
-            font_name = txt.small_font
+            font_name = txt.small_font,
+            halign = "right"
         )
 
 
@@ -488,6 +489,8 @@ class OptionsMenu(Screen):
             txt.rainbow_buttons + "          "
         self.drawing_images_label.text = \
             txt.drawing_images +   "          "
+        self.in_order_label.text = \
+            txt.in_order +   "                        "
 
         #! Don't change this part
         #  Kivy library don't accept to center
@@ -507,7 +510,6 @@ class OptionsMenu(Screen):
 
         self.normal_label.text = txt.normal
         self.alternative_label.text = txt.alternative
-        self.in_order_label.text = txt.in_order
         self.randomizing_styles_label.text = txt.randomizing_styles
 
         self.english_label.text = txt.english
@@ -571,6 +573,13 @@ class OptionsMenu(Screen):
             self.russian_checkbox.active = True
         else:
             self.ukrainian_checkbox.active = True
+
+        if options_manager.randomizing_style == "alternative":
+            self.alternative_checkbox.active = True
+        elif options_manager.randomizing_style == "in_order":
+            self.in_order_checkbox.active = True
+        else:
+            self.normal_checkbox.active = True
 
         self.music_slider.value = \
             options_manager.music_volume * 100
@@ -702,9 +711,6 @@ class OptionsMenu(Screen):
         music_manager.button_clicked.play()
 
     def black_function(self, checkbox, value):
-        if checkbox.value == False:
-            checkbox.value = True
-
         options_manager.menus_color = "black"
         options_manager.color_change()
         options_manager.save()
