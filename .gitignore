@@ -1,1 +1,15 @@
 __pycache__/
+*.log
+*.todo
+.idea
+zipper.py
+*.zip
+temp/
+temp_copy/
+*.json
+json/
+crashes/
+logo.png
+logo.jpg
+to_jpg.py
+to_ico.py

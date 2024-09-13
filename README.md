@@ -1,43 +1,46 @@
-# IQ Test app
+# The Test App
 
-Hello! It's a **cross-platform** *(iOS, Android & Windows)* project. You can **complete tests**, **collect points**, **listen to** your **favorite music** and so many *more*!
+Hello! It's a **cross-platform** *(iOS, Android & Windows)* project. You can **complete tests**, **collect points**, **listen to**, **presonalize all for your taste**, listen your **favorite music** and much *more*!
 
-The other languages:
+**Before presonalizing the project, read the [LICENSE](LICENSE.md)!**
 
-* [Русский](markdown/ПРОЧИТАЙМЕНЯ.md)
+Other languages:
 
-* [Українська](markdown/ПРОЧТИМЕНЕ.md)
+* [Français](resources/markdown/README-FR.md)
 
-* [Français](markdown/LISMOI.md)
+* [Русский](resources/markdown/README-RU.md)
 
-The [changelog](markdown/changelog.md) to see all the updates and changes of the project.
+* [Українська](resources/markdown/README-UA.md)
 
-If the game crashed or you need to find an exception, the [info.log](info.log) file is for you!
+Go check the [credits](resources/markdown/credits.md) of the project.
+
+Check the [changelog](resources/markdown/changelog.md) to see all the updates and changes of the project.
+
+If you need to find errors when you add new features to the code, the [info.log](info.log) file is here to help!
+
+If the game crashes, go check the last crash log in [the crashlogs folder](crashes/).
 
 ## First steps
 
-To begin your experience in the game, you will need to install Python and some modules, like kivy and pygame.
+### On Windows 10 / 11
 
-* I recommend to install it with the `install.bat` file if you are on Windows.
+To start your experience with the game, you will need to install Python from [the official Python site](https://python.org/downloads) and install the latest version of *Python 3*.
 
-* Alternatively, you can go on the [official Python site](https://python.org) and install the last *Python 3* version.
-(There are already a `python.exe` in the directory.)
-
-  Next, open your terminal () and write `pip install pygame`, then `pip install kivy`, and finally `pip install colorama`.
-
-  Finally, you can play this game, opening the `main.py` file.
+Then, start the `install.bat` file.
 
 ## Personalization
 
-You can also personalize this game - add some fonts, images, quiz, music, etc..
+You can also personalize this game - add some fonts, images, quizzes, music, etc.
+
+**Currently, you can personalize the game only on Windows 10 / 11!**
 
 ### Custom songs
 
-There are awesome songs available in the game.
+There are great songs available in the game.
 
-But, you can also add your own songs in the game.
+But, you can also add your own songs to the game.
 
-To do this, you just need to put your songs in the `iq_test/music` folder.
+To do this, you just need to put your songs in the `the_test/resources/music` folder.
 
 **To apply your changes, you need to restart the game!**
 
@@ -45,37 +48,53 @@ To do this, you just need to put your songs in the `iq_test/music` folder.
 
 If you want to customize the quiz, you can!
 
-You just need to go in the `iq_test/databases` and choose the language, that you want to change.
+You just need to go in the `the_test/resources/databases` and choose the language you want to change.
 
-You can put anything, but remember, that if you don't set the questions correctly, it may not work!
+You can put anything, but remember that if you don't set the questions correctly, it may not work!
 
 To set your questions correctly you must write:
 
-"Your question (it can be a bit long and you don't need to include `\n` line breaks)","The true answer","The wrong answer №1","The wrong answer №2","The wrong answer №3","The path to your image in `iq_test/images` (Optional)"
+"Your question (it can be a bit long and you don't need to include `\n` line breaks)","The true answer","The wrong answer №1","The wrong answer №2","The wrong answer №3"
 
-#### **Examples with image:**
-
-```python
-"Sur 250 marins partis 1519 avec Magellan, combien rentrent à Séville, 3 ans plus tard?","18","115","249","60","magellan.jpg"
-
-"Quel scientifique est associé à l'image d'une pomme qui lui tombe sur la tête?","Newton","Archimède","Thalès","Pythagore","newton.jpg"
-```
-
-#### **Or without image:**
+#### **Examples:**
 
 ```python
-"Combien contient de calcium en moyenne un corps d'un homme adulte au total?","1 kg","3 kg","5 kg","10 kg"
+# Like that:
 
-"Dans quel pays parle-t-on le basque, le catalan, le galicien ou le valencien?","Espagne","Pays-Bas","Allemagne","Norvège"
+"What animal is the symbol of the former tennis champion René Lacoste?","The crocodile","The panda","The jaguar","The puma"
+
+# Or that:
+
+"Out of 250 sailors who left in 1519 with Magellan, how many returned to Seville 3 years later?","18","115","249","60"
 ```
 
-The first example will show the question, the 4 answers and an illustration, because i added the optional path to the image *`magellan.jpg`* or `newton.jpg`
+### Add an image to your question
 
-If an image is not included, as in the second example, it will not be visible.
+To add an image, you must indicate it in the `the_test/resources/databases/images.csv`
 
-You can use the `.jpeg`, `.jpg`, `.webp`, `.png`.
+The line where you put the name of your image must match the exact line of the question in your database file.
 
-**If the line isn"t set correctly, it may crash the game or don"t work correctly!**
+If you want to add an image to only certain questions, leave the corresponding lines empty.
+
+#### **Examples:**
+
+```python
+# Like that:
+
+""
+"magellan.jpg"
+"calcium.jpeg"
+""
+"marseille.jpg"
+
+# And so on...
+```
+
+You can use the `.jpeg`, `.jpg`, `.png` formats.
+
+**This will apply the images to all languages!**
+
+**If the line isn't set correctly, it may crash the game or not work correctly!**
 
 **To apply your changes, you need to restart the game!**
 
@@ -85,69 +104,17 @@ It is also possible to add some custom fonts.
 
 There are two fonts in the vanilla game:
 
-1. The big one (called Pusab) is in the fonts folder and called **`big_font.ttf`**.
+1. The big one (called Pusab) is in the `the_test/resources/fonts` folder and called **`big_font.ttf`**.
 
-2. The smaller one (called Aller) is also in the fonts folder and called **`small_font.ttf`**.
+2. The smaller one (called Aller) is in the same folder and called *`small_font.ttf`*.
 
-Notice that you should choose fonts with **Cyrillic letters** (the basic ones are *Cyrillic extensions* of Aller and Pusab).
+Note that you should choose fonts that support **Cyrillic letters** (as the default ones are *Cyrillic versions* of Aller and Pusab), except if you will not need it.
 
 **To apply your changes, you need to restart the game!**
 
-## Credits
-
-Thanks to :
-
-### **Fonts:**
-
-* **Flat-It** for the *Pusab font*.
-* **HopKa** for the *Cyrillic Pusab version*.
-* **Dalton Maag Inc.** for the *Aller font*.
-
-### **Libraries:**
-
-* **** for the *Pygame* library.
-* **The Kivy Team** for the *Kivy* library.
-* **** for the *Colorama* library.
-
-### **Music:**
-
-* **Aurora Borealis** for his song *"Beyond the Horizon"*.
-* **Daminika** for their song *"Beyond the Stars"*.
-* **Dimatis** for their song *"Moonlit Lover"*.
-* **Direct & Finding Hope** for their song *"Falling Into Place"*.
-* **Elekid** for their song *"Melting Ice"*.
-* **Osk** for their song *"Komorebi"*.
-* **Rameses B** for their song *"Believing"*.
-* **SkyFlair & Exal** for their song *"Afterlife"*.
-* **Vexatic** for his song *"Lifted"*.
-
-### **Images:**
-
-* **iStock & Bihagolan** for their image of *Isaac Newton*.
-* **Frédérique Catinaud-Brusset Naturopathe & F. Brusset** for their image of the *Calcium*.
-* **Unes de l'Equipe** for their image of *René Lacoste*.
-* **Interhome** for their image of the *Basque country*.
-* **Daily Geek Show, Photo Junction & Shutterstock** for their image of the *Bermuda Triangle*.
-* **Le GDE & Mary Evans PL** for their image of the *Magellan's boats*.
-* **Cocorico Web** for their image of *colors*.
-* **L'Humanité & Nicolas Guillermin** for their image of *Cape Horn*.
-* **Guides Ulysse & Chidanand M.** for their image of *Mumbai*.
-* **Hôtel Edmont Rostand & Hôtel Marseille** their image of the *Marseille's port*.
-* **Premiere & DR** for their image of *Hulk*.
-* **Les Echos & Getty Images** for their image of *Halloween*.
-* **Voyages et Vagabondages & Lucie A** for their image of *London's Olympics Games opening ceremony*.
-* **Fandom, AlleDazzi1 & Disney** for their image of *Hercules*.
-* **Papilles et Pullipes** for their image of *popcorn*.
-* **La Voix du Nord & Stephne Mortagne** for their image of **.
-
-*If I didn't write an author's name, it's because I didn't find it! There are too many images without credits on internet.
-
-### **Questions:**
-
-* Huge thanks to **Trivial Pursuit** to give me *ideas for questions*!
-
-### **Thanks to everyone who is reading this and playing my game!**
-
 ## Contact me
 
-To cantact me, write me on [Gmail](mailto:gild56gmd@gmail.com), [Telegram](https://t.me/gild56) or [Discord](https://discord.com/users/gild56).
+To contact me:
+* [my Telegram](https://t.me/gild56) (Checked often)
+* [my Discord](https://discord.com/users/gild56) (Checked rarely)
+* [my Gmail](mailto:gild56gmd@gmail.com) (Never checked xD)
