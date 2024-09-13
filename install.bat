@@ -16,7 +16,7 @@ set "desktop=%UserProfile%\Desktop\The Test.lnk"
 set "fallback=%~dp0..\The Test.lnk"  :: Creates a shortcut one directory above the working directory
 
 if not exist "%desktop%" (
-    powershell -Command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%desktop%'); $s.TargetPath = '%target%'; $s.IconLocation = '%icon%'; $s.Save()" 
+    powershell -Command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%desktop%'); $s.TargetPath = '%target%'; $s.IconLocation = '%icon%'; $s.Save()"
     if errorlevel 1 (
         echo Failed to create shortcut on the desktop. Trying to create it near the directory.
     ) else (
