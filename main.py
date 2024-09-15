@@ -29,7 +29,7 @@ class QuizApp(App):
             log.info(
                 "The app stopped when a question "
                 "was asked. Points were lost."
-                )
+            )
             points_manager.lose()
 
 if __name__ == '__main__':

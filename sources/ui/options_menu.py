@@ -29,13 +29,13 @@ class OptionsMenu(Screen):
         )
 
         self.left_layout = BoxLayout(
-            orientation="vertical",
+            orientation = "vertical",
             spacing = 32,
             padding = 32
         )
 
         self.right_layout = BoxLayout(
-            orientation="vertical",
+            orientation = "vertical",
             spacing = 0,
             padding = 32
         )
@@ -44,7 +44,7 @@ class OptionsMenu(Screen):
             size_hint = (1, 0.1),
             color = WHITE,
             font_size = 32,
-            font_name=txt.small_font,
+            font_name = txt.small_font,
             halign = "center",
             on_press = self.show_popup
         )
@@ -118,7 +118,7 @@ class OptionsMenu(Screen):
         self.rainbow_buttons_layout = BoxLayout()
 
         self.rainbow_buttons_checkbox = CheckBox(
-            size_hint=(0, 0),
+            size_hint = (0, 0),
             pos_hint = {"center_x": 1, "center_y": 0.5}
         )
 
@@ -355,30 +355,30 @@ class OptionsMenu(Screen):
 
 
         self.drawing_images_checkbox.bind(
-            active=self.drawing_images_function
+            active = self.drawing_images_function
         )
 
         self.rainbow_buttons_checkbox.bind(
-            active=self.rainbow_buttons_function
+            active = self.rainbow_buttons_function
         )
 
-        self.normal_checkbox.bind(active=self.normal_function)
-        self.alternative_checkbox.bind(active=self.alternative_function)
-        self.in_order_checkbox.bind(active=self.in_order_function)
+        self.normal_checkbox.bind(active = self.normal_function)
+        self.alternative_checkbox.bind(active = self.alternative_function)
+        self.in_order_checkbox.bind(active = self.in_order_function)
 
-        self.english_checkbox.bind(active=self.english_function)
-        self.french_checkbox.bind(active=self.french_function)
-        self.russian_checkbox.bind(active=self.russian_function)
-        self.ukrainian_checkbox.bind(active=self.ukrainian_function)
+        self.english_checkbox.bind(active = self.english_function)
+        self.french_checkbox.bind(active = self.french_function)
+        self.russian_checkbox.bind(active = self.russian_function)
+        self.ukrainian_checkbox.bind(active = self.ukrainian_function)
 
-        self.blue_checkbox.bind(active=self.blue_function)
-        self.orange_checkbox.bind(active=self.orange_function)
-        self.violet_checkbox.bind(active=self.violet_function)
-        self.pink_checkbox.bind(active=self.pink_function)
-        self.yellow_checkbox.bind(active=self.yellow_function)
-        self.cyan_checkbox.bind(active=self.cyan_function)
-        self.grey_checkbox.bind(active=self.grey_function)
-        self.black_checkbox.bind(active=self.black_function)
+        self.blue_checkbox.bind(active = self.blue_function)
+        self.orange_checkbox.bind(active = self.orange_function)
+        self.violet_checkbox.bind(active = self.violet_function)
+        self.pink_checkbox.bind(active = self.pink_function)
+        self.yellow_checkbox.bind(active = self.yellow_function)
+        self.cyan_checkbox.bind(active = self.cyan_function)
+        self.grey_checkbox.bind(active = self.grey_function)
+        self.black_checkbox.bind(active = self.black_function)
 
 
 
@@ -586,14 +586,14 @@ class OptionsMenu(Screen):
         self.sounds_slider.value = \
             options_manager.sounds_volume * 100
 
-    def update_music(self, dt):
+    def update_music(self, dt=None):
         options_manager.music_volume = \
             round(self.music_slider.value / 100, 2)
         options_manager.sounds_volume = \
             round(self.sounds_slider.value / 100, 2)
 
 
-    def reset_settings(self, instance):
+    def reset_settings(self, df=None, instance=None):
 
         options_manager.clear()
         txt.set_system_language()
@@ -602,7 +602,7 @@ class OptionsMenu(Screen):
         options_manager.save()
 
 
-    def return_in_main_menu(self, instance):
+    def return_in_main_menu(self, instance=None):
 
         questions_manager.status = True
         options_manager.save()
@@ -619,7 +619,7 @@ class OptionsMenu(Screen):
         music_manager.button_clicked.play()
         points_manager.clear()
 
-    def next_song(self, instance):
+    def next_song(self, instance=None):
         music_manager.button_clicked.play()
         music_manager.next_song()
 
@@ -740,41 +740,41 @@ class OptionsMenu(Screen):
             self.current_text = txt.reset_settings
 
         layout = BoxLayout(
-            orientation='vertical',
-            padding=10
+            orientation = 'vertical',
+            padding = 10
         )
 
         title_label = Label(
-            text=txt.warning,
-            font_size='24sp',
-            font_name=txt.small_font
+            text = txt.warning,
+            font_size = '24sp',
+            font_name = txt.small_font
         )
 
         explanation_label = Label(
-            text=txt.warning_message,
-            font_size='14sp',
-            halign="center"
+            text = txt.warning_message,
+            font_size = '14sp',
+            halign = "center"
         )
 
         button_layout = GridLayout(
-            cols=2,
-            spacing=10
+            cols = 2,
+            spacing = 10
         )
 
         yes_button = Button(
-            text=txt.yes,
-            font_name=txt.small_font,
+            text = txt.yes,
+            font_name = txt.small_font,
             background_color = RED
         )
 
         no_button = Button(
-            text=txt.no,
-            font_name=txt.small_font,
+            text = txt.no,
+            font_name = txt.small_font,
             background_color = RED
         )
 
-        yes_button.bind(on_press=self.yes_action)
-        no_button.bind(on_press=self.close_popup)
+        yes_button.bind(on_press = self.yes_action)
+        no_button.bind(on_press = self.close_popup)
 
         button_layout.add_widget(yes_button)
         button_layout.add_widget(no_button)

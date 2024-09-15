@@ -26,70 +26,70 @@ class QuestionMenu(Screen):
         self.update_variables()
 
         self.main_layout = BoxLayout(
-            orientation="vertical",
-            spacing=32,
-            padding=32
+            orientation = "vertical",
+            spacing = 32,
+            padding = 32
         )
 
         self.image_layout = BoxLayout(
-            orientation="horizontal",
-            size_hint_y=None,
-            spacing=64,
-            padding=64
+            orientation = "horizontal",
+            size_hint_y = None,
+            spacing = 64,
+            padding = 64
         )
 
         self.question_text = Label(
-            font_size=48,
-            font_name=txt.big_font,
-            halign="center"
+            font_size = 48,
+            font_name = txt.big_font,
+            halign = "center"
         )
 
         self.top_answers_layout = BoxLayout(
-            spacing=32,
-            padding=32,
-            size_hint_y=None
+            spacing = 32,
+            padding = 32,
+            size_hint_y = None
         )
 
         self.bottom_answers_layout = BoxLayout(
-            spacing=32,
-            padding=32,
-            size_hint_y=None
+            spacing = 32,
+            padding = 32,
+            size_hint_y = None
         )
 
         self.true_button = Button(
-            background_color=options_manager.main_color,
-            color=WHITE,
-            font_size=32,
-            font_name=txt.small_font,
-            size_hint=(1, 3),
-            halign="center"
+            background_color = options_manager.main_color,
+            color = WHITE,
+            font_size = 32,
+            font_name = txt.small_font,
+            size_hint = (1, 3),
+            halign = "center"
         )
 
         self.wrong_button1 = Button(
-            background_color=options_manager.main_color,
-            color=WHITE,
-            font_size=32,
-            font_name=txt.small_font,
-            size_hint=(1, 3),
-            halign="center"
+            background_color = options_manager.main_color,
+            color = WHITE,
+            font_size = 32,
+            font_name = txt.small_font,
+            size_hint = (1, 3),
+            halign = "center"
         )
 
         self.wrong_button2 = Button(
-            background_color=options_manager.main_color,
-            color=WHITE,
-            font_size=32,
-            font_name=txt.small_font,
-            size_hint=(1, 3),
-            halign="center"
+            background_color = options_manager.main_color,
+            color = WHITE,
+            font_size = 32,
+            font_name = txt.small_font,
+            size_hint = (1, 3),
+            halign = "center"
         )
 
         self.wrong_button3 = Button(
-            background_color=options_manager.main_color,
-            color=WHITE,
-            font_size=32,
-            font_name=txt.small_font,
-            size_hint=(1, 3),
-            halign="center"
+            background_color = options_manager.main_color,
+            color = WHITE,
+            font_size = 32,
+            font_name = txt.small_font,
+            size_hint = (1, 3),
+            halign = "center"
         )
 
         self.main_layout.add_widget(self.question_text)
@@ -99,10 +99,10 @@ class QuestionMenu(Screen):
 
         self.add_widget(self.main_layout)
 
-        self.true_button.bind(on_press=self.check_answer)
-        self.wrong_button1.bind(on_press=self.check_answer)
-        self.wrong_button2.bind(on_press=self.check_answer)
-        self.wrong_button3.bind(on_press=self.check_answer)
+        self.true_button.bind(on_press = self.check_answer)
+        self.wrong_button1.bind(on_press = self.check_answer)
+        self.wrong_button2.bind(on_press = self.check_answer)
+        self.wrong_button3.bind(on_press = self.check_answer)
 
     def update_variables(self):
         (
@@ -130,9 +130,9 @@ class QuestionMenu(Screen):
 
             else: #self.image_path and self.image_path.strip()
                 self.image = Image(
-                    source=resource_path(self.image_path),
-                    size_hint_y=None,
-                    height=200
+                    source = resource_path(self.image_path),
+                    size_hint_y = None,
+                    height = 200
                 )
                 log.info(
                     "The image was created. "
