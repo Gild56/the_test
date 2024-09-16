@@ -126,7 +126,7 @@
 * **Morocco** for their image of *Marrakech*.
 * **GoTokyo** for their image of *Tokyo*.
 * **Wikipedia & Thomas Woodtli** for their image of *the Sahara*.
-* **Britannica & Thinkstock** for their image of *Mendeleev's table*.
+* **Britannica, Scanrail & stock.adobe.com** for their image of *gold*.
 * **GoCity & Charlotte Tricoire** for their image of *Rome*.
 * **The Conversation, Diego Villar Lozano & Shutterstock** for their image of *mammals*.
 * **Photowall** for their image of *wine*.

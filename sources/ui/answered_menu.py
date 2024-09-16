@@ -19,54 +19,54 @@ class AnsweredMenu(Screen):
         super().__init__(**kwargs)
 
         self.main_layout = BoxLayout(
-            orientation="vertical",
-            spacing=8,
-            padding=20
+            orientation = "vertical",
+            spacing = 8,
+            padding = 20
         )
 
         self.top_text = Label(
-            size_hint=(1, 0.3),
-            font_size=96,
-            font_name=txt.big_font
+            size_hint = (1, 0.3),
+            font_size = 96,
+            font_name = txt.big_font
         )
 
         self.bottom_text = Label(
-            size_hint=(1, 0.3),
-            font_size=64,
-            font_name=txt.small_font
+            size_hint = (1, 0.3),
+            font_size = 64,
+            font_name = txt.small_font
         )
 
         self.stats_label = Label(
-            size_hint=(0.3, 0.3),
-            font_size=25,
-            font_name=txt.small_font,
-            pos_hint={"center_x": 0.5, "center_y": 0.8},
-            halign="center"
+            size_hint = (0.3, 0.3),
+            font_size = 25,
+            font_name = txt.small_font,
+            pos_hint = {"center_x": 0.5, "center_y": 0.8},
+            halign = "center"
         )
 
         self.exit_button = Button(
-            text=txt.main_menu,
-            pos_hint={"center_x": 0.5, "center_y": 0.4},
-            size_hint=(0.5, 0.2),
-            background_color=options_manager.main_color,
-            color=WHITE,
-            font_size=32,
-            font_name=txt.small_font,
-            halign="center"
+            text = txt.main_menu,
+            pos_hint = {"center_x": 0.5, "center_y": 0.4},
+            size_hint = (0.5, 0.2),
+            background_color = options_manager.main_color,
+            color = WHITE,
+            font_size = 32,
+            font_name = txt.small_font,
+            halign = "center"
         )
 
         self.next_screen_button = Button(
-            text=txt.next,
-            pos_hint={"center_x": 0.5, "center_y": 0.5},
-            size_hint=(0.5, 0.2),
-            background_color=options_manager.main_color,
-            color=WHITE,
-            font_size=64,
-            font_name=txt.big_font
+            text = txt.next,
+            pos_hint = {"center_x": 0.5, "center_y": 0.5},
+            size_hint = (0.5, 0.2),
+            background_color = options_manager.main_color,
+            color = WHITE,
+            font_size = 64,
+            font_name = txt.big_font
         )
 
-        self.next_screen_button.bind(on_press=self.next_screen)
-        self.exit_button.bind(on_press=self.exit_to_main_menu)
+        self.next_screen_button.bind(on_press = self.next_screen)
+        self.exit_button.bind(on_press = self.exit_to_main_menu)
 
         self.main_layout.add_widget(self.top_text)
         self.main_layout.add_widget(self.bottom_text)
@@ -99,7 +99,7 @@ class AnsweredMenu(Screen):
                 f'{txt.correct_answer}: "{t}".'
             )
 
-        self.stats_label.text=(
+        self.stats_label.text = (
             f"{txt.points}: {points_manager.points}\n "
             f"{txt.win_streak}: {points_manager.win_streak}\n "
             f"{txt.best_win_streak}: "

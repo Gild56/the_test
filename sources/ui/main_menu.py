@@ -20,62 +20,62 @@ class MainMenu(Screen):
         Clock.schedule_interval(self.update_music, 0)
 
         self.main_layout = BoxLayout(
-            orientation="vertical",
-            spacing=32,
-            padding=32
+            orientation = "vertical",
+            spacing = 32,
+            padding = 32
         )
 
         self.top_layout = BoxLayout(
-            spacing=0,
-            padding=0
+            spacing = 0,
+            padding = 0
         )
 
         self.dedications_label = Label(
-            text=txt.dedications,
-            size_hint=(0.3, 0.3),
-            font_size=25,
-            font_name=txt.small_font,
-            pos_hint={"center_x": 0.5, "center_y": 0.8}
+            text = txt.dedications,
+            size_hint = (0.3, 0.3),
+            font_size = 25,
+            font_name = txt.small_font,
+            pos_hint = {"center_x": 0.5, "center_y": 0.8}
         )
 
         self.name_label = Label(
-            text=txt.name,
-            size_hint=(1, 0.3),
-            font_size=70,
-            font_name=txt.big_font,
-            pos_hint={"center_x": 0.5, "center_y": 0.8}
+            text = txt.name,
+            size_hint = (1, 0.3),
+            font_size = 70,
+            font_name = txt.big_font,
+            pos_hint = {"center_x": 0.5, "center_y": 0.8}
         )
 
         self.stats_label = Label(
-            size_hint=(0.3, 0.3),
-            font_size=25,
-            font_name=txt.small_font,
-            pos_hint={"center_x": 0.5, "center_y": 0.8},
-            halign="right"
+            size_hint = (0.3, 0.3),
+            font_size = 25,
+            font_name = txt.small_font,
+            pos_hint = {"center_x": 0.5, "center_y": 0.8},
+            halign = "right"
         )
 
         self.options_button = Button(
-            pos_hint={"center_x": 0.5, "center_y": 0.7},
-            size_hint=(0.7, 0.5),
-            color=WHITE,
-            font_size=50,
-            font_name=txt.big_font,
-            halign="center"
+            pos_hint = {"center_x": 0.5, "center_y": 0.7},
+            size_hint = (0.7, 0.5),
+            color = WHITE,
+            font_size = 50,
+            font_name = txt.big_font,
+            halign = "center"
         )
 
         self.play_button = Button(
-            pos_hint={"center_x": 0.5, "center_y": 0.2},
-            size_hint=(0.7, 0.5),
-            color=WHITE,
-            font_size=64,
-            font_name=txt.big_font
+            pos_hint = {"center_x": 0.5, "center_y": 0.2},
+            size_hint = (0.7, 0.5),
+            color = WHITE,
+            font_size = 64,
+            font_name = txt.big_font
         )
 
         self.update_labels()
 
-        self.options_button.bind(on_press=self.open_options)
+        self.options_button.bind(on_press = self.open_options)
 
-        self.play_button.bind(on_press=self.start_game)
+        self.play_button.bind(on_press = self.start_game)
 
         self.top_layout.add_widget(self.dedications_label)
         self.top_layout.add_widget(self.name_label)
